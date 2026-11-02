@@ -1,8 +1,8 @@
 # Tasks
 
-A task card is a pre-planned unit of agent work: **one card = one worker = one branch = one PR**. The card's `scope` lists the only paths the worker may change. The `Agent scope` CI check in the code repo rejects a PR that changes anything else. Cards are merged to `main` before work starts, because workers and CI read them from `main`.
+A task card is a pre-planned unit of agent work: **one card = one worker = one branch = one PR**. The card's `scope` lists the only paths the worker may change. `crew pr` refuses to push a branch that changes anything else. Cards are merged to `main` before work starts, because workers and `crew pr` read them from `main`.
 
-This folder holds the plan. What's merged comes from git (DECISIONS.md D16). What's in flight (`todo`, `working`, `review`, …) lives in Redis (crew's COMMS.md). `crew status` shows both.
+This folder holds the plan. What's merged comes from git (WORKFLOW.md D16). What's in flight (`todo`, `working`, `review`, …) lives in Redis (crew's COMMS.md). `crew status` shows both.
 
 ## Card format
 

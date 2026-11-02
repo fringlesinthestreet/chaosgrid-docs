@@ -2,7 +2,16 @@
 
 Changes to the plan, the decisions and the way we work, newest first. The code's own history is in git. Merged tasks show up in the Status section of this repo's README and in `crew status`.
 
-When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md` or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
+When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
+
+## 2026-11-02 — The code repo names neither crew nor this repo (D54)
+
+People who work on the shared code repo without crew would wonder what its mentions of the plan repo, crew and lead branches mean. And a session the human started by hand didn't know it was the lead: it made a branch in the main checkout instead of a lead branch.
+
+- D14–D17, D36 and D53 moved to the new [WORKFLOW.md](WORKFLOW.md), with their numbers. The code repo's DECISIONS.md keeps a `Withdrawn` row for each, and its CLAUDE.md no longer mentions the plan repo. A new decision takes the next number that's free on both pages.
+- crew's session hook (`crew setup` writes it to the code repo's untracked `.claude/settings.local.json`) tells every session started in the code repo that it's the lead and gives it this repo's CLAUDE.md. It also says how changes reach main: the docs and the cards go on lead branches, and anything else gets a task card first.
+- The Agent scope workflow and its deploy key are gone from the code repo. `crew pr` runs the same scope check against this repo's main before it pushes.
+- Workers' PR bodies no longer name the card or `crew check`.
 
 ## 2026-11-02 — The web's Node-run files may import the cards package's Node entry (T-123)
 

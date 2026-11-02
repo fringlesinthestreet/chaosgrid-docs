@@ -1,7 +1,7 @@
 # crew settings for ChaosGrid (~/Documents/AI/tools/crew/README.md › Configuration). This is the plan
 # repo: the paths below are paths here, while the gates, the install command and Redis run in the code
-# repo, which `crew link` connects to this one. The git hooks and the Agent scope check read this file
-# too: keep to plain NAME=value lines, with comments on their own.
+# repo, which `crew link` connects to this one. The git hooks read this file too: keep to plain
+# NAME=value lines, with comments on their own.
 
 CREW_PROJECT=ChaosGrid
 CREW_PREFIX=cg
