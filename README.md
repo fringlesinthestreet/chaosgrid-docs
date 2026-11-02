@@ -5,10 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 13 of 22 tasks merged
-- **Latest task completed:** [T-123](docs/tasks/M5/T-123-art-pack.md) Art pack and local art server (2026-11-02)
+- **Milestone:** M5 — Balance pass · 14 of 22 tasks merged
+- **Latest task completed:** [T-134](docs/tasks/M5/T-134-card-stats.md) Bot-game stats on card pages (2026-11-02)
 - **Next up:**
-  - [T-134](docs/tasks/M5/T-134-card-stats.md) Bot-game stats on card pages
+  - [T-135](docs/tasks/M5/T-135-planner-bot.md) The planner bot looks ahead
   - [T-136](docs/tasks/M5/T-136-battlefield-backdrop.md) The battlefield behind the match
 <!-- status:end -->
 
