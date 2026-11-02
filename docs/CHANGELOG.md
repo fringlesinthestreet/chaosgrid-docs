@@ -4,6 +4,12 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md` or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-02 — The web's Node-run files may import the cards package's Node entry (T-123)
+
+T-123 widened ESLint's web zone for the files outside `apps/web/src/` (config files, `e2e/`, `art-pack/`), which Node runs, so they may import `@chaosgrid/cards/node`. Its card planned that as a stated exception to planning rule 4. The code repo's import tables now say the same: DECISIONS.md › Import boundaries, rules 1 and 6, and CLAUDE.md › Architecture rules. No decision changed.
+
+The merged art pack also took Fable's whole export without a problem: 285 keys, 1,058 strips stitched from frames, 264 portraits and 39 icons, and the same output on a second run.
+
 ## 2026-11-02 — Follow-ups from the M5 handoffs (T-143 to T-147)
 
 The lead went through the open notes in the handoffs of T-119 and T-124 to T-140, and the human picked what to do with them. Five became cards, and the rest stay as the merged code has them.
