@@ -5,14 +5,14 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 7 of 22 tasks merged
-- **Latest task completed:** [T-140](docs/tasks/M5/T-140-card-view-attachments.md) List attached cards in the card view (2026-11-02)
+- **Milestone:** M5 — Balance pass · 8 of 22 tasks merged
+- **Latest task completed:** [T-128](docs/tasks/M5/T-128-playback-timeline.md) Playback timeline (2026-11-02)
 - **Next up:**
   - [T-119](docs/tasks/M5/T-119-art-manifest.md) Animated art manifest, sprites and stills
   - [T-127](docs/tasks/M5/T-127-card-browser.md) Card browser sorting, groups and views
-  - [T-128](docs/tasks/M5/T-128-playback-timeline.md) Playback timeline
   - [T-132](docs/tasks/M5/T-132-durability-zero.md) Durability 0 and discard-pile cards
   - [T-133](docs/tasks/M5/T-133-bot-plays.md) Bots use traps, Leader moves and Rest
+  - [T-136](docs/tasks/M5/T-136-battlefield-backdrop.md) The battlefield behind the match
 <!-- status:end -->
 
 ## What's here
