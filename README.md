@@ -5,11 +5,12 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 23 of 28 tasks merged
-- **Latest task completed:** [T-135](docs/tasks/M5/T-135-planner-bot.md) The planner bot looks ahead (2026-11-02)
+- **Milestone:** M5 — Balance pass · 24 of 28 tasks merged
+- **Latest task completed:** [T-137](docs/tasks/M5/T-137-bot-styles.md) Bot styles for the starter decks (2026-11-02)
 - **Next up:**
   - [T-122](docs/tasks/M5/T-122-effect-sprites.md) Effect sprites and spell casts
-  - [T-137](docs/tasks/M5/T-137-bot-styles.md) Bot styles for the starter decks
+  - [T-138](docs/tasks/M5/T-138-lobby-presets.md) Lobby presets and bot levels
+  - [T-139](docs/tasks/M5/T-139-balance-baseline.md) Balance baseline
   - [T-148](docs/tasks/M5/T-148-planner-previews-guess-the-other-seats-p.md) Planner previews guess the other seats' plans
 <!-- status:end -->
 
