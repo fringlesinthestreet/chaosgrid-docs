@@ -5,10 +5,9 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 15 of 27 tasks merged
-- **Latest task completed:** [T-136](docs/tasks/M5/T-136-battlefield-backdrop.md) The battlefield behind the match (2026-11-02)
+- **Milestone:** M5 — Balance pass · 16 of 27 tasks merged
+- **Latest task completed:** [T-143](docs/tasks/M5/T-143-test-limits.md) Test limits under load (2026-11-02)
 - **Next up:**
-  - [T-143](docs/tasks/M5/T-143-test-limits.md) Test limits under load
   - [T-144](docs/tasks/M5/T-144-bot-draft-reuse.md) Bot draft reuse and Rest-safe attaches
   - [T-146](docs/tasks/M5/T-146-one-playback-speed.md) One stored playback speed
   - [T-147](docs/tasks/M5/T-147-card-browser-follow-ups.md) Card browser follow-ups
