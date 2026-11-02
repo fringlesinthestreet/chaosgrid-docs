@@ -2,7 +2,7 @@
 id: T-135
 title: The planner bot looks ahead
 milestone: M5
-depends_on: [T-116, T-129, T-133, T-134, T-141]
+depends_on: [T-116, T-129, T-133, T-134, T-141, T-143, T-144, T-145]
 branch: agent/T-135-planner-bot
 model: opus
 effort: high
@@ -32,7 +32,7 @@ The human wants bots that try out what can happen, from what their seat can see,
 
 ## Interfaces
 
-What exists (copied from the code on 2026-10-29). T-114, T-116, T-130, T-133 and T-134 change these files first: re-read greedy-bot.ts, turtle-bot.ts, registry.ts, sim-cli's game.ts and host.ts when you start.
+What exists (copied from the code on 2026-10-29). T-114, T-116, T-130, T-133, T-134 and T-143 to T-145 change these files first: re-read greedy-bot.ts, turtle-bot.ts, draft.ts, targets.ts, value.ts, registry.ts, sim-cli's game.ts, host.ts and host.test.ts when you start.
 
 ```ts
 // packages/bots/src/bot.ts:8-19 (T-114 adds chooseDiscards)

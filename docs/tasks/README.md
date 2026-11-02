@@ -34,6 +34,7 @@ Body sections: Goal · Interfaces · Deliverables · Acceptance · Out of scope 
 8. **Hand the worker its context** (D17). List under `context:` exactly the sections it must read, not whole docs, and put the exact names it will use in Interfaces: signatures, types, file paths, event names. Every search a worker doesn't have to make saves steps, and every step re-reads its whole context.
 9. **Pick the model.** Leave `sonnet`/`medium` for most tasks. Use `opus` (and `high` effort if needed) for tasks that need judgment: core rules, shared contracts, tricky algorithms. Use `haiku` for mechanical ones: data files, renames, docs that follow a fixed pattern.
 10. **Write test filters without `--`.** `pnpm --filter @chaosgrid/web test planning CardView` runs the files whose paths match. After `--`, Vitest runs every file.
+11. **No two paths that differ only in case.** macOS's file system ignores case, so a card never names a file beside one that differs from it only in case: T-125's `quickAdd.ts` next to `QuickAdd.tsx` broke TypeScript (TS1261), and it became `matchCard.ts`. The same goes for ignore patterns: `.gitignore`'s `Art/` also hid `apps/web/src/art/` until it became `/Art/` (2026-11-02).
 
 ## M0 — Skeleton
 
@@ -447,10 +448,11 @@ After playing M4, the human set M5's priorities: gameplay, the UI, card balancin
 - **Language files first (D50).** T-124 builds `t()` and one empty file per namespace in wave 14, so every web card after it puts its text in the files. Only T-124 edits `i18n/messages.ts`; each later card edits only its own folder's namespace file.
 - **Deck building (wave 15).** T-125 (the deck editor), T-126 (the deck list) and T-127 (the card browser) own separate folders. T-127 keeps `filter.ts`'s exports, which the editor uses, and leaves `CardDetail.tsx` and `cards.test.tsx` to T-115.
 - **Playback (wave 16).** T-128's timeline stays in `match/playback/` and `match/overlays/`, which no playtest card touches after T-113.
-- **Bots and balance (waves 17 to 21).** After T-114, `packages/bots` changes one owner at a time (T-130, T-133, T-135, T-137), and so does `tools/sim-cli/src` (T-131, T-134, T-135, T-137). T-135 also waits for T-141 (M4), which edits `host/host.test.ts` first. T-129 is the shared contract for previews (planning rule 2, D49): protocol types and core's `previewRound`, after T-112's v26, with no protocol bump. T-132 changes core's Cleanup (D48) and adds card files. T-139 runs the baseline once the bots are final and changes no code.
-- **The lobby (wave 21).** T-138 waits for T-137's bot styles.
+- **Bots and balance (waves 17 to 26).** After T-114, `packages/bots` changes one owner at a time (T-130, T-133, T-144, T-145, T-135, T-137), and so does `tools/sim-cli/src` (T-131, T-134, T-135, T-137). T-135 also waits for T-141 (M4), which edits `host/host.test.ts` first. T-129 is the shared contract for previews (planning rule 2, D49): protocol types and core's `previewRound`, after T-112's v26, with no protocol bump. T-132 changes core's Cleanup (D48) and adds card files. T-139 runs the baseline once the bots are final and changes no code.
+- **The lobby (wave 26).** T-138 waits for T-137's bot styles.
 - **The card view (wave 21).** T-140 lists a squad's attached cards in the card view (the human's request, 2026-10-30). It waits for T-124's `t()` and for T-142 (M4), which edits `CardView.tsx` first.
 - **The match backdrop (wave 22, D51).** T-136 waits for T-118, the last playtest card, for T-128, whose timeline it places, and for T-140, since both edit `CardView.tsx`, `MatchScreen.tsx` and `theme.css`. The lead updates `apps/web/README.md`'s match section after T-136 merges. T-120 waits for T-136 as well, since both edit the battlefield and `MatchScreen.tsx`.
+- **Follow-ups from the handoffs (waves 22 and 23).** The human picked these on 2026-11-02, from the T-125 to T-140 handoffs. T-143 gives core's round perf test and the web's `host.test.ts` more time; T-135 and T-137 edit `host.test.ts` after it. T-144 and then T-145 change `packages/bots` before T-135. T-145 is a shared contract (planning rule 2): `SpawnedSquadSnapshot.pointsPerKill`, protocol v27. T-146 makes the replay keep the match's stored speed, before T-120 edits `ReplayPage.tsx`. T-147 waits for T-134, which owns the card browser's folder.
 
 The art cards follow the playtest fixes: T-119 needs T-118. T-119 builds the art module: the version 2 manifest, sprite strips, `SpriteView` and stills. Then the battlefield changes one owner at a time, since all three cards edit `match/battlefield/`: T-120 animates units and permanents, T-121 winds attacks up from playback's look-ahead and flies projectile sprites (D47), and T-122 plays the `fx` sprites and the spell casts. T-120 and T-121 also edit `MatchScreen.tsx` and `replay/ReplayPage.tsx`, and T-121 `match/playback/`. T-123, the art pack, waits only for T-119, whose `manifest-schema.ts` it imports (planning rule 2), and its scope is disjoint from the battlefield cards'. The art cards add owners to M4/README.md's tree the same way as the playtest cards, one after another.
 
@@ -477,6 +479,11 @@ graph LR
   T133 --> T135
   T134 --> T135
   T141["T-141 (M4) test follow-ups"] --> T135
+  T143["T-143 test limits"] --> T135
+  T144["T-144 bot draft reuse"] --> T145["T-145 kill points for Chaos"]
+  T144 --> T135
+  T145 --> T135
+  T134 --> T147["T-147 card browser follow-ups"]
   T124 --> T140["T-140 card view attachments"]
   T142["T-142 (M4) match screen follow-ups"] --> T140
   T118["T-118 (M4) targets on the battlefield"] --> T136["T-136 battlefield backdrop"]
@@ -494,6 +501,7 @@ graph LR
   T124 --> T119
   T119 --> T120["T-120 unit animations"]
   T136 --> T120
+  T146["T-146 one playback speed"] --> T120
   T120 --> T121["T-121 attack wind-ups"]
   T121 --> T122["T-122 effect sprites"]
   T119 --> T123["T-123 art pack"]
@@ -512,17 +520,22 @@ graph LR
 | 18 | [T-132 Durability 0 and discard-pile cards](M5/T-132-durability-zero.md) | T-112, T-131 | sonnet, high effort | core's `round/cleanup.ts` and its test, `packages/cards/data`, a set test |
 | 18 | [T-133 Bots use traps, Leader moves and Rest](M5/T-133-bot-plays.md) | T-130 | sonnet, high effort | `packages/bots` |
 | 18 | [T-134 Bot-game stats on card pages](M5/T-134-card-stats.md) | T-115, T-127, T-131 | sonnet, medium effort | the cards package's stats module and `stats/`, `tools/sim-cli/src`, `cards`, `en/cards.json` |
-| 19 | [T-135 The planner bot](M5/T-135-planner-bot.md) | T-116, T-129, T-133, T-134, T-141 | opus, high effort | `packages/bots`, `host`, `tools/sim-cli/src`, two sim-cli tests, sim-cli's `package.json` and README |
 | 20 | [T-119 Animated art manifest, sprites and stills](M5/T-119-art-manifest.md) | T-118, T-124 | opus, high effort | `art`, `apps/web/README.md` |
-| 20 | [T-137 Bot styles for the starter decks](M5/T-137-bot-styles.md) | T-131, T-135 | sonnet, high effort | `packages/bots`, `host`, `tools/sim-cli/src`, sim-cli's tests and README |
 | 21 | [T-123 Art pack and local art server](M5/T-123-art-pack.md) | T-119 | sonnet, high effort | `apps/web/art-pack`, the web `package.json`, `tsconfig.json` and `vitest.config.ts`, `apps/web/README.md`, one line of `eslint.config.js` |
-| 21 | [T-138 Lobby presets and bot levels](M5/T-138-lobby-presets.md) | T-110, T-124, T-137 | sonnet, medium effort | `lobby`, `en/lobby.json` |
-| 21 | [T-139 Balance baseline](M5/T-139-balance-baseline.md) | T-132, T-137 | sonnet, medium effort | `docs/balance`, `packages/cards/stats` |
 | 21 | [T-140 List attached cards in the card view](M5/T-140-card-view-attachments.md) | T-124, T-142 | sonnet, medium effort | `CardView`, `MatchScreen`, `en/match.json`, `theme.css` |
 | 22 | [T-136 The battlefield behind the match](M5/T-136-battlefield-backdrop.md) | T-118, T-124, T-128, T-140 | opus, high effort | `MatchScreen`, `CardView`, `match/overlays`, `match/planning`, `match/battlefield`, `theme.css`, fixtures, `e2e/m4.spec.ts`, `en/overlays.json` |
-| 23 | [T-120 Animated units and permanents on the battlefield](M5/T-120-unit-animations.md) | T-119, T-136 | sonnet, high effort | `match/battlefield`, `MatchScreen`, `ReplayPage` |
+| 22 | [T-143 Test limits under load](M5/T-143-test-limits.md) | — | haiku, medium effort | core's `round/perf.test.ts`, the web's `host/host.test.ts` |
+| 22 | [T-144 Bot draft reuse and Rest-safe attaches](M5/T-144-bot-draft-reuse.md) | — | sonnet, medium effort | the bots' `draft`, `random-bot`, `greedy-bot` and `turtle-bot` and their tests, the bots README |
+| 22 | [T-146 One stored playback speed](M5/T-146-one-playback-speed.md) | — | sonnet, low effort | `replay/ReplayPage.tsx` and `replay.test.tsx` |
+| 23 | [T-120 Animated units and permanents on the battlefield](M5/T-120-unit-animations.md) | T-119, T-136, T-146 | sonnet, high effort | `match/battlefield`, `MatchScreen`, `ReplayPage` |
+| 23 | [T-145 Kill points for Chaos and tokens](M5/T-145-spawned-kill-points.md) | T-144 | opus, medium effort | protocol's snapshot and version, `docs/PROTOCOL.md`, core's `scoring/points.ts` and `view/units.ts`, the bots' `value` and `targets`, fixtures, the bots README |
+| 23 | [T-147 Card browser follow-ups](M5/T-147-card-browser-follow-ups.md) | T-134 | sonnet, low effort | `cards/browse.ts`, `cards/CardFilters.tsx` and their tests |
 | 24 | [T-121 Attack wind-ups and projectile sprites](M5/T-121-attack-windup.md) | T-120 | sonnet, high effort | `match/playback`, `match/battlefield`, `MatchScreen`, `ReplayPage` |
+| 24 | [T-135 The planner bot](M5/T-135-planner-bot.md) | T-116, T-129, T-133, T-134, T-141, T-143, T-144, T-145 | opus, high effort | `packages/bots`, `host`, `tools/sim-cli/src`, two sim-cli tests, sim-cli's `package.json` and README |
 | 25 | [T-122 Effect sprites and spell casts](M5/T-122-effect-sprites.md) | T-121 | sonnet, high effort | `match/battlefield` |
+| 25 | [T-137 Bot styles for the starter decks](M5/T-137-bot-styles.md) | T-131, T-135 | sonnet, high effort | `packages/bots`, `host`, `tools/sim-cli/src`, sim-cli's tests and README |
+| 26 | [T-138 Lobby presets and bot levels](M5/T-138-lobby-presets.md) | T-110, T-124, T-137 | sonnet, medium effort | `lobby`, `en/lobby.json` |
+| 26 | [T-139 Balance baseline](M5/T-139-balance-baseline.md) | T-132, T-137 | sonnet, medium effort | `docs/balance`, `packages/cards/stats` |
 
 ## Later milestones
 
