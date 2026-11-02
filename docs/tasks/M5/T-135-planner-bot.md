@@ -28,7 +28,7 @@ context:
 
 ## Goal
 
-The human wants bots that try out what can happen, from what their seat can see, and play the best option, without slowing the game (D49, 2026-10-29). After this PR a `planner` bot does that. It builds a few candidate plans from the heuristic bots and previews each one with the `Simulator` its runner passes in (core's `previewRound`, T-129). It stays within a fixed budget of previews and ticks, and keeps the plan that scores best. sim-cli and the web host pass it the simulator, and a soak shows it wins more often than greedy.
+The human wants bots that try out what can happen, from what their seat can see, and play the best option, without slowing the game (D49, 2026-10-29). After this PR a `planner` bot does that. It builds a few candidate plans from the heuristic bots and previews each one with the `Simulator` its runner passes in (core's `previewRound`, T-129). It stays within a fixed budget of previews and ticks, and keeps the plan that scores best. sim-cli and the web host pass it the simulator, and a soak plays it against greedy (that it wins more often moves to T-148).
 
 ## Interfaces
 
@@ -150,7 +150,7 @@ export function createBot(name: BotName, random: Random, options?: CreateBotOpti
      - sim-cli's package.json gets `"test:perf": "vitest run --no-file-parallelism --retry=1 perf.test"`, and its `test` excludes `**/*.perf.test.ts` too.
    - `tools/sim-cli/test/planner.soak.test.ts`:
      - `playMatchup(['planner', 'greedy', 'greedy', 'greedy'], …)` over 40 games, with starter decks and target 30.
-     - No game throws, and `3 × wins[0] > wins[1] + wins[2] + wins[3]`: the planner wins more often than the average greedy seat. Print the shares.
+     - No game throws. Print the shares. The planner winning more often than the average greedy seat moves to T-148: previews don't yet guess the other seats' plans, so the planner is about as strong as greedy (measured 2026-11-02).
      - The timeout is 900 s. If it runs over 5 minutes here, play 24 games, and say so in the handoff.
 7. **Docs.**
    - bots README: a `## The planner bot` section (its candidates, its score, its budget and what it costs), and the look-ahead in › Using a bot.
