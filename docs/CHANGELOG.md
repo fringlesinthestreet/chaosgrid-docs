@@ -4,6 +4,17 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md` or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-02 — Follow-ups from the M5 handoffs (T-143 to T-147)
+
+The lead went through the open notes in the handoffs of T-119 and T-124 to T-140, and the human picked what to do with them. Five became cards, and the rest stay as the merged code has them.
+
+- **Test limits (T-143, wave 22).** Core's round perf test and the web's `host.test.ts` get twice the time, not cheaper bot planning: the capped preview took about 0.85 s of its 1 s.
+- **Bots (T-144, wave 22; T-145, wave 23).** The random bot reuses PlanDraft's Leader move and Rest use, with the same plans. Greedy and turtle attach resources without a Rest ability first, so a Rest isn't lost to an attach. Then each `SpawnedSquadSnapshot` carries `pointsPerKill` (protocol v27), and the bots rank Chaos squads and opponents' tokens by kill points next to the grid squads, instead of counting them 0 (T-130).
+- **Web (T-146, wave 22; T-147, wave 23).** The replay keeps the match's stored speed under one key, since the playback controls already overrode its own. The cost sort keeps ties A to Z when descending, like the other sorts, and "More filters" can close with a filter set.
+- **Waves.** T-135 waits for T-143 to T-145 and moves to wave 24, so T-137 is 25, and T-138 and T-139 are 26. T-120 waits for T-146. T-135's Interfaces tell its worker to re-read the files these cards change.
+- **Kept as merged.** T-128's markers: one per sustained attack on a prize or an Emblem. T-127's sort: ties ascending. T-131's nine stats defaults, confirmed. T-132 accepts `at` on Pale Summoner, so that default needs no fallback.
+- **Other changes.** Planning rule 11: no two paths that differ only in case (T-125's `quickAdd.ts`, the `Art/` ignore line the human anchored as `/Art/`). In the code repo, ART.md says the art bucket must send `Access-Control-Allow-Origin`, since T-119 loads images with `crossOrigin` set.
+
 ## 2026-11-02 — The plan moves to chaosgrid-docs, the code repo is shared, and the agents run on crew (D53)
 
 The code repo is going to be shared with other people, so it keeps the code and the docs anyone working on it needs, and the plan moved to this private repo. The lead and worker tooling moved to the shared `crew` command (`~/Documents/AI`). How waves, cards, lead branches and reviews work doesn't change.

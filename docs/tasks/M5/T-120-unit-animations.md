@@ -2,7 +2,7 @@
 id: T-120
 title: Animated units and permanents on the battlefield
 milestone: M5
-depends_on: [T-119, T-136]
+depends_on: [T-119, T-136, T-146]
 branch: agent/T-120-unit-animations
 model: sonnet
 effort: high
