@@ -1,0 +1,6 @@
+# Commits on main that status tracking would count as a task merge, but that aren't one
+# (scripts/lib.sh task_log skips them; main's copy of this file is the one that counts).
+# One per line: the full commit hash, then what it was. A lead commit can't look like a
+# task merge any more (D36: scripts/plan.sh check refuses it), so add a line only for a
+# mistake that reached main anyway.
+93bf79300efa1db8ce98c2cbaeb445990a58ea91 docs(tasks): widen T-061 scope (a lead commit with a "Task: T-061" trailer, so T-061 looked merged before its PR was)

@@ -1,0 +1,35 @@
+# Local infrastructure: Redis for agent coordination (docs/agents/COMMS.md), and a viewer for the
+# local SQLite DB. scripts/setup.sh starts Redis; scripts/dev.sh starts the viewer.
+#   docker compose up -d redis      start Redis
+#   docker compose down             stop everything (keeps messages and claims)
+#   docker compose down -v          stop and wipe every message and claim
+name: chaosgrid
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: chaosgrid-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "127.0.0.1:6379:6379" # localhost only
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
+  # Read-only browser for the main checkout's DB (.data/chaosgrid.db, D11) at http://localhost:8080.
+  # SQLite has no server; this is just a UI on the file. --immutable reads it without locks or
+  # writes, which keeps it safe while code on your Mac uses the DB (WAL mode doesn't work across
+  # Docker's file sharing). It shows the DB as it was when it started: scripts/dev.sh seed restarts it.
+  db-viewer:
+    image: datasetteproject/datasette:0.65.5
+    platform: linux/amd64 # the only one published; Docker Desktop emulates it on Apple Silicon
+    container_name: chaosgrid-db-viewer
+    command: ["datasette", "serve", "--host", "0.0.0.0", "--port", "8001", "--immutable", "/data/chaosgrid.db"]
+    ports:
+      - "127.0.0.1:8080:8001"
+    volumes:
+      - ./.data:/data:ro
+    profiles: [dev] # only when asked for: scripts/dev.sh, or docker compose up -d db-viewer
+
+volumes:
+  redis-data:
