@@ -1,6 +1,6 @@
 # What a lead branch in the code repo may change (crew plan new <slug> --code): its shared docs. One
-# glob per line, where a * also matches "/". crew plan check, the code repo's pre-commit hook and its
-# Agent scope check read this file from this repo's main, so a lead branch can't widen its own list.
+# glob per line, where a * also matches "/". crew plan check (which crew pr runs) and the code repo's
+# pre-commit hook read this file from this repo's main, so a lead branch can't widen its own list.
 # This repo needs no list: everything in it is the lead's.
 #
 # Code, card data and CI aren't here: they change through a task card, or by the human.
