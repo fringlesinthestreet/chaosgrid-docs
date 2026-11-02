@@ -5,11 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 5 of 22 tasks merged
-- **Latest task completed:** [T-126](docs/tasks/M5/T-126-deck-tiles.md) Deck list tiles (2026-11-02)
+- **Milestone:** M5 — Balance pass · 6 of 22 tasks merged
+- **Latest task completed:** [T-125](docs/tasks/M5/T-125-deck-problems.md) Deck problems and quick add (2026-11-02)
 - **Next up:**
   - [T-119](docs/tasks/M5/T-119-art-manifest.md) Animated art manifest, sprites and stills
-  - [T-125](docs/tasks/M5/T-125-deck-problems.md) Deck problems and quick add
   - [T-127](docs/tasks/M5/T-127-card-browser.md) Card browser sorting, groups and views
   - [T-128](docs/tasks/M5/T-128-playback-timeline.md) Playback timeline
   - [T-132](docs/tasks/M5/T-132-durability-zero.md) Durability 0 and discard-pile cards
