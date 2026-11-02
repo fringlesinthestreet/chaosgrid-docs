@@ -5,7 +5,7 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 24 of 28 tasks merged
+- **Milestone:** M5 — Balance pass · 24 of 29 tasks merged
 - **Latest task completed:** [T-137](docs/tasks/M5/T-137-bot-styles.md) Bot styles for the starter decks (2026-11-02)
 - **Next up:**
   - [T-122](docs/tasks/M5/T-122-effect-sprites.md) Effect sprites and spell casts
