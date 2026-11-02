@@ -20,7 +20,7 @@ scope:
   - docs/PROTOCOL.md
   - packages/protocol/**
 context:
-  - docs/DECISIONS.md#D49
+  - docs/DECISIONS.md#D55
   - packages/core/README.md#Previews
   - docs/tasks/M5/T-135-planner-bot.md
 ---
@@ -29,7 +29,7 @@ context:
 
 ## Goal
 
-The planner bot (T-135) wins about as often as greedy, because in a preview the other seats play nothing (D49), so previews barely rank plans. After this PR a preview fills in the other seats with a guess of their plans, and the planner beats the average greedy seat in the soak.
+The planner bot (T-135) wins about as often as greedy, because in a preview the other seats play nothing (D49, replaced by D55), so previews barely rank plans. After this PR a preview fills in the other seats with a guess of their plans, and the soak prints how many games the planner wins. Beating the average greedy seat moves to T-149.
 
 ## Interfaces
 
@@ -39,12 +39,12 @@ Core's `previewRound` (T-129) and the planner's `plan` (T-135). Any change to a 
 
 1. Previews that play the other seats with a guessed plan (for example, the heuristic bots' plans on the snapshot).
 2. The planner uses it, and its budget stays documented in the bots README.
-3. The soak asserts `3 × wins[0] > wins[1] + wins[2] + wins[3]` over 40 games (planner vs 3 greedy, starter decks, target 30).
+3. The soak plays 40 games (planner vs 3 greedy, starter decks, target 30) and prints each seat's wins. It asserts only that the games finish, with no win threshold: T-149 adds it.
 
 ## Acceptance
 
 - [ ] `crew check` green
-- [ ] `pnpm test:soak` passes, with the planner's win threshold in item 3
+- [ ] `pnpm test:soak` passes and prints the win shares
 - [ ] `pnpm test:perf` passes
 
 ## Out of scope
