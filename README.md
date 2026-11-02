@@ -5,10 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 21 of 27 tasks merged
-- **Latest task completed:** [T-145](docs/tasks/M5/T-145-spawned-kill-points.md) Kill points for Chaos and tokens (2026-11-02)
+- **Milestone:** M5 — Balance pass · 22 of 27 tasks merged
+- **Latest task completed:** [T-121](docs/tasks/M5/T-121-attack-windup.md) Attack wind-ups and projectile sprites (2026-11-02)
 - **Next up:**
-  - [T-121](docs/tasks/M5/T-121-attack-windup.md) Attack wind-ups and projectile sprites
+  - [T-122](docs/tasks/M5/T-122-effect-sprites.md) Effect sprites and spell casts
   - [T-135](docs/tasks/M5/T-135-planner-bot.md) The planner bot looks ahead
 <!-- status:end -->
 
