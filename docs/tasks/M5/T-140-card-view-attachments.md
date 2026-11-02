@@ -102,7 +102,7 @@ What this task adds: an optional list of attached cards on the card subject, one
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
+- [ ] `crew check` is green.
 - [ ] `pnpm --filter @chaosgrid/web test CardView` passes. Write the filter with no `--`: after `--`, Vitest runs every file.
 - [ ] `pnpm test:e2e` passes.
 - [ ] `git diff --stat main...HEAD` lists only files in the scope.

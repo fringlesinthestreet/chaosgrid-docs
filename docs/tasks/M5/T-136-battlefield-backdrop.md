@@ -19,7 +19,7 @@ scope:
   - apps/web/e2e/m4.spec.ts
   - apps/web/src/i18n/en/overlays.json
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - apps/web/README.md#Rules a change must keep
   - apps/web/README.md#Text
 ---
@@ -200,7 +200,7 @@ export interface BattlefieldProps {
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test MatchScreen overlays planning battlefield CardView` passes, with tests for:
   - [ ] each piece in its region in Plan, during playback, in the Discard step and at game over, and the Battlefield there in every phase
   - [ ] the overlays alone (`<Overlays />`): the summary in `left`, the banner and the log in `right`

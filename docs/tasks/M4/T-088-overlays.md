@@ -9,7 +9,7 @@ effort: medium
 scope:
   - apps/web/src/match/overlays/**
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - docs/PROTOCOL.md#Game and round
   - docs/PROTOCOL.md#Planning
   - docs/PROTOCOL.md#Card events
@@ -104,7 +104,7 @@ export function Overlays(): JSX.Element; // still no props
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- overlays` passes
 
 ## Out of scope

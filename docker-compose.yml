@@ -1,5 +1,5 @@
-# Local infrastructure: Redis for agent coordination (docs/agents/COMMS.md), and a viewer for the
-# local SQLite DB. scripts/setup.sh starts Redis; scripts/dev.sh starts the viewer.
+# Local infrastructure: Redis for crew's board and messages, and a viewer for the code repo's SQLite
+# DB. crew setup starts Redis (CREW_REDIS_START in .crew/config.sh); scripts/dev.sh starts both.
 #   docker compose up -d redis      start Redis
 #   docker compose down             stop everything (keeps messages and claims)
 #   docker compose down -v          stop and wipe every message and claim
@@ -16,7 +16,7 @@ services:
       - redis-data:/data
     restart: unless-stopped
 
-  # Read-only browser for the main checkout's DB (.data/chaosgrid.db, D11) at http://localhost:8080.
+  # Read-only browser for the code repo's DB (its .data/chaosgrid.db, D11) at http://localhost:8080.
   # SQLite has no server; this is just a UI on the file. --immutable reads it without locks or
   # writes, which keeps it safe while code on your Mac uses the DB (WAL mode doesn't work across
   # Docker's file sharing). It shows the DB as it was when it started: scripts/dev.sh seed restarts it.
@@ -28,7 +28,7 @@ services:
     ports:
       - "127.0.0.1:8080:8001"
     volumes:
-      - ./.data:/data:ro
+      - ${CHAOSGRID_DATA:-./.data}:/data:ro # scripts/dev.sh sets it to the code repo's .data
     profiles: [dev] # only when asked for: scripts/dev.sh, or docker compose up -d db-viewer
 
 volumes:

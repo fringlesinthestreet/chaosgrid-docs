@@ -126,7 +126,7 @@ export function sortCards(
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:soak` passes
 - [ ] `pnpm --filter @chaosgrid/cards test`, `pnpm --filter @chaosgrid/sim-cli test` and `pnpm --filter @chaosgrid/web test src/cards/` pass
 - [ ] `pnpm sim --games 2 --target 30 --rounds 3 --card-stats .data/t134.json` exits 0

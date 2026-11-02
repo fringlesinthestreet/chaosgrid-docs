@@ -15,7 +15,7 @@ scope:
   - apps/web/test/fixtures/session.ts
   - apps/web/e2e/m4.spec.ts
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - apps/web/README.md#Rules a change must keep
 ---
 
@@ -101,7 +101,7 @@ look?: 'opaque' | 'clear';
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- battlefield planning MatchScreen` passes
 - [ ] `pnpm test:e2e` passes
 

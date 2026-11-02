@@ -76,7 +76,7 @@ Nothing new is exported.
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/sim-cli test -- m2-done-when` passes
 - [ ] `pnpm --filter @chaosgrid/bots test` passes, with a test for every rejection the bots no longer make
 

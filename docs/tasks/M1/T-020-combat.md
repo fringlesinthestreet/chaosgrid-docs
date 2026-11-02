@@ -17,7 +17,7 @@ Run Simulate: sorceries at tick 0, then every tick in RULES.md's order until the
 
 ## Read first
 
-- docs/tasks/M1/README.md (simultaneity, and the Movement in range and Projectiles defaults) and packages/core/README.md
+- docs/CORE.md (simultaneity, and the Movement in range and Projectiles defaults) and packages/core/README.md
 - docs/RULES.md: Round structure (Simulate, end conditions), all of Simulation rules, Non-unit permanents (Traps)
 - the arena, movement, targeting, effects and projectiles modules (T-011, T-012, T-013, T-016, T-018, T-027)
 

@@ -102,8 +102,8 @@ timeout-minutes: 20
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
-- [ ] `scripts/check.sh soak` is green.
+- [ ] `crew check` is green.
+- [ ] `crew check soak` is green.
 - [ ] `pnpm --filter @chaosgrid/core test --maxWorkers=1` and `pnpm --filter @chaosgrid/sim-cli test --maxWorkers=1` pass.
 - [ ] In those runs, every test in scope that takes more than a second has a timeout of at least 5 times its time.
 - [ ] `git diff -U0 main...HEAD -- packages tools/sim-cli/src tools/sim-cli/test | grep '^[+-][^+-]'` shows only timeouts, the one perf budget and its comment: no test body changes.

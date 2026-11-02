@@ -133,7 +133,7 @@ What this task adds: no export and no prop. Only scene.ts and its tests change.
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test battlefield` passes, with tests for:
   - [ ] each row of deliverable 1: with the `fx` sprite, without it, with its file still loading, and, in the rows with a "when", where the thing's own animation plays instead
   - [ ] a banished squad's `fx` on its units where they were drawn, a sacrificed squad's on the units it just lost, and a despawned squad's on its kept rect

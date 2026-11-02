@@ -16,7 +16,7 @@ Create `@chaosgrid/core` with the shared pieces every other M1 task builds on: t
 
 ## Read first
 
-- docs/tasks/M1/README.md: the conventions this card turns into code
+- docs/CORE.md: the conventions this card turns into code
 - docs/RULES.md: Components and setup, Round structure, Simulation rules, Units, Leveling, Resources and attaching, Non-unit permanents, Balance knobs
 - docs/DECISIONS.md: D2, D7, D8, import rules 2 and 6
 - packages/cards/README.md and `packages/cards/src/schema.ts`: the card types core consumes
@@ -24,7 +24,7 @@ Create `@chaosgrid/core` with the shared pieces every other M1 task builds on: t
 ## Deliverables
 
 1. `@chaosgrid/core`, following the internal-package pattern. Its dependencies are `zod` (catalog), `@chaosgrid/protocol` and `@chaosgrid/cards` (workspace). It must be browser-safe; the ESLint zone for `packages/core` already applies.
-2. A folder under `src/` for every module in the M1 README, each with an `index.ts` and a `state.ts`:
+2. A folder under `src/` for every module in CORE.md, each with an `index.ts` and a `state.ts`:
    - For the modules other tasks own, `state.ts` exports an empty `<Module>State` interface and `initial<Module>State()`, and `index.ts` exports nothing else yet.
    - `src/index.ts` re-exports `state`, `rng`, `view` and `round`, so no later task edits it.
 3. `state/`:
@@ -55,7 +55,7 @@ Create `@chaosgrid/core` with the shared pieces every other M1 task builds on: t
 ## Acceptance
 
 - [ ] `pnpm lint && pnpm typecheck && pnpm test` green
-- [ ] Every module folder in the M1 README exists, with an `index.ts` and a `state.ts`
+- [ ] Every module folder in CORE.md exists, with an `index.ts` and a `state.ts`
 - [ ] `pnpm --filter @chaosgrid/core test` covers rng, time and the state helpers
 
 ## Out of scope
@@ -66,4 +66,4 @@ Create `@chaosgrid/core` with the shared pieces every other M1 task builds on: t
 ## Notes
 
 - The shared fields on `Unit`, `Squad` and `Permanent` are a contract for ten later tasks. Check them against RULES.md carefully now: once this merges, later tasks can't edit `state/`. Data that only one module needs belongs in that module's slice, keyed by id.
-- T-009 builds protocol v2 at the same time, with the same ids and coordinates from the M1 README. Use them exactly.
+- T-009 builds protocol v2 at the same time, with the same ids and coordinates from CORE.md. Use them exactly.

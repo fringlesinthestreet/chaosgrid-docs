@@ -115,7 +115,7 @@ export function formatMessage(message: string, values: MessageValues | undefined
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test i18n src/app/` passes, with the tests above
 - [ ] `ls apps/web/src/i18n/en` lists the 13 namespace files
 - [ ] `grep -rn -E "Something|Back to your|>ChaosGrid<|\"Main\"|'(Cards|Decks|Play|Replay)'" apps/web/src/app --exclude='*.test.tsx'` prints nothing

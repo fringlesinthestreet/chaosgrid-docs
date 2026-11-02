@@ -32,7 +32,7 @@ events. Copy them from the code or the docs, so the worker doesn't have to searc
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] <a command anyone can run that proves it works>
 
 ## Out of scope

@@ -86,16 +86,16 @@ D31 (docs/DECISIONS.md): `pnpm test` stays quick. Whole-game soaks are `*.soak.t
    - Root `package.json`: `"test:soak": "pnpm -r --if-present run test:soak"`.
    - New `tools/sim-cli/test/smoke.test.ts`: 5 games between 4 RandomBots with `--check`, as `done-when` does with 100, expecting `errors: none`. Keep it under 10 seconds on this laptop.
 3. **CI.** In `ci.yml`, add a second job, `soak`, beside `checks`: the same setup and install steps, then one step "Soak tests" that runs `pnpm test:soak`, with `timeout-minutes: 20`. `checks` keeps its steps. Its Test step now runs the perf tests last, through `pnpm test`.
-4. **check.sh.** Add a `soak` gate (`pnpm test:soak`). It isn't one of the defaults, so `scripts/check.sh` still runs the four quick gates. The unknown-gate message lists it. Update the `check.sh` row in `scripts/README.md`.
+4. **check.sh.** Add a `soak` gate (`pnpm test:soak`). It isn't one of the defaults, so `crew check` still runs the four quick gates. The unknown-gate message lists it. Update the `check.sh` row in `scripts/README.md`.
 5. **Docs.**
-   - WORKER.md › 4. Work (the gates bullet) and › 7. Verify: when your scope touches `packages/core/src/**`, `packages/bots/src/**`, `packages/cards/data/**` or `tools/sim-cli/**`, also run `scripts/check.sh soak` before handing off. It takes a few minutes, so give the shell command a timeout of 600000 ms or run it in the background. Say in "How it was checked" that it passed.
-   - CLAUDE.md › Commands: add rows for `pnpm test:soak` (the whole-game soaks: their own CI job, run before handing off a core, bots, card data or sim-cli change) and `pnpm test:perf` (core's perf tests alone; `pnpm test` runs them last). Add `soak` to the `scripts/check.sh` row.
+   - WORKER.md › 4. Work (the gates bullet) and › 7. Verify: when your scope touches `packages/core/src/**`, `packages/bots/src/**`, `packages/cards/data/**` or `tools/sim-cli/**`, also run `crew check soak` before handing off. It takes a few minutes, so give the shell command a timeout of 600000 ms or run it in the background. Say in "How it was checked" that it passed.
+   - CLAUDE.md › Commands: add rows for `pnpm test:soak` (the whole-game soaks: their own CI job, run before handing off a core, bots, card data or sim-cli change) and `pnpm test:perf` (core's perf tests alone; `pnpm test` runs them last). Add `soak` to the `crew check` row.
    - `tools/sim-cli/README.md` › Tests: the new file names, the smoke test, and which script runs which file.
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
-- [ ] `scripts/check.sh soak` is green.
+- [ ] `crew check` is green.
+- [ ] `crew check soak` is green.
 - [ ] `pnpm --filter @chaosgrid/sim-cli test 2>&1 | grep -c soak` prints `0`: the quick tests don't run the soaks.
 - [ ] `pnpm --filter @chaosgrid/core test 2>&1 | grep -c perf.test` prints `0`, and `pnpm --filter @chaosgrid/core test:perf` runs all three perf files.
 - [ ] `git diff -M --stat main...HEAD -- tools/sim-cli/test` shows the three soak files as renames with no line changes.

@@ -90,7 +90,7 @@ D32 (docs/DECISIONS.md): core may cache derived data outside the state, never in
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
+- [ ] `crew check` is green.
 - [ ] `pnpm --filter @chaosgrid/core exec vitest run caches` passes in under 10 seconds.
 - [ ] `git diff -U0 main...HEAD -- packages/core/src ':!*.test.ts' | grep '^[+-][^+-]' | grep -v '^[+-]\s*\(//\|\*\|/\*\*\)'` prints nothing: only comments changed in the source files.
 

@@ -10,7 +10,7 @@ scope:
   - apps/web/src/lobby/**
   - apps/web/src/i18n/en/lobby.json
 context:
-  - docs/tasks/M4/README.md#Web layout and ownership
+  - docs/APPS.md#Web layout and ownership
   - apps/web/README.md#Text (D50)
   - apps/web/README.md#Tests
 ---
@@ -148,7 +148,7 @@ export function suggestedDecks(choice: LobbyChoice, decks: readonly DeckSummary[
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test lobby` passes, with the tests above
 - [ ] `grep -rn -E "Your deck|Opponents|More options|Point target|Random starter|Not legal|You · seat|No deck|Can't start|Loading…|whole number" apps/web/src/lobby --exclude='*.test.ts' --exclude='*.test.tsx'` prints nothing
 - [ ] `grep -c "BOT_NAMES" apps/web/src/lobby/index.tsx` prints 0
@@ -171,4 +171,4 @@ export function suggestedDecks(choice: LobbyChoice, decks: readonly DeckSummary[
 - Ids built from a level, `` t(`lobby.level.${level}`) ``, type-check once every level has its key.
 - Tests find text by its English, never through `t()` (README › Text).
 - A target that isn't a number is saved as JSON `null`, so it comes back as 100.
-- Only `lobby/` and `host/` import `@chaosgrid/bots` (M4 README › Web layout and ownership).
+- Only `lobby/` and `host/` import `@chaosgrid/bots` (APPS.md › Web layout and ownership).

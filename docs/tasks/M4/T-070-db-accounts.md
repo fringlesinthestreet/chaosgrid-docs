@@ -20,7 +20,7 @@ scope:
   - packages/db/migrations/**
   - packages/db/README.md
 context:
-  - docs/tasks/M4/README.md#Accounts
+  - docs/APPS.md#Accounts
   - packages/db/README.md#Tables (schema v2)
   - packages/db/README.md#Changing the schema
   - packages/db/README.md#Decks
@@ -161,7 +161,7 @@ export function seedAll(
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm db:migrate && pnpm db:seed && pnpm db:seed` work on a fresh DB file (`CHAOSGRID_DB=.data/t070.db`) and on your existing `.data/chaosgrid.db`, whose player `0` becomes `admin` and keeps its decks
 - [ ] `src/open.test.ts` passes with the tests above: player `0` is `admin` with its superadmin account, two opens keep one row of each, and the migrations match the schema
 - [ ] `src/commands.test.ts` passes (`seedCommand` now runs `seedAll`); its "2 migrations applied" expectations become 3

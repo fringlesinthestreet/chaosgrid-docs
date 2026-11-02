@@ -9,8 +9,8 @@ effort: high
 scope:
   - apps/api/**
 context:
-  - docs/tasks/M4/README.md#Accounts
-  - docs/tasks/M4/README.md#HTTP API
+  - docs/APPS.md#Accounts
+  - docs/APPS.md#HTTP API
   - packages/db/README.md#Decks
   - packages/cards/README.md#Deck rules
 ---
@@ -89,7 +89,7 @@ export function toDeckSummary(deck: SavedDeck, problems: DeckProblem[]): DeckSum
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/api test` passes
 
 ## Out of scope

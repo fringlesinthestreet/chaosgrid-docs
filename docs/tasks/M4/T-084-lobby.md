@@ -9,10 +9,10 @@ effort: medium
 scope:
   - apps/web/src/lobby/**
 context:
-  - docs/tasks/M4/README.md#Accounts
-  - docs/tasks/M4/README.md#Web layout and ownership
-  - docs/tasks/M4/README.md#Routes
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#Accounts
+  - docs/APPS.md#Web layout and ownership
+  - docs/APPS.md#Routes
+  - docs/APPS.md#The match
 ---
 
 # T-084 — Solo lobby
@@ -84,7 +84,7 @@ export function LobbyPage(): JSX.Element;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- lobby` passes
 - [ ] With the API on 5084 and the web on 4084: sign up, `/play` picks a starter (no own decks yet), Start opens `/match` (still T-068's placeholder until T-085)
 

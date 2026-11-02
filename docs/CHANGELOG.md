@@ -1,8 +1,20 @@
 # Changelog
 
-Changes to the plan, the decisions and the way we work, newest first. The code's own history is in git. Merged tasks show up in the README's Status section and in `scripts/status.sh`.
+Changes to the plan, the decisions and the way we work, newest first. The code's own history is in git. Merged tasks show up in the Status section of this repo's README and in `crew status`.
 
-When you change [PLAN.md](PLAN.md), [DECISIONS.md](DECISIONS.md) or the agent workflow, add an entry here on the same lead branch (D36). Say what changed and why, and name the decisions and tasks it touches.
+When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md` or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
+
+## 2026-11-02 — The plan moves to chaosgrid-docs, the code repo is shared, and the agents run on crew (D53)
+
+The code repo is going to be shared with other people, so it keeps the code and the docs anyone working on it needs, and the plan moved to this private repo. The lead and worker tooling moved to the shared `crew` command (`~/Documents/AI`). How waves, cards, lead branches and reviews work doesn't change.
+
+- Here: the milestones (docs/PLAN.md), the task cards and the board (docs/tasks/), this changelog, the README's status block, the workers' notes (docs/agents/CREW.md) and crew's settings (`.crew/`). `scripts/dev.sh` and `docker-compose.yml` came too: running ChaosGrid with Redis and the DB viewer.
+- In the code repo: docs/RULES.md, PROTOCOL.md, DECISIONS.md and ART.md, plus three that came out of the plan. ARCHITECTURE.md has PLAN.md's layout, runtime shape and card JSON sketch; CORE.md is the M1 README's conventions; APPS.md is the M4 README's, without "What M4 adds", which stays in docs/tasks/M4/README.md. Card context entries and code comments use the new names. CLAUDE.md is for anyone working on the code, and `pnpm dev` runs only the game.
+- Lead branches here: `crew plan new <slug>`, `crew card new`, and `crew card widen T-NNN <glob>` for a wider scope. For the code repo's docs: `crew plan new <slug> --code`, limited to `.crew/lead-paths`. A decision change is two PRs: the decision in the code repo, merged first, then this changelog and the cards here.
+- `scripts/*.sh` are gone: each is a crew command (`crew help`). Workers no longer type `redis-cli`: `crew claim`, `crew read`, `crew wait`, `crew send lead --from T-NNN`, `crew scope` and `crew handoff`. `crew context` and `crew doc` read the docs from either repo. crew's permission rules live in each clone's untracked `.claude/settings.local.json`, which `crew setup` writes, so the code repo's `.claude/settings.json` keeps only the deny rules and the project's own commands.
+- The Agent scope check in the code repo reads the cards and the lead paths from this repo's main, with a read-only deploy key.
+- `crew merged` commits the status block here, so the code repo's history holds only merged PRs. Fixed on the way: after a lead branch merged, the old status block counted no merged tasks until the next task merged.
+- The cards' "`scripts/check.sh` green" acceptance lines say `crew check` now.
 
 ## 2026-10-31 — Fable's sprites: stitched frames in the art pack, and skins (D52)
 

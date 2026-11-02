@@ -158,7 +158,7 @@ export function beginRound(input: GameState, discards?: SeatDiscards): BeginRoun
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:soak` passes
 - [ ] `pnpm --filter @chaosgrid/core test -- discard cleanup begin` passes
 - [ ] `grep -rn --include='*.ts' --include='*.tsx' "action: 'discard'" packages apps/web/src tools` prints nothing

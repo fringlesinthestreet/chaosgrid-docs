@@ -17,7 +17,7 @@ Move units toward their targets across the arena. That means shortest paths arou
 
 ## Read first
 
-- docs/tasks/M1/README.md (coordinates, time, defaults) and packages/core/README.md
+- docs/CORE.md (coordinates, time, defaults) and packages/core/README.md
 - docs/RULES.md: Simulation rules (Movement), Units (Speed, Static, Flying)
 
 ## Deliverables
@@ -28,7 +28,7 @@ Move units toward their targets across the arena. That means shortest paths arou
    - stops once the goal is within `range`
    - waits when the way is blocked
    - never moves a Speed 0 unit
-3. Blocking per the M1 README defaults: one unit per cell, flying or not. Flying units block ground units and ground units block them; `Unit.layer` matters only for targeting.
+3. Blocking per CORE.md defaults: one unit per cell, flying or not. Flying units block ground units and ground units block them; `Unit.layer` matters only for targeting.
 4. A `movement` slice for each unit's progress (accumulator, cached path), keyed by unit id.
 5. A helper that moves a unit to the nearest free cell in a direction. The push effect (T-018) uses it.
 6. Performance: a 4-player arena with 120 units moving for 1000 ticks runs in under a second on a laptop. Check it with a test that has a generous time limit, and note the measured time in the PR.

@@ -42,7 +42,7 @@ describe('the sample cards', () => {
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] With the Earth set: in your worktree, run `git checkout agent/T-054-earth-set -- packages/cards/data`, then `pnpm --filter @chaosgrid/cards test src/spells.test.ts` passes. Then run `git restore --source=HEAD --staged --worktree packages/cards/data`, and check that `git status --short packages/cards/data` prints nothing: those files aren't in your scope, so never commit them.
 
 ## Out of scope

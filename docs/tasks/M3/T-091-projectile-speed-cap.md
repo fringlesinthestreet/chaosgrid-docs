@@ -86,7 +86,7 @@ D30 (docs/DECISIONS.md): a projectile flies at most 60 cells per second (`MAX_PR
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
+- [ ] `crew check` is green.
 - [ ] `grep -n 'while (projectile.progress' packages/core/src/projectiles/flight.ts` prints nothing.
 - [ ] `git diff --stat main...HEAD -- tools/sim-cli/test/golden` prints nothing: no golden changes.
 

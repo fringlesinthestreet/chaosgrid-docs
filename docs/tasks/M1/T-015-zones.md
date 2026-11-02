@@ -17,7 +17,7 @@ Handle everything about cards that aren't on the board: setting up a game from d
 
 ## Read first
 
-- docs/tasks/M1/README.md and packages/core/README.md
+- docs/CORE.md and packages/core/README.md
 - docs/RULES.md: Components and setup (Setup), Round structure (draws during Plan, Cleanup), Resources and attaching, the sample Resources table
 - `packages/cards/src/cost.ts` (pip strings)
 
@@ -40,7 +40,7 @@ Handle everything about cards that aren't on the board: setting up a game from d
    - resting, with everything unresting at Cleanup
    - a resource's ability rests that resource; Underwater Volcano arrives already rested
    - attaching resources to squads (Charge); at Cleanup they return to the pool, or to the bottom of the resource deck when an ability spent them
-6. The hand limit at Cleanup: discard down to 8 (M1 README default), unless an effect removes the limit (Old Library).
+6. The hand limit at Cleanup: discard down to 8 (CORE.md default), unless an effect removes the limit (Old Library).
 7. Tests for each of the above, including payment edge cases with Prism and two-color resources.
 
 ## Acceptance

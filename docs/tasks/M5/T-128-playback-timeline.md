@@ -13,7 +13,7 @@ scope:
   - apps/web/src/i18n/en/overlays.json
 context:
   - docs/PROTOCOL.md#Timeline
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - apps/web/README.md#Rules a change must keep
   - apps/web/README.md#Text
 ---
@@ -190,7 +190,7 @@ at: {
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test playback overlays` passes, with tests for:
   - [ ] seeking forward and back while playing (the model equals `applyEvents` of the start model and the steps up to the tick, and `points()` counts them), while paused, onto a step and between steps (`step`), past both ends, and to the end (`post` applied, the next batch started)
   - [ ] a rewatch: `playing` and `rewatch.live`; the live model back (`toBe`) at the end, on Skip and on a push, which then plays; `idle()` resolved during it

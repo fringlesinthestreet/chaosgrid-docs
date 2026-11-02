@@ -16,7 +16,7 @@ context:
   - docs/ART.md#Events
   - docs/ART.md#Per card kind
   - docs/ART.md#Fallbacks
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - apps/web/README.md#Rules a change must keep
 ---
 
@@ -109,7 +109,7 @@ export interface BattlefieldProps { /* … */ speed?: number } // applied in an 
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test battlefield` passes, with tests for:
   - [ ] each row of deliverable 2, with the sprite and without it
   - [ ] the walk timeout at speed 1 and 4, and a Speed 0 unit

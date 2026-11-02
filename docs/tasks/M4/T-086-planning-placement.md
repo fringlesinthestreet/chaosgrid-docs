@@ -10,7 +10,7 @@ scope:
   - apps/web/src/match/planning/**
   - apps/web/test/fixtures/planning/**
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - docs/PROTOCOL.md#Plans
   - docs/PROTOCOL.md#Coordinates
   - docs/PROTOCOL.md#Planning
@@ -119,7 +119,7 @@ export function PlanningPanel(): JSX.Element;      // still no props
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- planning` passes
 - [ ] With the API on 5086 and the web on 4086: start a match, place the Leader and a unit, Ready: the battlefield shows both when the round plays
 

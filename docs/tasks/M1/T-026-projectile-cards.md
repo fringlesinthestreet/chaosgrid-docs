@@ -23,7 +23,7 @@ Ranged and Artillery units say what they fire and how fast, so core can fly thei
 
 - packages/cards/README.md (card format and DSL)
 - docs/RULES.md › Simulation rules (Attacking, Projectiles)
-- docs/tasks/M1/README.md › Projectiles
+- docs/CORE.md › Projectiles
 
 ## Deliverables
 
@@ -48,7 +48,7 @@ Ranged and Artillery units say what they fire and how fast, so core can fly thei
 
 ## Notes
 
-- Trample needs no new field. A Ranged or Artillery unit with Trample fires a projectile that splashes where it lands (M1 README › Projectiles).
+- Trample needs no new field. A Ranged or Artillery unit with Trample fires a projectile that splashes where it lands (CORE.md › Projectiles).
 - Card `version` stays 1: versioning starts in M4.
 - Making `projectile` required breaks the Ranged and Artillery test cards outside `packages/cards`, and they can't change before this PR (the strict schema rejects the field on `main`). So the five test files in the scope get one `projectile` each, and nothing else changes in them.
 - After this merges, any new Ranged or Artillery test card needs a `projectile`.

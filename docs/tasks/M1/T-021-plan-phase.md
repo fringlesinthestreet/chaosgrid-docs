@@ -17,7 +17,7 @@ Apply each seat's plan: cast and place cards, pay for them, level up, attach res
 
 ## Read first
 
-- docs/PROTOCOL.md (plan actions), docs/tasks/M1/README.md and packages/core/README.md
+- docs/PROTOCOL.md (plan actions), docs/CORE.md and packages/core/README.md
 - docs/RULES.md: Round structure (Plan), Units (Leveling, Leader, Respawn), Resources and attaching, Non-unit permanents
 
 ## Deliverables

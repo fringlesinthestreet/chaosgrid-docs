@@ -53,7 +53,7 @@ T-053 may add choices to `choices` (copy's `copyTarget`) and cards to the map. S
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
+- [ ] `crew check` is green.
 - [ ] `pnpm --filter @chaosgrid/cards exec vitest run dsl` passes.
 - [ ] `git diff --name-only main...HEAD` prints only `packages/cards/src/dsl.test.ts`.
 

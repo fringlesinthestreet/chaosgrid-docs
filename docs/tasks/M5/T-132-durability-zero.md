@@ -133,7 +133,7 @@ And seven card files (below), with a set test.
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:soak` passes
 - [ ] `pnpm cards:validate` passes
 - [ ] `pnpm --filter @chaosgrid/core test cleanup` and `pnpm --filter @chaosgrid/cards test discard-pile` pass

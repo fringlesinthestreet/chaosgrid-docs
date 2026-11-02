@@ -80,7 +80,7 @@ export function refereeDiscards(snapshot: Snapshot, cards: readonly CardInstance
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:soak` passes
 - [ ] `pnpm --filter @chaosgrid/bots test` passes
 - [ ] `pnpm sim --games 5 --target 30 --check` exits 0

@@ -76,7 +76,7 @@ Nothing new is exported.
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/bots test -- greedy` passes
 - [ ] `pnpm sim --bots greedy,greedy,greedy,greedy --games 100 --seed 1` and the same with `--decks starter` finish with no errors, and their `rejected` lines show no rejected actions. A table of one bot is the only way to pin rejections on it, because they're counted for all seats together. If some remain after 3 fixes, report them by reason: T-039 finishes the job.
 

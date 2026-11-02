@@ -14,9 +14,9 @@ scope:
   - pnpm-workspace.yaml
 context:
   - docs/tasks/M4/README.md#What M4 adds
-  - docs/tasks/M4/README.md#Web layout and ownership
-  - docs/tasks/M4/README.md#Routes
-  - docs/tasks/M4/README.md#Ports and the e2e DB
+  - docs/APPS.md#Web layout and ownership
+  - docs/APPS.md#Routes
+  - docs/APPS.md#Ports and the e2e DB
   - docs/DECISIONS.md#Import boundaries
 ---
 
@@ -56,7 +56,7 @@ const WEB = ['protocol', 'cards', 'bots'];
 ```ts
 // @chaosgrid/http (T-069): ApiErrorBody = { error: { code: ErrorCode, message: string } }, ERROR_CODES,
 // ROUTES (ROUTES.deck(id) encodes the id) and the response schemas MeResponse, CardsResponse,
-// DeckListResponse and DeckDetail. Logout and DELETE /api/decks/:id answer 204 with no body (M4 README).
+// DeckListResponse and DeckDetail. Logout and DELETE /api/decks/:id answer 204 with no body (APPS.md).
 ```
 
 What this task adds:
@@ -140,7 +140,7 @@ export function stubApi(routes: Record<string, StubAnswer | ((body: unknown) => 
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:e2e` passes
 - [ ] `CHAOSGRID_WEB_PORT=4068 pnpm --filter @chaosgrid/web dev` serves the app on port 4068, and `/decks` shows the Decks placeholder
 - [ ] `pnpm --filter @chaosgrid/web build` succeeds

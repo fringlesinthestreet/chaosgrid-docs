@@ -11,7 +11,7 @@ scope:
   - apps/web/src/theme/theme.css
   - apps/web/e2e/m4.spec.ts
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
 ---
 
 # T-108 — The round summary in live play
@@ -95,7 +95,7 @@ export function lastEndedRound(model: MatchModel): number | null;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- overlays` passes
 - [ ] `grep -c -E "fixme" apps/web/e2e/m4.spec.ts` prints 0, and `grep -c -E "@keyframes" apps/web/src/match/overlays/index.tsx` prints 0
 - [ ] `grep -c -E "@keyframes cg-fade-in" apps/web/src/theme/theme.css` prints 1

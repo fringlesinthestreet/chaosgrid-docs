@@ -9,7 +9,7 @@ effort: high
 scope:
   - apps/web/src/match/battlefield/**
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - apps/web/README.md#Rules a change must keep
 ---
 
@@ -91,7 +91,7 @@ export function pickAt(model: MatchModel, world: WorldCell): BattlefieldPick;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- battlefield` passes
 - [ ] `grep -c -E "onPick" apps/web/src/match/battlefield/Battlefield.tsx` prints at least 1
 - [ ] `pnpm test:e2e` passes: nothing that pans or zooms broke

@@ -87,7 +87,7 @@ PROTOCOL_VERSION + 1
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/core test -- dump discard revive` passes
 - [ ] A core test: a unit with an `onPlay` and an `onEnter` ability fires both when cast, only `onEnter` when revived, and both when revived with `played: true`
 - [ ] `grep -rn discardPileCount packages tools --include='*.ts'` prints nothing

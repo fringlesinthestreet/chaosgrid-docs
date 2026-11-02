@@ -21,7 +21,7 @@ scope:
   - apps/web/test/fixtures/planning/**
   - apps/web/e2e/m4.spec.ts
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
 ---
 
 # T-115 — The match tray and the card view
@@ -118,7 +118,7 @@ export function CardDetail({ card, size }: { card: Card; size?: 'normal' | 'larg
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- planning MatchScreen CardView session cards` passes
 - [ ] `grep -rn -E "Zone card detail" apps/web/src` prints nothing
 - [ ] `pnpm test:e2e` passes

@@ -83,7 +83,7 @@ export const PROTOCOL_VERSION = /* T-051's + 1 */;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` passes
 - [ ] The core test that plays a whole round with fear has its event log checked against a fixture, in the style of the existing golden tests
 

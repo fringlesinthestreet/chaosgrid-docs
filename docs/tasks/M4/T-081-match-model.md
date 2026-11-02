@@ -10,8 +10,8 @@ scope:
   - apps/web/src/match/model/**
   - apps/web/test/fixtures/logs/**
 context:
-  - docs/tasks/M4/README.md#The match
-  - docs/tasks/M4/README.md#Web layout and ownership
+  - docs/APPS.md#The match
+  - docs/APPS.md#Web layout and ownership
   - docs/PROTOCOL.md#Coordinates
   - docs/PROTOCOL.md#Events
   - docs/PROTOCOL.md#Visibility
@@ -112,7 +112,7 @@ export function applyEvent(model: MatchModel, event: Event): MatchModel; // appl
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- model` passes
 - [ ] `ls -l apps/web/test/fixtures/logs/` shows both logs under 3 MB
 

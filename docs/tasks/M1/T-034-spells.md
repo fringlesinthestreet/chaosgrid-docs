@@ -34,7 +34,7 @@ Play by the spell model. Utility spells resolve during Plan. Defensive and offen
 ## Read first
 
 - docs/RULES.md: Round structure, Simulation rules › Tick 0, Non-unit permanents › Sorceries and spells
-- docs/tasks/M1/README.md › Spells, and the `spell` field in packages/cards/README.md (T-033)
+- docs/CORE.md › Spells, and the `spell` field in packages/cards/README.md (T-033)
 - docs/PROTOCOL.md (plan actions, `ritual.resolved`, `sorcery.resolved`, `plans.revealed`, `HandCard`, visibility)
 - packages/core/src/plan/, combat/, view/ and effects/ (T-021, T-020, T-022, T-016, T-018)
 

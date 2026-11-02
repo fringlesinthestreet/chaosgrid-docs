@@ -108,7 +108,7 @@ export const PROTOCOL_VERSION = /* T-099's + 1 */;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] A core test plays `playGame(gameSetup(4), 10)` from `packages/core/test/fixtures/round/games.ts` and checks every round against its states. Each permanent and squad that is in the round's events but not in `played.state` got exactly one leaving event (Deliverable 5). Each permanent that was destroyed and is still in `played.state` got `permanent.respawned`. Each `permanent.durabilityChanged` gives the Durability the state ends the round with, unless a later event in that round changed it.
 
 ## Out of scope

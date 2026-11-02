@@ -73,7 +73,7 @@ export const PROTOCOL_VERSION = /* T-043's + 1 (T-044 doesn't bump it) */;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/protocol test -- timeline` passes
 - [ ] The golden round files are smaller than before (`wc -l tools/sim-cli/test/golden/*.json` in the PR)
 

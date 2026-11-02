@@ -17,7 +17,7 @@ Replace the M0 stubs with the real contract between core, bots and the UI: what 
 
 ## Read first
 
-- docs/tasks/M1/README.md: ids, coordinates, events
+- docs/CORE.md: ids, coordinates, events
 - docs/RULES.md: Round structure (Plan), Simulation rules, Resources and attaching, Non-unit permanents, Scoring and winning, Chaos deck and Emblems
 - docs/DECISIONS.md: D3, D7, D12, and the `PROTOCOL_VERSION` rule under Working rules
 - packages/protocol/README.md
@@ -32,7 +32,7 @@ Replace the M0 stubs with the real contract between core, bots and the UI: what 
    - `useResource` (a resource's rest ability, such as Harvest Cycle's) and `discard` (hand cards)
 
    Paying is automatic: core pays from unrested resources, so no action lists them.
-2. Events, all in the past tense, carrying ids and world cells (M1 README):
+2. Events, all in the past tense, carrying ids and world cells (CORE.md):
    - **Game and round:** `game.started`, `round.started`, `phase.changed`, `round.ended` (points per seat), `game.ended`, `tick`
    - **Planning:** `card.drawn`, `resource.drawn`, `plan.rejected` (seat, action index, reason), `plans.revealed`
    - **Board:** `squad.placed`, `unit.spawned`, `unit.moved`, `unit.attacked`, `unit.damaged`, `unit.healed`, `unit.died`, `unit.respawned`, `squad.leveled`, `squad.retired` (Durability reached 0)
@@ -64,4 +64,4 @@ Replace the M0 stubs with the real contract between core, bots and the UI: what 
 ## Notes
 
 - Bots import only the protocol (import rule 3). So a hand entry has to carry everything a planner needs: cost, type, size and unit stats.
-- T-008 builds core at the same time, with the same ids and coordinates from the M1 README. Use them exactly.
+- T-008 builds core at the same time, with the same ids and coordinates from CORE.md. Use them exactly.

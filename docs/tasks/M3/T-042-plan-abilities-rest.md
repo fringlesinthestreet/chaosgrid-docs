@@ -119,7 +119,7 @@ export const PROTOCOL_VERSION = /* T-041's + 1 */;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` passes. Existing cards don't change: resources keep `onRest`.
 - [ ] A golden-style core test: a ramp unit with a draw-a-resource ability `{ "trigger": "onUse", "rest": true, "spell": "utility", … }` draws during Plan and stays put for the whole Simulate
 - [ ] A sim-cli vitest plays 20 seeded games with `runGame` and fixture cards that have Plan abilities (passed in as the `cards` argument), and no game throws

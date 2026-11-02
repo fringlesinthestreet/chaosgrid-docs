@@ -158,7 +158,7 @@ export function createBot(name: BotName, random: Random, options?: CreateBotOpti
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:soak` passes
 - [ ] `pnpm test:perf` passes, and its output shows the planner's times
 - [ ] `pnpm --filter @chaosgrid/bots test` passes

@@ -66,8 +66,8 @@ D35 (docs/DECISIONS.md): `packages/core` has no import cycles. Only value import
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
-- [ ] `scripts/check.sh soak` is green.
+- [ ] `crew check` is green.
+- [ ] `crew check soak` is green.
 - [ ] `pnpm --filter @chaosgrid/core exec vitest run imports` passes, and fails when you add `import { fire } from './triggers'` back to `effects/draws.ts` (try it, then undo it).
 - [ ] `git diff --stat main...HEAD -- tools/sim-cli/test/golden` prints nothing: no behaviour changed.
 

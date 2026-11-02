@@ -19,7 +19,7 @@ Finish the effect DSL: every effect T-016 left out, the round rules, and the han
 
 - packages/cards/README.md (the DSL), and `packages/core/src/effects/` (T-016's engine and registry)
 - docs/RULES.md: the sample cards, and Chaos deck and Emblems (rule-changing cards)
-- docs/tasks/M1/README.md: the Hitting flyers and Buffs on one stat defaults
+- docs/CORE.md: the Hitting flyers and Buffs on one stat defaults
 
 ## Deliverables
 

@@ -10,8 +10,8 @@ scope:
   - apps/web/src/decks/editor/**
   - apps/web/src/app/app.test.tsx
 context:
-  - docs/tasks/M4/README.md#HTTP API
-  - docs/tasks/M4/README.md#Web layout and ownership
+  - docs/APPS.md#HTTP API
+  - docs/APPS.md#Web layout and ownership
   - packages/cards/README.md#Deck rules
   - packages/cards/README.md#Card colors
 ---
@@ -81,7 +81,7 @@ export function DeckEditorPage(): JSX.Element; // re-exported by decks/index.tsx
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] With the API on 5077 and the web on 4077: sign up, copy a starter, remove one main-deck card (the `mainDeckSize` problem shows), add it back ("Legal"), save, reload: the deck is as saved
 
 ## Out of scope

@@ -59,7 +59,7 @@ export const STARTER_SEATS: readonly SeatSetup[] = loadStarterDecks()
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `packages/core/test/fixtures/zones/starter-decks.json` is gone, and `grep -rn "starter-decks.json" packages/core` finds nothing.
 - [ ] In your worktree, swap one main-deck card in `packages/cards/decks/ember_aggro.json` for another legal card, and change one deck's pile order. `pnpm --filter @chaosgrid/core test src/zones` stays green. Then run `git checkout -- packages/cards/decks`: that file isn't in your scope, so never commit it.
 

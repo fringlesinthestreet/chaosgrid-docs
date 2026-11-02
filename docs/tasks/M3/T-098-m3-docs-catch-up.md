@@ -57,7 +57,7 @@ What's stale (copied from the READMEs on 2026-10-26; T-064 to T-097 may have fix
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green (the format check covers Markdown).
+- [ ] `crew check` is green (the format check covers Markdown).
 - [ ] `git diff --name-only main...HEAD` prints only the two READMEs.
 - [ ] Every number and name you changed matches the code on your branch: the PR lists each change with the file and line it comes from.
 

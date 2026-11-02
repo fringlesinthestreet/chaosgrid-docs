@@ -200,7 +200,7 @@ export function mergeReports(reports: readonly JsonReport[]): JsonReport;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:soak` passes
 - [ ] `pnpm --filter @chaosgrid/sim-cli test` passes
 - [ ] `pnpm sim --games 4 --target 30 --json .data/t131.json` exits 0 and prints the median and the Leader intervals

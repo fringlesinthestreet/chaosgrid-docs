@@ -89,8 +89,8 @@ Hand-built `Snapshot`s that need the new field: `packages/protocol/test/fixtures
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
-- [ ] `scripts/check.sh soak` is green, including "4 turtle seats, generated decks, seed 4".
+- [ ] `crew check` is green.
+- [ ] `crew check soak` is green, including "4 turtle seats, generated decks, seed 4".
 - [ ] For each of the random, greedy and turtle bots, a test gives it a snapshot with `rules: ['noSpells']` and a hand with a defensive, an offensive and a utility spell. Over many seeds it plans neither of the first two, and the referee passes the plan. The random bot also plans the utility spell at least once.
 - [ ] A referee test rejects an offensive `castSpell` under `noSpells` and passes it with `rules: []`.
 - [ ] A core test: with Fog of War in play, every seat's snapshot has `rules` `['noSpells', 'trampleHitsFriendlyUnits']`. Without it, `[]`.

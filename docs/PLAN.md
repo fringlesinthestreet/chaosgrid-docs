@@ -1,51 +1,6 @@
-# ChaosGrid — Plan and milestones
+# ChaosGrid — Milestones
 
-Draft v3 · 2026-10-21 · companion to [RULES.md](RULES.md) (the game spec)
-
-What we build and in what order. The decisions and rules every task follows are in [DECISIONS.md](DECISIONS.md), changes to this plan are logged in [CHANGELOG.md](CHANGELOG.md), and the current progress is in the README's Status section ([README.md](../README.md#status)). How agents work: [CLAUDE.md](../CLAUDE.md).
-
-## Repository layout
-
-```
-chaosgrid/
-  docs/
-    RULES.md               game rules and sample cards (the spec)
-    PLAN.md                this file
-    DECISIONS.md           decisions and rules every task follows
-    CHANGELOG.md           changes to the plan and the decisions
-    PROTOCOL.md            commands, events, snapshot shape (to write in M1)
-    agents/                how agents work: worker and lead playbooks, Redis comms
-    tasks/                 task cards: one per agent task (= one branch, one PR), by milestone
-  packages/
-    core/                  pure sim: state, tick loop, pathing, targeting, effects, scoring
-    protocol/              Zod schemas: Command, Event, Snapshot; version constant
-    cards/                 card JSON (data/, one file per card) + schemas + loader + validator; deck rules
-    db/                    SQLite + Drizzle: schema, migrations, `db:seed` (cards from JSON)
-    bots/                  bot planners: take a Snapshot, return a Plan (pure functions)
-    http/                  Zod schemas for the HTTP API between `apps/api` and `apps/web` (M4, D28)
-  apps/
-    web/                   Vite + React + PixiJS; imports only `protocol`, `cards`, `bots`, `http` (core only in src/host/)
-    api/                   local HTTP API over `db`: accounts, cards and decks (M4)
-  tools/
-    sim-cli/               headless runner: N games, stats, event-log dumps
-  scripts/                 lead tools: start workers, watch status, open PRs, record merges
-```
-
-Which package may import which is fixed in [DECISIONS.md](DECISIONS.md) › Import boundaries.
-
-## Runtime shape (no networking)
-
-```
-┌──────────────┐  Command   ┌───────────────────────┐  Event   ┌──────────────┐
-│  Human UI    │ ─────────► │  GameHost (in page)    │ ───────► │  Arena/React │
-│  (React)     │            │  core + N bots         │ timeline │  views       │
-└──────────────┘            └───────────────────────┘          └──────────────┘
-```
-
-- `GameHost` is the only place that owns a `core` instance. It calls each bot's `plan(snapshot)` during the Plan phase, and once every plan is locked it has core play out the whole round (D19). Core returns the round's events at once.
-- Simulate's events are a timeline: a `tick` event opens each tick in which something happens. The Arena plays it back in real time (100 ticks = 1 s, D18) at 1×, 2× or 4×, scheduling each batch from its tick number with `requestAnimationFrame`. Nothing drives core tick by tick, and the UI never waits on the sim.
-- The human UI submits `plan.submit` like a bot would, and the host answers each one with that seat's `plan.checked`: the actions core would refuse and the seat's snapshot with the plan applied (D29). The host knows which seats are human only to wait for their `player.ready` and to filter the events each one sees.
-- A `MockTransport` wraps `GameHost` behind the same interface a future `WsTransport` will expose (`send`, `onEvents`, `onSnapshot`, `close`; docs/tasks/M4/README.md › The match), so the UI is already written against the networked shape.
+What we build and in what order. The code repo holds what every task follows (D53): the layout and the runtime shape (`docs/ARCHITECTURE.md`), the decisions (`docs/DECISIONS.md`) and the conventions (`docs/CORE.md`, `docs/APPS.md`). Changes to this plan are logged in [CHANGELOG.md](CHANGELOG.md), and the progress is in this repo's [README](../README.md#status).
 
 ## Milestones
 
@@ -64,7 +19,7 @@ Task cards: [`docs/tasks/M0/`](tasks/M0/). They run in three waves: 1 agent, the
 
 ### M1 — Core simulation, headless (1–2 weeks)
 
-Task cards: [`docs/tasks/M1/`](tasks/M1/), 27 tasks in eight waves, with shared conventions in [`docs/tasks/M1/README.md`](tasks/M1/README.md).
+Task cards: [`docs/tasks/M1/`](tasks/M1/), 27 tasks in eight waves, with shared conventions in `docs/CORE.md` (in the code repo).
 
 - [ ] State model: players, grids (15×15 then, footprints), units, squads, non-unit permanents, resources, points, round number.
 - [ ] Round loop: Reveal → Plan (collect plans) → Simulate (ticks) → Cleanup (scoring, respawn, durability, trap expiry).
@@ -152,7 +107,7 @@ Match:
 - [ ] The match: a playback timeline with event markers (T-128), a squad's attached cards in the card view (T-140), and the battlefield behind the whole screen, with the panels over it (D51, T-136).
 - [ ] Carded once the code they build on has merged: a standings strip; planning aids (unaffordable cards dimmed, footprint and range while placing, the cost previewed); a rules drawer with a keyword glossary; one card face in three sizes; seat identity (an icon or pattern per seat, colorblind-safe); combat readability (shield segments, changed stats against the printed ones, merged damage numbers); settings (reduced motion, text size, high contrast, default speed); after the baseline, the Chaos and starter-deck items above; moving each area's remaining text into the language files; and a lint rule against hard-coded UI text.
 - [ ] Starter decks: retune the five from M3, and add two-color ones.
-- [ ] Art (D45 to D47 and D52, [ART.md](ART.md); T-119 to T-123): animated sprites at 16 px a cell, attacks that wind up from playback's look-ahead, projectile and effect sprites, spell casts, and the art pack that checks the files, stitches Fable's one-PNG-per-frame export into strips and writes their manifest. The first real sprites go to cloud storage; the repo keeps only the placeholders. Skins are variants under a card's art key (D52), with no code before players can pick them.
+- [ ] Art (D45 to D47 and D52, `docs/ART.md`; T-119 to T-123): animated sprites at 16 px a cell, attacks that wind up from playback's look-ahead, projectile and effect sprites, spell casts, and the art pack that checks the files, stitches Fable's one-PNG-per-frame export into strips and writes their manifest. The first real sprites go to cloud storage; the repo keeps only the placeholders. Skins are variants under a card's art key (D52), with no code before players can pick them.
 - **Done when:** no Leader wins > 35% in a 4-bot tournament and median game is 12–16 rounds.
 
 ### M6 — Multiplayer (later)
@@ -166,30 +121,3 @@ Match:
 ### M7 — Desktop (later)
 - [ ] Tauri wrapper of `apps/web`, auto-update, offline solo play.
 
-## Card JSON (v1 sketch)
-
-One file per card, in a folder per type: `packages/cards/data/units/flame_lancer.json`. Two agents adding different cards never touch the same file, and `db:seed` just reads the directory. Every card has `id`, `name`, `type`, `cost` (pips string like `"2RR"`, colors `R T E D L`, D21), `set`, `version`, and `text` (the printed rules text, which is what UIs show).
-
-```json
-{
-  "id": "unit.flame_lancer",
-  "name": "Flame Lancer",
-  "type": "unit",
-  "set": "base",
-  "version": 1,
-  "cost": "1R",
-  "text": "Reach. On attack: +1 Atk for the round (max +{level})",
-  "stats": { "hp": 1, "attack": 3, "attackSpeed": 0.2, "speed": 1, "range": "ranged", "charge": 1 },
-  "size": [2, 2],
-  "squad": 4,
-  "durability": 4,
-  "keywords": ["reach"],
-  "levelUnlock": { "damageDealt": 8 },
-  "abilities": [
-    { "trigger": "onAttack", "effect": "buff", "stat": "attack", "amount": 1,
-      "duration": "round", "max": "{level}" }
-  ]
-}
-```
-
-`{level}` and `{unitLevel}` are resolved by core at cast/level time. Anything the DSL can't express goes in `"script": "<id>"` pointing at a hand-written effect in core, so the JSON stays the source of truth and scripts stay rare.

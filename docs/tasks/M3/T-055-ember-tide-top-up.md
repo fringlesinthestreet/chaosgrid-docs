@@ -46,7 +46,7 @@ Nothing new is exported.
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` passes
 - [ ] `git diff --diff-filter=MDR --name-only main...HEAD` prints nothing: this task only adds files
 

@@ -60,7 +60,7 @@ Nothing new is exported.
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` passes
 - [ ] `git diff --diff-filter=MDR --name-only main...HEAD` prints nothing: this task only adds files
 
@@ -73,5 +73,5 @@ Nothing new is exported.
 
 - Content tasks run alongside the rules tasks (docs/tasks/README.md › M3). Add files only, so you never conflict with them. A duplicate id fails `cards:validate`: if a set that merged meanwhile took one of your ids, rename yours after the rebase.
 - Traps are free-standing only (T-044): model each trap on Spike Pit, with an `area` and an area trigger (README › Trap triggers).
-- The M2 soak test builds generated decks around every Leader, so a broken card shows up in `scripts/check.sh`. If the soak fails because a bot can't handle a card that is legal, send `lead` a `question` instead of changing the card.
+- The M2 soak test builds generated decks around every Leader, so a broken card shows up in `crew check`. If the soak fails because a bot can't handle a card that is legal, send `lead` a `question` instead of changing the card.
 - Default names are yours: keep them distinct from existing card names (`ls packages/cards/data/*`).

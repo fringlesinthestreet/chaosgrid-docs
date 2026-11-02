@@ -156,7 +156,7 @@ export type SeatPlayer =
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/bots test` passes, with the tests above
 - [ ] `pnpm --filter @chaosgrid/sim-cli test` passes
 - [ ] `pnpm --filter @chaosgrid/web test host` passes

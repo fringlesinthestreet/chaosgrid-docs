@@ -108,7 +108,7 @@ export const PROTOCOL_VERSION = /* T-042's + 1 */;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` and `pnpm cards:validate --decks` (or the CLI's deck flag) pass on every starter deck
 - [ ] `grep -rn "cardColors" packages tools --include='*.ts'` prints nothing
 - [ ] A golden-style core test: a static "Tide spells cost 1 more" on one player's grid changes only its opponents' Tide spells, from the next round

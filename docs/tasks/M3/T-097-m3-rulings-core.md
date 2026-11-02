@@ -102,8 +102,8 @@ RULES.md, as the human ruled:
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
-- [ ] `scripts/check.sh soak` is green.
+- [ ] `crew check` is green.
+- [ ] `crew check soak` is green.
 - [ ] `pnpm --filter @chaosgrid/core exec vitest run end revive layout config snapshot` passes.
 - [ ] `pnpm --filter @chaosgrid/core exec vitest run imports` passes: no new import cycle (D35).
 - [ ] `git diff main...HEAD -- packages/protocol` prints nothing, and `PROTOCOL_VERSION` doesn't change: no payload changes.

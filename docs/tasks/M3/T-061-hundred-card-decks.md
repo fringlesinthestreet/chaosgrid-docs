@@ -79,7 +79,7 @@ export const MAIN_DECK_SIZE = 100;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` passes
 - [ ] `pnpm db:seed` runs twice without an error, and the second run stores the same five starter decks
 - [ ] `pnpm --filter @chaosgrid/sim-cli test -- decks` passes, including the case for every Leader

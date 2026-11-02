@@ -73,7 +73,7 @@ PROTOCOL_VERSION + 1
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/core test -- shield extra-life ward` passes
 - [ ] `pnpm cards:validate` passes
 

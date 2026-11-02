@@ -87,7 +87,7 @@ PROTOCOL_VERSION + 1
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/core test -- banish sacrifice` passes
 - [ ] `pnpm cards:validate` passes
 

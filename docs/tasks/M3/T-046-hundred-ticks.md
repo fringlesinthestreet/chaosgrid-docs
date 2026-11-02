@@ -75,7 +75,7 @@ export function subcellsPerTick(speed: number): number; // Math.round(speed * SU
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/core test -- perf` passes with the budgets unchanged
 - [ ] The PR body has seconds per game before and after, and the perf tests' times before and after
 - [ ] `grep -rn -i millicell packages tools --include='*.ts'` prints nothing

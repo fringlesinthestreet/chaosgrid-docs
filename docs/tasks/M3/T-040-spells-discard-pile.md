@@ -81,7 +81,7 @@ export const PROTOCOL_VERSION = 5;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` passes, and a `"type": "sorcery"` fixture fails with the hint
 - [ ] `grep -rniE 'sorcer|graveyard' packages tools docs/PROTOCOL.md --include='*.ts' --include='*.json' --include='*.md' | grep -v node_modules` prints only what records the old names: the `sorcery` hint with its fixture and test, the retired-row test, the protocol tests that check the old wire names are rejected (`event.test.ts`), and the history lines in PROTOCOL.md › Versioning. A comment or test name that still says sorcery or graveyard isn't one of them: rename it
 - [ ] `grep -rniE 'mirror.?ward|void.?maw' packages tools docs/PROTOCOL.md --include='*.ts' --include='*.json' --include='*.md' | grep -v node_modules` prints only the retired-row test

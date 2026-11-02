@@ -19,7 +19,7 @@ Put the modules together into rounds and games, behind a small, pure API that th
 
 - packages/core/README.md, and every module's `index.ts`
 - docs/RULES.md: Round structure (all four steps, including Cleanup), Scoring and winning
-- docs/PLAN.md › Runtime shape: how GameHost will call this
+- docs/ARCHITECTURE.md › Runtime shape: how GameHost will call this
 
 ## Deliverables
 
@@ -42,7 +42,7 @@ Put the modules together into rounds and games, behind a small, pure API that th
    8. extra Chaos is checked
    9. the winner check
 3. Events for every phase change and for the end of the round. `round.started` carries the round's `arena` layout (T-025).
-4. Seats rotate every round (M1 README › Seat rotation), and `arena/` derives the rotation from `state.round`. When a round begins, put every squad's units back on their start cells for the new round (`unitStartCells`, T-028), before Reveal.
+4. Seats rotate every round (CORE.md › Seat rotation), and `arena/` derives the rotation from `state.round`. When a round begins, put every squad's units back on their start cells for the new round (`unitStartCells`, T-028), before Reveal.
 5. Tests:
    - a full game of several rounds with scripted plans
    - replaying the same inputs gives byte-identical events

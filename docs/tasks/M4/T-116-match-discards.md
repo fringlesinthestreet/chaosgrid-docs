@@ -18,7 +18,7 @@ scope:
   - apps/web/e2e/m4.spec.ts
 context:
   - docs/RULES.md#Round structure
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
 ---
 
 # T-116 — Choose discards in the match
@@ -98,7 +98,7 @@ chooseDiscards(cards: readonly CardInstanceId[]): void;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- host session planning MatchScreen` passes
 - [ ] `grep -c -E "discard\.choose" apps/web/src/host/host.ts` prints at least 1
 - [ ] `pnpm test:e2e` passes

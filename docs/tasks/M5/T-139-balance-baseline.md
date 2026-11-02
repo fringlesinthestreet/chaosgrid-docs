@@ -13,7 +13,6 @@ context:
   - docs/PLAN.md#M5
   - docs/RULES.md#Balance knobs
   - tools/sim-cli/README.md
-  - docs/agents/COMMS.md#Messages
 ---
 
 # T-139 — Balance baseline
@@ -86,7 +85,7 @@ pnpm sim --bots planner,planner,planner,planner --decks starter --seed 1 --games
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/cards test` passes: the new `cards.json` parses
 - [ ] `pnpm sim --merge docs/balance/<date>-starter.json` and `pnpm sim --merge docs/balance/<date>-generated.json` print their reports. Exit 1 only if a game threw, and then the write-up lists the errors
 - [ ] `git diff --name-only main...HEAD` lists only files in `docs/balance/` and `packages/cards/stats/cards.json`

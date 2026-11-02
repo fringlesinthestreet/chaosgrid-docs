@@ -9,8 +9,8 @@ effort: high
 scope:
   - apps/api/**
 context:
-  - docs/tasks/M4/README.md#HTTP API
-  - docs/tasks/M4/README.md#Ports and the e2e DB
+  - docs/APPS.md#HTTP API
+  - docs/APPS.md#Ports and the e2e DB
   - docs/DECISIONS.md#Import boundaries
   - packages/db/README.md#In code
 ---
@@ -96,7 +96,7 @@ export function seedOnStart(db: Db): SeedAllCounts; // main.ts logs them; a bad 
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `CHAOSGRID_API_PORT=5071 CHAOSGRID_DB=.data/t071.db pnpm --filter @chaosgrid/api start` starts on an empty DB file, and `curl -s 127.0.0.1:5071/api/cards` returns the cards
 
 ## Out of scope

@@ -18,7 +18,7 @@ Every spell says its class (utility, defensive or offensive) in the card data, a
 ## Read first
 
 - docs/RULES.md: Round structure (Plan, Simulate), Simulation rules › Tick 0, Non-unit permanents › Sorceries and spells
-- docs/tasks/M1/README.md › Spells
+- docs/CORE.md › Spells
 - packages/cards/README.md (card format, DSL, targets and zones)
 
 ## Deliverables

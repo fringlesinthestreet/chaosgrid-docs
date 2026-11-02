@@ -146,7 +146,7 @@ export function CardTable(props: { cards: readonly Card[]; onSelect: (card: Card
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test src/cards/ decks/editor` passes: the new tests, `cards.test.tsx` unchanged, and the deck editor with the shared filters
 - [ ] `git diff --name-only main...HEAD -- apps/web/src/cards/CardDetail.tsx apps/web/src/cards/cards.test.tsx apps/web/src/cards/CardTile.tsx` prints nothing
 - [ ] `pnpm test:e2e` passes, with `e2e/m4.spec.ts` unchanged

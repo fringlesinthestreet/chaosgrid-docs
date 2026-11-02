@@ -29,7 +29,7 @@ Create the empty monorepo that every other task builds on. This task writes root
 ## Read first
 
 - docs/DECISIONS.md: D2, D8, D9 and Import boundaries
-- docs/PLAN.md: Repository layout
+- docs/ARCHITECTURE.md: Repository layout
 - CLAUDE.md: Conventions
 
 ## Deliverables

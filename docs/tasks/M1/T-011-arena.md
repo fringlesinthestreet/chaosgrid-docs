@@ -17,7 +17,7 @@ Build the shared battlefield: where each player's 15×15 grid sits around the ce
 
 ## Read first
 
-- docs/tasks/M1/README.md (coordinates and defaults) and packages/core/README.md
+- docs/CORE.md (coordinates and defaults) and packages/core/README.md
 - docs/RULES.md: Components and setup (Arena layout), Units (Size), Non-unit permanents, Chaos deck and Emblems (where Chaos spawns)
 
 ## Deliverables
@@ -29,7 +29,7 @@ Build the shared battlefield: where each player's 15×15 grid sits around the ce
 
    The layout sizes are named constants.
 2. `gridToWorld` and `worldToGrid` for a seat in a given round, with row 0 facing the center.
-3. Seat rotation per round (M1 README default), as a pure function of the round and the seat count.
+3. Seat rotation per round (CORE.md default), as a pure function of the round and the seat count.
 4. Placement:
    - footprints come from `footprintCells` and `placementCells` in `state/` (T-008); don't redefine them
    - `canPlace(state, seat, footprint)`: the footprint is on the grid and overlaps no other unit's or free-standing permanent's footprint. Traps may overlap permanents (RULES.md › Units).

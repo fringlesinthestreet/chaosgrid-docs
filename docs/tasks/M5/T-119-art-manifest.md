@@ -179,7 +179,7 @@ export class SpriteView extends Container {
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test art` passes, with tests for:
   - [ ] `parseArtManifest`: a valid manifest, each drop rule, version 1 and junk
   - [ ] `stillFor` at the boxes in use: 16, 24, 32, 48, 96, 192

@@ -79,7 +79,7 @@ export const PROTOCOL_VERSION = /* T-040's + 1 */;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` passes with the three new resources
 - [ ] The only card file with an `E` pip is `resource.grove`: no Ember card was missed
 - [ ] The golden files change only by the pip letter (`git diff --word-diff` on them, summed up in the PR)

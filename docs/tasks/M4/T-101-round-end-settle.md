@@ -145,8 +145,8 @@ export const MAX_SETTLE_TICKS = 1_000; // 10 s at most, then what's left is drop
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
-- [ ] `scripts/check.sh soak` is green, `settle.soak.test.ts` included.
+- [ ] `crew check` is green.
+- [ ] `crew check soak` is green, `settle.soak.test.ts` included.
 - [ ] `pnpm --filter @chaosgrid/core exec vitest run settle simulate end` passes.
 - [ ] `pnpm --filter @chaosgrid/core exec vitest run imports` passes: no new import cycle (D35).
 - [ ] `pnpm sim --games 20 --seed 1` runs.

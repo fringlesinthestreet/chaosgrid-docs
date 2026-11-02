@@ -24,7 +24,7 @@ context:
   - docs/RULES.md#Units
   - docs/RULES.md#Chaos deck and Emblems
   - docs/RULES.md#Traps (free-standing, face-down, automatic)
-  - docs/tasks/M1/README.md#Defaults for open rules questions
+  - docs/CORE.md#Defaults for open rules questions
 ---
 
 # T-064 — Positions in the snapshot
@@ -92,7 +92,7 @@ squadGridCell(state, squad): { seat: Seat; cell: Cell } | null // the grid a squ
    - **The nearest squad.** Move the "caster's squad nearest a grid cell" rule into one helper that `mirroredTarget` (T-042) and copy (T-053) both use:
      - `squadGridCell` says where a squad stands. A squad with a footprint stands on its owner's grid, at its top-left cell. A squad without one stands under its lowest-id living unit: that unit's world cell converted to a grid's coordinates (the inverse of PROTOCOL.md › Arena layout's `toWorld`, clamped to the grid's nearest cell). A token uses its owner's grid. A Chaos squad uses the grid of the first seat in its card's `targets`, or the caster's grid when there's none. A squad with no living unit stands nowhere (null).
      - The chosen squad's cell is carried over to the caster's grid unchanged. The candidates are every caster squad that stands somewhere, tokens included (a token is a squad), and the Leader counts.
-     - Distance is Chebyshev (M1 README › Defaults). Ties go to the lowest squad id. With no candidate, the spell does nothing.
+     - Distance is Chebyshev (CORE.md › Defaults). Ties go to the lowest squad id. With no candidate, the spell does nothing.
 6. **Bots.** Their target lists for a `squad` plan target on the opponent side now include Chaos squads and other seats' living tokens, read from `units` and `spawned`. Keep the change small and say in the PR how they choose. Update only the goldens this changes, and say why in the PR.
 7. **Tests:**
    - protocol: parse and round-trip `UnitSnapshot`, `SpawnedSquadSnapshot`, and the new `ChaosSnapshot` and `EmblemSnapshot` fields.
@@ -112,7 +112,7 @@ squadGridCell(state, squad): { seat: Seat; cell: Cell } | null // the grid a squ
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] A core test plays one game with four greedy bots (seed 1). After each round's `plans.revealed`, every living unit in `Snapshot.units` has the cell the log last gave it (`unit.spawned`, `unit.moved` or `unit.respawned`).
 
 ## Out of scope

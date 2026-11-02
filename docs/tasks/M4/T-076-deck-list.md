@@ -13,9 +13,9 @@ scope:
   - apps/web/src/decks/list/**
   - apps/web/src/app/app.test.tsx
 context:
-  - docs/tasks/M4/README.md#HTTP API
-  - docs/tasks/M4/README.md#Web layout and ownership
-  - docs/tasks/M4/README.md#Routes
+  - docs/APPS.md#HTTP API
+  - docs/APPS.md#Web layout and ownership
+  - docs/APPS.md#Routes
   - packages/cards/README.md#Deck rules
 ---
 
@@ -81,7 +81,7 @@ export function DecksPage(): JSX.Element; // re-exported from decks/index.tsx
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] With the API on 5076 and the web on 4076: sign up, `/decks` shows the five starter decks; Copy on one opens `/decks/<id>`, and back on `/decks` the copy is under My decks as Legal
 
 ## Out of scope

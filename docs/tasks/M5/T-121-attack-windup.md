@@ -134,7 +134,7 @@ export interface BattlefieldProps { /* … */ upcoming?: readonly UpcomingStep[]
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test playback battlefield` passes, with tests for:
   - [ ] the window and its `inMs` at speeds 1, 2 and 4, and the publish when a step enters it with nothing due
   - [ ] an empty window while paused, when idle, at a timeline's end, and after a skip with nothing queued

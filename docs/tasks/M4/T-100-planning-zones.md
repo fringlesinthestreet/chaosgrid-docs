@@ -10,7 +10,7 @@ scope:
   - apps/web/src/match/planning/**
   - apps/web/test/fixtures/planning/**
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - docs/PROTOCOL.md#Plans
   - docs/PROTOCOL.md#Targets
   - docs/PROTOCOL.md#`PlayerSnapshot` and `SeatScore`
@@ -100,7 +100,7 @@ export function RulesBar(props: { rules: readonly Rule[] }): JSX.Element | null;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- planning` passes
 
 ## Out of scope

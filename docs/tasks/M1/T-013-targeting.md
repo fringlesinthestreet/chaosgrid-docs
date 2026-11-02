@@ -17,7 +17,7 @@ Decide what each unit attacks and whether it's in range, following RULES.md: the
 
 ## Read first
 
-- docs/tasks/M1/README.md and packages/core/README.md
+- docs/CORE.md and packages/core/README.md
 - docs/RULES.md: Simulation rules (Targeting, Range classes, Blocker), Units (Flying and reach, Keywords), Chaos deck and Emblems
 
 ## Deliverables

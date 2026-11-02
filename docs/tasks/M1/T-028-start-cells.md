@@ -17,7 +17,7 @@ Give every unit its own starting cell, including squads with more units than foo
 
 ## Read first
 
-- docs/tasks/M1/README.md › Cells during the simulation, and packages/core/README.md
+- docs/CORE.md › Cells during the simulation, and packages/core/README.md
 - packages/core/src/arena/ (T-011): `placementWorldCells`, `canPlace`, `spawnCells`
 
 ## Deliverables

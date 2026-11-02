@@ -9,8 +9,8 @@ effort: medium
 scope:
   - apps/web/src/decks/editor/**
 context:
-  - docs/tasks/M4/README.md#Web layout and ownership
-  - docs/tasks/M4/README.md#Routes
+  - docs/APPS.md#Web layout and ownership
+  - docs/APPS.md#Routes
 ---
 
 # T-106 — Ask before leaving the deck editor with unsaved changes
@@ -82,7 +82,7 @@ What this task adds: the guard and its prompt in `decks/editor/`, and their test
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- editor` passes
 - [ ] `git diff main...HEAD -- apps/web/src/decks/editor/editor.test.tsx` only adds tests: no existing test changes
 

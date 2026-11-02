@@ -17,7 +17,7 @@ Turn kills, Emblems and survival into points. Keep totals fractional, show them 
 
 ## Read first
 
-- docs/tasks/M1/README.md and packages/core/README.md
+- docs/CORE.md and packages/core/README.md
 - docs/RULES.md: Scoring and winning (including Shown points), Leader, Chaos deck and Emblems
 
 ## Deliverables

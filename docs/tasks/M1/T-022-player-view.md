@@ -17,7 +17,7 @@ Build the snapshot each seat plans from: everything that seat can see, and nothi
 
 ## Read first
 
-- docs/PROTOCOL.md (Snapshot and visibility) and docs/tasks/M1/README.md
+- docs/PROTOCOL.md (Snapshot and visibility) and docs/CORE.md
 - docs/RULES.md on hidden information: Round structure (Plan), Non-unit permanents (traps), rituals
 
 ## Deliverables

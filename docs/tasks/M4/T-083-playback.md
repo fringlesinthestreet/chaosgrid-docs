@@ -11,7 +11,7 @@ scope:
   - apps/web/src/replay/**
   - apps/web/e2e/replay.spec.ts
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - docs/PROTOCOL.md#Timeline
   - docs/PROTOCOL.md#Game and round
 ---
@@ -89,7 +89,7 @@ export function PlaybackControls(props: { playback: Playback }): JSX.Element; //
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- playback replay` and `pnpm test:e2e -- replay` pass
 - [ ] With the web on 4083: `/replay` with `starter-2-rounds.json` plays round 1 at 1× in about the Simulate's length in seconds (its last tick ÷ `TICKS_PER_SECOND`)
 

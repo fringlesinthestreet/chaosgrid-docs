@@ -9,9 +9,9 @@ effort: high
 scope:
   - apps/web/src/host/**
 context:
-  - docs/tasks/M4/README.md#The match
-  - docs/tasks/M4/README.md#Web layout and ownership
-  - docs/PLAN.md#Runtime shape (no networking)
+  - docs/APPS.md#The match
+  - docs/APPS.md#Web layout and ownership
+  - docs/ARCHITECTURE.md#Runtime shape (no networking)
   - docs/PROTOCOL.md#Commands
   - docs/PROTOCOL.md#Visibility
   - packages/core/README.md#Public API
@@ -21,7 +21,7 @@ context:
 
 ## Goal
 
-A match in the browser needs something that owns the game: it runs core, plans for the bots and answers the human's commands. After this task `src/host/` has the `GameHost`, the only core instance in the web (PLAN.md › Runtime shape), and a `MockTransport` with the interface M6's `WsTransport` will have. The match screens (T-085 to T-088) talk only to the transport, so they never see core state.
+A match in the browser needs something that owns the game: it runs core, plans for the bots and answers the human's commands. After this task `src/host/` has the `GameHost`, the only core instance in the web (ARCHITECTURE.md › Runtime shape), and a `MockTransport` with the interface M6's `WsTransport` will have. The match screens (T-085 to T-088) talk only to the transport, so they never see core state.
 
 ## Interfaces
 
@@ -115,7 +115,7 @@ export function createMockTransport(host: GameHost, seat: Seat): Transport;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- host` passes
 - [ ] `src/host/` is the only web folder that imports `@chaosgrid/core` (the ESLint zone from T-068 stays as it is)
 

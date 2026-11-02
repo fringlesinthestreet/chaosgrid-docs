@@ -15,7 +15,7 @@ scope:
   - packages/core/src/round/play.ts
   - packages/core/README.md
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - docs/PROTOCOL.md#Commands
   - docs/PROTOCOL.md#Planning
   - docs/PROTOCOL.md#Visibility
@@ -125,7 +125,7 @@ export function checkPlan(state: GameState, seat: Seat, plan: Plan): PlanChecked
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test` passes in every package (sim-cli and bots parse events and snapshots)
 - [ ] `pnpm sim --games 20 --seed 1` runs as before: `playRound` never emits `plan.checked`
 

@@ -10,8 +10,8 @@ scope:
   - packages/http/**
 context:
   - docs/tasks/M4/README.md#What M4 adds
-  - docs/tasks/M4/README.md#Accounts
-  - docs/tasks/M4/README.md#HTTP API
+  - docs/APPS.md#Accounts
+  - docs/APPS.md#HTTP API
   - docs/DECISIONS.md#Import boundaries
   - packages/cards/README.md#Deck rules
 ---
@@ -92,7 +92,7 @@ export const ROUTES: {
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/http test` passes
 
 ## Out of scope

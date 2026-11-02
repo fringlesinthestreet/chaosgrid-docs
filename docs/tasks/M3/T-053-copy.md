@@ -134,7 +134,7 @@ export const PROTOCOL_VERSION = /* T-052's + 1 */;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` passes. Mirror Snare and the other existing cards don't change.
 - [ ] A golden-style core test: a plan casts an offensive spell on one squad and copies it onto another squad. Its event log shows two `spell.resolved` at tick 0, the second with `copyOf`, and damage on both squads.
 

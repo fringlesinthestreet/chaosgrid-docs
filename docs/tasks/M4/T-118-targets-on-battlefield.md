@@ -14,7 +14,7 @@ scope:
   - apps/web/test/fixtures/planning/**
   - apps/web/e2e/m4.spec.ts
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
 ---
 
 # T-118 — Pick targets on the battlefield
@@ -63,7 +63,7 @@ What exists (copied from the code on 2026-10-29, and from the T-117 card):
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- planning MatchScreen battlefield` passes
 - [ ] `grep -c -E "placement=" apps/web/src/match/planning/TargetPicker.tsx` prints at least 1
 - [ ] `pnpm test:e2e` passes

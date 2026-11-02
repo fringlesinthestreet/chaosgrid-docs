@@ -26,7 +26,7 @@ Core fills the new fields and emits the new events later (T-020, T-022, T-023, T
 
 - docs/PROTOCOL.md (Coordinates, Events, Snapshot, Versioning) and packages/protocol/README.md
 - packages/core/src/arena/ (T-011): `arenaLayout`, `layoutOf`, `seatGrid` and the ASCII maps in `packages/core/test/fixtures/arena/`. The protocol's layout mirrors them.
-- docs/tasks/M1/README.md: Ids, Coordinates, the Seat rotation and Projectiles defaults
+- docs/CORE.md: Ids, Coordinates, the Seat rotation and Projectiles defaults
 - docs/RULES.md › Simulation rules (Attacking, Projectiles)
 
 ## Deliverables
@@ -39,7 +39,7 @@ Core fills the new fields and emits the new events later (T-020, T-022, T-023, T
 2. `Snapshot.arena`: the layout for the snapshot's round.
 3. `RoundStartedEvent.arena`: the layout for the round that starts, so an event log alone says where each grid is every round (seats rotate).
 4. Projectiles:
-   - `ProjectileId` (`j12`, M1 README › Ids) and `ProjectileKind`: `arrow`, `bolt`, `fireball`, `waterball`, `shell`, `orb`. packages/cards lists the same kinds (T-026).
+   - `ProjectileId` (`j12`, CORE.md › Ids) and `ProjectileKind`: `arrow`, `bolt`, `fireball`, `waterball`, `shell`, `orb`. packages/cards lists the same kinds (T-026).
    - `projectile.launched`: `projectile`, `kind`, `source` (the unit that fired), `owner`, `from` (world cell), `speed` (cells per second), `target` (what it was fired at), and `aim`: the world cell a Trample projectile flies to, or null for one that homes on its target
    - `projectile.moved`: `projectile`, `from`, `to` (world cells), whenever it enters a new cell
    - `projectile.landed`: `projectile`, `at` (world cell), `hit` (false when it missed because its target died or left the arena first). The damage it deals is reported by the existing damage events.

@@ -25,7 +25,7 @@ context:
   - docs/PROTOCOL.md#`ChaosSnapshot` and `EmblemSnapshot`
   - docs/PROTOCOL.md#Visibility
   - docs/PROTOCOL.md#Versioning
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
 ---
 
 # T-090 — The emblem.placed, prize.placed and permanent.healed events
@@ -125,7 +125,7 @@ export const PermanentHealedEvent = z.strictObject({
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/protocol test` and `pnpm --filter @chaosgrid/core test` pass
 - [ ] `pnpm test` passes in every package (sim-cli and bots parse every event)
 - [ ] `git diff --stat main -- tools/sim-cli/test/golden` shows only the golden files (or nothing)

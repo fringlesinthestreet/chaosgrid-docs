@@ -17,7 +17,7 @@ Create the contract between the UI and the core (D3) as Zod schemas: commands go
 ## Read first
 
 - docs/DECISIONS.md: D3, D7, and the `PROTOCOL_VERSION` rule under Working rules
-- docs/PLAN.md: Runtime shape
+- docs/ARCHITECTURE.md: Runtime shape
 - docs/RULES.md: Round structure (Reveal, Plan, Simulate, Cleanup)
 
 ## Deliverables

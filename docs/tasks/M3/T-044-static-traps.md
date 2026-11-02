@@ -76,7 +76,7 @@ The protocol doesn't change: `trap.revealed` shares the placement shape (`mode: 
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` passes
 - [ ] `grep -rn -e attachedUnitHit -e attachedUnitDies -e backdraft -e riptide packages tools --include='*.ts' --include='*.json' | grep -v node_modules` prints nothing
 

@@ -92,7 +92,7 @@ export function offColors(card: Card, leader: Card): Color[];
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:soak` passes (`points.ts` is core)
 - [ ] `deck/check.test.ts`, core's `points.test.ts` and db's `seed.test.ts` pass unchanged
 - [ ] `git diff --stat main -- packages/core packages/db` shows only `points.ts` and `seed.ts`

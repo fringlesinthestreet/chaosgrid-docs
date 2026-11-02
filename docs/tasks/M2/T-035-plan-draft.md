@@ -105,7 +105,7 @@ export function createTurtleBot(options: TurtleBotOptions): Bot; // stub: name '
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] RandomBot's plans are unchanged. Run `pnpm sim --games 20 --seed 1 --log <scratch>/before.json` before your first change and `--log <scratch>/after.json` at the end. The two reports match except for the timing line, and `cmp` finds the two logs identical.
 - [ ] `grep -n 'payment(\|anchors(' packages/bots/src/random-bot.ts` finds nothing: the bookkeeping lives in `draft.ts`
 - [ ] `pnpm sim --bots greedy,turtle --games 2` finishes with `errors: none`

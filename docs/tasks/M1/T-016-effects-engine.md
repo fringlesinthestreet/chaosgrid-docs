@@ -18,7 +18,7 @@ Run card abilities: compute each unit's effective stats, apply damage, healing a
 ## Read first
 
 - packages/cards/README.md: the DSL reference (T-010)
-- docs/tasks/M1/README.md, packages/core/README.md and docs/PROTOCOL.md
+- docs/CORE.md, packages/core/README.md and docs/PROTOCOL.md
 - docs/RULES.md: Units (stats, Charge, Leveling, Keywords), Resources and attaching ("If charged"), Simulation rules (Damage and death, Trample)
 
 ## Deliverables

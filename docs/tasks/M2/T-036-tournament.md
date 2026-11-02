@@ -75,7 +75,7 @@ export function formatTournament(result: TournamentResult, options: SimOptions, 
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `tournament.test.ts`: `matchups` order for 2, 3 and 4 bots; `seated` rotation; in every matchup `wins` plus `ties`, `capped` and the number of errors adds up to `games`; the same seed gives the same result. Run it with `random` and a few short games (`rounds: 5`) to keep it fast.
 - [ ] `command.test.ts`: `--tournament` with one name, an unknown name, or `--bots` is a usage error
 - [ ] `pnpm sim --tournament random,random,random --games 4 --rounds 10` prints 3 pairs and 1 three-seat matchup, and reports no errors

@@ -9,8 +9,8 @@ effort: high
 scope:
   - apps/api/**
 context:
-  - docs/tasks/M4/README.md#Accounts
-  - docs/tasks/M4/README.md#HTTP API
+  - docs/APPS.md#Accounts
+  - docs/APPS.md#HTTP API
   - packages/db/README.md#In code
 ---
 
@@ -97,7 +97,7 @@ export function setAdminPassword(db: Db, password: string | undefined): Promise<
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] With the API on port 5072: `curl -si -X POST -H 'content-type: application/json' -d '{"username":"ana","password":"12345678"}' 127.0.0.1:5072/api/auth/signup` answers 201 with a `cg_session` cookie
 - [ ] Started with `CHAOSGRID_ADMIN_PASSWORD` set to a value of your choice, a login as `admin` with that value answers 200 and `me` answers id `0`; restarted without it, the same login answers 401 `badCredentials`
 

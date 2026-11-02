@@ -140,7 +140,7 @@ const SOLO_CLOCKS = { planSeconds: 9999, discardSeconds: 9999 } satisfies GameCo
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:soak` and `pnpm test:perf` pass
 - [ ] `pnpm --filter @chaosgrid/core test -- prize end` passes
 - [ ] `pnpm sim --games 2 --target 30` finishes and prints its table

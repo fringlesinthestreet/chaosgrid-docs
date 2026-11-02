@@ -108,7 +108,7 @@ export const PROTOCOL_VERSION = /* T-091's + 1 */;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `grep -rn "GRID_SIZE\|STRIP_DEPTH\|CENTER_SIZE\|MIN_SEATS" packages tools --include='*.ts' | grep -v MAX_GRID_SIZE` prints nothing
 - [ ] An ASCII map test (`packages/core/test/fixtures/arena/`) of the default battlefield in round 1 and round 2 (rotated)
 - [ ] A core test: a Chaos squad sent against seat 0 spawns on the Chaos Grid's bottom edge (seat 0's side), but attacks seat 1's unit when that unit is nearer

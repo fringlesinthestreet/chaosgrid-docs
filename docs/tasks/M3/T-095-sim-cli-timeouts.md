@@ -39,7 +39,7 @@ it('accounts for every game, deterministically', () => { … }, 30_000);
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
+- [ ] `crew check` is green.
 - [ ] `pnpm --filter @chaosgrid/sim-cli exec vitest run command game` passes.
 - [ ] `git diff -U0 main...HEAD | grep '^[+-][^+-]'` shows only lines that add a timeout: no test body changes.
 

@@ -1,0 +1,19 @@
+# What a lead branch in the code repo may change (crew plan new <slug> --code): its shared docs. One
+# glob per line, where a * also matches "/". crew plan check, the code repo's pre-commit hook and its
+# Agent scope check read this file from this repo's main, so a lead branch can't widen its own list.
+# This repo needs no list: everything in it is the lead's.
+#
+# Code, card data and CI aren't here: they change through a task card, or by the human.
+
+# The rules, the protocol, the decisions, the architecture, the conventions and the art
+docs/**
+
+# The pitch, the guide for anyone working on the code, and its permission rules
+README.md
+CLAUDE.md
+.claude/settings.json
+
+# Stale docs in a package (only when no running task's scope has the file; crew plan check warns)
+packages/*/README.md
+apps/*/README.md
+tools/*/README.md

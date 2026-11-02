@@ -12,8 +12,8 @@ scope:
   - apps/web/src/replay/**
   - apps/web/e2e/replay.spec.ts
 context:
-  - docs/tasks/M4/README.md#The match
-  - docs/tasks/M4/README.md#Web layout and ownership
+  - docs/APPS.md#The match
+  - docs/APPS.md#Web layout and ownership
   - docs/PROTOCOL.md#Coordinates
   - docs/PROTOCOL.md#Arena layout
   - docs/PROTOCOL.md#Timeline
@@ -127,7 +127,7 @@ export function ReplayPage(): JSX.Element;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- battlefield replay` and `pnpm test:e2e -- replay` pass
 - [ ] With the web on 4082, `/replay` with `emblem.json` shows the Emblem on the Chaos Grid and its HP going down
 - [ ] With the web on 4082, `/replay` focused on seat 0 shows its grid at 16 px per cell with placeholder sprites; zooming out to the whole arena shows units as markers

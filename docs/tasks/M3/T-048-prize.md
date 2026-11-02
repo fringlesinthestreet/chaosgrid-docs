@@ -93,7 +93,7 @@ export const PROTOCOL_VERSION = /* T-047's + 1 */;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] An ASCII map test of the default battlefield shows the 4 prizes
 - [ ] Over `pnpm sim --bots greedy,greedy,greedy,greedy --games 20 --seed 1`, the PR reports how many prize points were scored per game. More than zero means prizes are reachable.
 

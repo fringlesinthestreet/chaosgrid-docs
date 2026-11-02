@@ -15,7 +15,7 @@ scope:
   - apps/web/e2e/preflight.ts
   - apps/web/README.md
 context:
-  - docs/tasks/M4/README.md#Ports and the e2e DB
+  - docs/APPS.md#Ports and the e2e DB
 ---
 
 # T-109 — Guidance when an e2e port is taken
@@ -30,7 +30,7 @@ What exists (copied from the code on 2026-10-29):
 
 ```ts
 // apps/web/playwright.config.ts:4–8 (T-068, T-074)
-// Ports (docs/tasks/M4/README.md › Ports and the e2e DB): CHAOSGRID_WEB_PORT and
+// Ports (docs/APPS.md › Ports and the e2e DB): CHAOSGRID_WEB_PORT and
 // CHAOSGRID_API_PORT when set, else 4999 and 5999, so a run never meets `pnpm dev`.
 const webPort = process.env.CHAOSGRID_WEB_PORT ?? '4999';
 const apiPort = process.env.CHAOSGRID_API_PORT ?? '5999';
@@ -133,7 +133,7 @@ process.exitCode = await checkPorts(e2ePorts(process.env), (text) => console.err
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- ports` passes
 - [ ] `pnpm --filter @chaosgrid/web exec playwright test --list` lists no test from `ports.test.ts`
 - [ ] With both ports free, `pnpm --filter @chaosgrid/web exec tsx e2e/preflight.ts` prints nothing and exits 0

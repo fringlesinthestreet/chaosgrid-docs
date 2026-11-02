@@ -1,0 +1,10 @@
+# lead worktrees (crew plan new)
+.claude/worktrees/
+
+# what the DB viewer mounts when CHAOSGRID_DATA isn't set (docker-compose.yml)
+.data/
+
+# personal Claude Code settings
+.claude/settings.local.json
+
+.DS_Store

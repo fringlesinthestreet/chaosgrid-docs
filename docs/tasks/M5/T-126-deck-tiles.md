@@ -104,7 +104,7 @@ export function DeckTile(props: {
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test decks/list` passes, with the tests above
 - [ ] `pnpm test:e2e` passes, with `e2e/m4.spec.ts` unchanged
 

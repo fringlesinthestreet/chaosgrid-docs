@@ -13,7 +13,7 @@ scope:
   - apps/web/e2e/m4.spec.ts
 context:
   - docs/RULES.md#Round structure
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
 ---
 
 # T-142 — Match screen follow-ups
@@ -97,7 +97,7 @@ What this task adds: no new exports, no protocol or session change, no new text.
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
+- [ ] `crew check` is green.
 - [ ] `pnpm --filter @chaosgrid/web test planning CardView` passes. Write the filter with no `--`: after `--`, Vitest runs every file.
 - [ ] `pnpm test:e2e` passes.
 - [ ] The PR lists steps for the human to try in a solo game: open the card view during a selection, then press Escape twice; in a Discard step, the newest cards start ticked; let a Discard clock run out with other cards ticked, and those go.

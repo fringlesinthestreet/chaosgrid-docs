@@ -1,8 +1,8 @@
 # Tasks
 
-A task card is a pre-planned unit of agent work: **one card = one worker = one branch = one PR**. The card's `scope` lists the only paths the worker may change. The [`Agent scope`](../../.github/workflows/agent-scope.yml) CI check rejects a PR that changes anything else. Cards are merged to `main` before work starts, because workers and CI read them from `main`.
+A task card is a pre-planned unit of agent work: **one card = one worker = one branch = one PR**. The card's `scope` lists the only paths the worker may change. The `Agent scope` CI check in the code repo rejects a PR that changes anything else. Cards are merged to `main` before work starts, because workers and CI read them from `main`.
 
-This folder holds the plan. What's merged comes from git (DECISIONS.md D16). What's in flight (`todo`, `working`, `review`, …) lives in Redis ([COMMS.md](../agents/COMMS.md)). `scripts/status.sh` shows both.
+This folder holds the plan. What's merged comes from git (DECISIONS.md D16). What's in flight (`todo`, `working`, `review`, …) lives in Redis (crew's COMMS.md). `crew status` shows both.
 
 ## Card format
 
@@ -18,7 +18,7 @@ Copy [TEMPLATE.md](TEMPLATE.md) to `docs/tasks/<milestone>/T-NNN-<slug>.md`.
 | `model` | Optional: `opus`, `sonnet` or `haiku`, the worker's model. Default `sonnet` (D17). |
 | `effort` | Optional: `low`, `medium`, `high`, `xhigh` or `max`. Default `medium`. |
 | `scope` | A block list of globs, one per line, saying which paths may change. `dir/**` covers everything below `dir`; a plain path covers one file. `pnpm-lock.yaml` is always allowed. |
-| `context` | A block list of what the worker must read: a file (`docs/tasks/M1/README.md`) or one section of it (`docs/RULES.md#Combat`, matched by the start of the heading). `scripts/context.sh T-NNN` prints the card followed by all of them. |
+| `context` | A block list of what the worker must read: a file (`docs/CORE.md`) or one section of it (`docs/RULES.md#Combat`, matched by the start of the heading). `crew context T-NNN` prints the card followed by all of them. |
 
 Body sections: Goal · Interfaces · Deliverables · Acceptance · Out of scope · Notes. Older cards have a Read first section instead of `context:`.
 
@@ -28,7 +28,7 @@ Body sections: Goal · Interfaces · Deliverables · Acceptance · Out of scope 
 2. **Shared contracts get their own task, merged before their users.** Shared contracts are the protocol messages, the card schema, the DB schema and the root config.
 3. **One migration task at a time.** Only one task at a time may touch `packages/db/migrations/**`, because generated migration numbers collide.
 4. **Root files belong to dedicated tasks only.** That means `package.json`, `pnpm-workspace.yaml`, `tsconfig.base.json`, `eslint.config.*` and `.github/**`. T-001 sets up the root scripts in advance, so package tasks never need to touch them.
-5. **Size: a PR a human can review in about 15 minutes**, tests included, and about 60–100 worker steps. `scripts/tokens.sh` shows what each task took; split a card that would clearly take more.
+5. **Size: a PR a human can review in about 15 minutes**, tests included, and about 60–100 worker steps. `crew tokens` shows what each task took; split a card that would clearly take more.
 6. **Acceptance criteria are things you can run or check, not adjectives.** Workers run headless, so each criterion is a command or a check of its output: no manual steps in a browser. Component tests and the Playwright specs (`pnpm test:e2e`) check what the browser shows.
 7. **Put known ambiguities and their default answers in the card's Notes**, so parallel workers don't each ask the same question.
 8. **Hand the worker its context** (D17). List under `context:` exactly the sections it must read, not whole docs, and put the exact names it will use in Interfaces: signatures, types, file paths, event names. Every search a worker doesn't have to make saves steps, and every step re-reads its whole context.
@@ -65,7 +65,7 @@ Wave 3 starts as soon as T-003 is merged, even if T-002 is still running. The pa
 
 Done when 100 headless games between 4 random-plan bots finish without errors, and golden-file tests lock the event stream of two scripted rounds ([PLAN.md](../PLAN.md) › Milestones).
 
-Most of M1 is one package, `packages/core`, so the cards share a set of conventions: [M1/README.md](M1/README.md). It covers the module layout, state slices, ids, coordinates, events, and defaults for open rules questions. T-008 builds the skeleton, and after that each module task owns one folder, so up to seven tasks run at once. T-026 and T-029 to T-032 work on cards, decks and the DB, next to core.
+Most of M1 is one package, `packages/core`, so the cards share a set of conventions: `docs/CORE.md`, in the code repo. It covers the module layout, state slices, ids, coordinates, events, and defaults for open rules questions. T-008 builds the skeleton, and after that each module task owns one folder, so up to seven tasks run at once. T-026 and T-029 to T-032 work on cards, decks and the DB, next to core.
 
 ```mermaid
 graph LR
@@ -155,7 +155,7 @@ The graph leaves out edges that another path already implies (T-020 also needs T
 | 8 | [T-024 Sim CLI and golden tests](M1/T-024-sim-cli.md) | T-017, T-023 | `tools/sim-cli/**` |
 | 8 | [T-032 Decks database](M1/T-032-decks-db.md) | T-007, T-031 | `packages/db/**` |
 
-Waves are a rough guide: a task can start as soon as its own dependencies merge (`scripts/status.sh` lists them under "Can start now"). Each core module task can also write fixtures in `packages/core/test/fixtures/<module>/`.
+Waves are a rough guide: a task can start as soon as its own dependencies merge (`crew status` lists them under "Can start now"). Each core module task can also write fixtures in `packages/core/test/fixtures/<module>/`.
 
 ## M2 — First bots
 
@@ -440,7 +440,7 @@ Waves are a ceiling, not a schedule: a task starts as soon as its own dependenci
 
 ## M5 — Balance pass
 
-Done when no Leader wins more than 35% of a 4-bot tournament and the median game runs 12 to 16 rounds ([PLAN.md](../PLAN.md) › M5). Every art card links [ART.md](../ART.md), which fixes the art keys, sizes, animations, events and manifest.
+Done when no Leader wins more than 35% of a 4-bot tournament and the median game runs 12 to 16 rounds ([PLAN.md](../PLAN.md) › M5). Every art card links `docs/ART.md` (in the code repo), which fixes the art keys, sizes, animations, events and manifest.
 
 After playing M4, the human set M5's priorities: gameplay, the UI, card balancing and the bots (2026-10-29). T-124 to T-139 come with D48 to D51. What builds on code that doesn't exist yet (standings, planning aids, a rules drawer, a card face, seat identity, combat readability, settings, moving the remaining text) is listed in PLAN.md › M5 and gets carded once that code has merged. The new cards run beside the playtest waves wherever the scopes allow:
 

@@ -14,7 +14,7 @@ scope:
   - tools/sim-cli/src/bots.ts
   - tools/sim-cli/src/seeds.ts
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - packages/bots/README.md#Using a bot
   - packages/bots/README.md#Files
   - packages/bots/README.md#Adding a bot
@@ -74,7 +74,7 @@ export const botSeed: (seed: string, seat: number) => string; // unchanged rule
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/sim-cli test` passes with its golden files unchanged
 - [ ] `git diff --stat main -- tools/sim-cli` shows only `src/bots.ts` and `src/seeds.ts`
 

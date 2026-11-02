@@ -10,14 +10,14 @@ scope:
   - apps/web/src/host/host.test.ts
   - apps/web/src/match/session.test.ts
 context:
-  - docs/tasks/M4/README.md#Web layout and ownership
+  - docs/APPS.md#Web layout and ownership
 ---
 
 # T-105 — Timeouts for the host's whole-game tests
 
 ## Goal
 
-`scripts/check.sh` fails for web tasks on this laptop (T-085's handoff, 2026-10-28). In the full test run, `src/host/host.test.ts` › a bots-only match › "plays the game sim-cli's loop plays" goes over Vitest's default 5 seconds. It takes about 3.9 s alone, but `pnpm test` runs several packages' tests at once (`pnpm -r`), and a test that keeps a CPU busy runs slower there. After this task the file's slow tests have their own timeouts, by T-103's rule (at least 5 times their time alone), and the full run passes.
+`crew check` fails for web tasks on this laptop (T-085's handoff, 2026-10-28). In the full test run, `src/host/host.test.ts` › a bots-only match › "plays the game sim-cli's loop plays" goes over Vitest's default 5 seconds. It takes about 3.9 s alone, but `pnpm test` runs several packages' tests at once (`pnpm -r`), and a test that keeps a CPU busy runs slower there. After this task the file's slow tests have their own timeouts, by T-103's rule (at least 5 times their time alone), and the full run passes.
 
 ## Interfaces
 
@@ -43,11 +43,11 @@ What this task adds: timeouts in `host.test.ts`, and nothing else.
 
 1. **Time the file** alone, three runs: `pnpm --filter @chaosgrid/web test src/host/host.test.ts --reporter=verbose`. Take each test's slowest time.
 2. **Timeouts.** Give each test that takes more than a second a timeout of at least 5 times its slowest time (3.9 s → `20_000` or more). Pass it as the last argument (`}, 30_000);`), as core's `round/round.test.ts` does (T-103). A test under a second keeps the default.
-3. **The full run.** Run `scripts/check.sh test` three times. A test in this file that still fails on time gets 10 times its time alone; say which in the PR.
+3. **The full run.** Run `crew check test` three times. A test in this file that still fails on time gets 10 times its time alone; say which in the PR.
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green, three runs in a row.
+- [ ] `crew check` is green, three runs in a row.
 - [ ] In `pnpm --filter @chaosgrid/web test src/host/host.test.ts --reporter=verbose`, every test that takes more than a second has a timeout of at least 5 times its time.
 - [ ] `git diff -U0 main...HEAD -- apps/web | grep '^[+-][^+-]'` shows only timeouts: no test body changes.
 

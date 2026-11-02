@@ -14,9 +14,9 @@ scope:
   - apps/web/src/match/session.test.ts
   - apps/web/test/fixtures/session.ts
 context:
-  - docs/tasks/M4/README.md#The match
-  - docs/tasks/M4/README.md#Web layout and ownership
-  - docs/tasks/M4/README.md#Routes
+  - docs/APPS.md#The match
+  - docs/APPS.md#Web layout and ownership
+  - docs/APPS.md#Routes
   - docs/PROTOCOL.md#Game and round
 ---
 
@@ -131,7 +131,7 @@ export function stubSession(state: Partial<SessionState>, cards: readonly Card[]
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- match/session MatchScreen` passes
 - [ ] With the API on 5085 and the web on 4085: sign up, `/play`, Start, then Ready and Skip until the game ends: no console errors, and the points go up
 

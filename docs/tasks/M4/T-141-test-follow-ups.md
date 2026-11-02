@@ -11,7 +11,7 @@ scope:
   - packages/protocol/src/plan.test.ts
   - packages/core/src/combat/perf.test.ts
 context:
-  - docs/tasks/M4/README.md#Web layout and ownership
+  - docs/APPS.md#Web layout and ownership
 ---
 
 # T-141 — Test follow-ups
@@ -80,7 +80,7 @@ What this task adds: one timeout, one table row, and a new limit with its commen
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` is green.
+- [ ] `crew check` is green.
 - [ ] `pnpm test:perf` passes.
 - [ ] `pnpm --filter @chaosgrid/web test src/host/host.test.ts` and `pnpm --filter @chaosgrid/protocol test plan` pass.
 - [ ] `grep -c "a v25 discard action" packages/protocol/src/plan.test.ts` prints 1.

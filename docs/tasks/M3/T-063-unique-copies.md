@@ -76,7 +76,7 @@ export function maxCopies(card: Card): number;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm cards:validate` passes. No card file changes.
 - [ ] `grep -rn "at most 2 of a card" packages tools` prints nothing
 

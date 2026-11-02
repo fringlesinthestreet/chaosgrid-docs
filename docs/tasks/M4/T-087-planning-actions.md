@@ -10,7 +10,7 @@ scope:
   - apps/web/src/match/planning/**
   - apps/web/test/fixtures/planning/**
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
   - docs/PROTOCOL.md#Plans
   - docs/PROTOCOL.md#Targets
   - docs/PROTOCOL.md#`HandCard`
@@ -127,7 +127,7 @@ export type Inspected = { squad: SquadId } | { permanent: PermanentId };
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- planning` passes
 
 ## Out of scope

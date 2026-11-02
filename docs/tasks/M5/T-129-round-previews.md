@@ -198,7 +198,7 @@ export function stateFromSnapshot(snapshot: Snapshot, cards: Iterable<Card>): Ga
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:soak` passes
 - [ ] `pnpm --filter @chaosgrid/core test preview rebuild` passes
 - [ ] `pnpm --filter @chaosgrid/core test:perf` passes, and its output shows the preview costs

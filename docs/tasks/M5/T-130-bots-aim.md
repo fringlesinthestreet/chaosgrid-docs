@@ -157,7 +157,7 @@ export function pickByValue(spec: TargetSpec, view: TargetView, context: ValueCo
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/bots test` passes, with the tests above
 - [ ] `pnpm test:soak` passes
 - [ ] `pnpm sim --games 20 --bots greedy,greedy,turtle,turtle --decks starter --target 30 --check` exits 0

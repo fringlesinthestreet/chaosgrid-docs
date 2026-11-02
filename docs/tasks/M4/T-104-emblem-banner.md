@@ -13,8 +13,8 @@ scope:
   - apps/web/src/match/MatchScreen.tsx
   - apps/web/src/match/MatchScreen.test.tsx
 context:
-  - docs/tasks/M4/README.md#Web layout and ownership
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#Web layout and ownership
+  - docs/APPS.md#The match
 ---
 
 # T-104 — The Emblem on its cell and the Chaos banner
@@ -71,7 +71,7 @@ interface BattlefieldOptions {
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- battlefield art MatchScreen` passes
 
 ## Out of scope

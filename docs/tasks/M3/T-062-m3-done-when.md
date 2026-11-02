@@ -98,8 +98,8 @@ Nothing new is exported.
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
-- [ ] `scripts/check.sh soak` green
+- [ ] `crew check` green
+- [ ] `crew check soak` green
 - [ ] `pnpm --filter @chaosgrid/sim-cli exec vitest run m3-done-when` passes
 - [ ] `pnpm --filter @chaosgrid/sim-cli test -- golden` passes, with a `round-<n>.json` for every scripted round
 - [ ] `pnpm --filter @chaosgrid/bots test` passes, with a test for every rejection the bots no longer make

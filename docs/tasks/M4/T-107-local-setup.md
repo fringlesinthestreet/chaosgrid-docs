@@ -11,8 +11,8 @@ scope:
   - scripts/dev.sh
   - scripts/README.md
 context:
-  - docs/tasks/M4/README.md#Routes
-  - docs/tasks/M4/README.md#Ports and the e2e DB
+  - docs/APPS.md#Routes
+  - docs/APPS.md#Ports and the e2e DB
 ---
 
 # T-107 — A guide to running ChaosGrid locally
@@ -87,7 +87,7 @@ What this task adds: the root README's "Run it locally" section, the Docker-free
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `bash -n scripts/dev.sh` passes, and `scripts/dev.sh --help` prints the new header
 - [ ] `pnpm dev status` prints what `scripts/dev.sh status` prints, including `Components: api web`
 - [ ] `grep -n "arrive in M4" scripts/dev.sh scripts/README.md` finds nothing

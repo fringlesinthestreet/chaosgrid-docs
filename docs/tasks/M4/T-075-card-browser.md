@@ -9,8 +9,8 @@ effort: medium
 scope:
   - apps/web/src/cards/**
 context:
-  - docs/tasks/M4/README.md#Web layout and ownership
-  - docs/tasks/M4/README.md#Routes
+  - docs/APPS.md#Web layout and ownership
+  - docs/APPS.md#Routes
   - packages/cards/README.md#Fields every card has
   - packages/cards/README.md#Cost
   - packages/cards/README.md#Card colors
@@ -95,7 +95,7 @@ export function CardsPage(): JSX.Element;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] With the API on 5075 and the web on 4075, `/cards` lists the cards; `/cards?type=leader` lists only Leaders
 
 ## Out of scope

@@ -168,7 +168,7 @@ export function serveArt(dir: string, port: number): Promise<Server>;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test art-pack` passes, with tests for:
   - [ ] each check in deliverable 2, failing and passing
   - [ ] each kind's base frame: a unit's 16×16, a 2×3 permanent's 32×32 and a 5×5 one's 80×80, a cast at 16, at 80 and too big at 96, the prize's 32×32 and a projectile's 8×8

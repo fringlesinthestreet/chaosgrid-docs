@@ -23,7 +23,7 @@ Ranged and Artillery attacks become projectiles that fly across the arena and de
 
 ## Read first
 
-- docs/tasks/M1/README.md (the Projectiles default, Interfaces, Ids, Time, Events) and packages/core/README.md
+- docs/CORE.md (the Projectiles default, Interfaces, Ids, Time, Events) and packages/core/README.md
 - docs/RULES.md › Simulation rules (Attacking, Projectiles, Damage and death)
 - docs/PROTOCOL.md (the projectile events, T-025) and packages/cards/README.md (the `projectile` field, T-026)
 - packages/core/src/movement/ (T-012): integer millicell progress and line stepping
@@ -64,5 +64,5 @@ Ranged and Artillery attacks become projectiles that fly across the arena and de
 
 ## Notes
 
-- Like movement, this module returns values and never emits (M1 README › Events).
+- Like movement, this module returns values and never emits (CORE.md › Events).
 - Kill credit goes to the projectile's owner at launch, even when the unit that fired it dies first.

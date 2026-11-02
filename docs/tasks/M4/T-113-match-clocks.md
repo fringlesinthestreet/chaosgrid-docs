@@ -22,7 +22,7 @@ scope:
   - apps/web/src/match/planning/PlanningActions.test.tsx
   - apps/web/src/match/planning/PlanningPanel.test.tsx
 context:
-  - docs/tasks/M4/README.md#The match
+  - docs/APPS.md#The match
 ---
 
 # T-113 — The match clocks and the Chaos pause
@@ -114,7 +114,7 @@ export function secondsLeft(model: MatchModel): number | null;
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm --filter @chaosgrid/web test -- session MatchScreen overlays playback` passes
 - [ ] `grep -rn PLAN_SECONDS apps/web/src` and `grep -rn BANNER_MS apps/web/src/match/overlays` print nothing (the battlefield's own `BANNER_MS` stays)
 - [ ] `grep -c -E "s left" apps/web/src/match/playback/PlaybackControls.tsx` prints at least 1

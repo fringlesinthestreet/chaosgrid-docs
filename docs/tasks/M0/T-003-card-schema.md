@@ -24,12 +24,12 @@ Define the card JSON format and its validator. Once this merges, three data task
   - Chaos deck and Emblems
   - every table under Sample cards
 - docs/DECISIONS.md: D5, D7, D10, and import rule 6
-- docs/PLAN.md: Card JSON (v1 sketch)
+- docs/ARCHITECTURE.md: Card JSON (v1 sketch)
 
 ## Deliverables
 
 1. `@chaosgrid/cards`, following the internal-package pattern. Its only runtime dependency is `zod`; add `tsx` for the CLI.
-2. Zod schemas forming a discriminated union on `type`, covering `unit`, `leader`, `ritual`, `sorcery`, `trap`, `artifact`, `enchantment`, `resource` and `chaos`. The common fields are `id`, `name`, `type`, `set`, `version`, `cost` and `text` (PLAN.md › Card JSON). Per kind:
+2. Zod schemas forming a discriminated union on `type`, covering `unit`, `leader`, `ritual`, `sorcery`, `trap`, `artifact`, `enchantment`, `resource` and `chaos`. The common fields are `id`, `name`, `type`, `set`, `version`, `cost` and `text` (ARCHITECTURE.md › Card JSON). Per kind:
    - **Cost:** a pip string such as `"0"`, `"3"`, `"E"`, `"1E"`, `"2EE"` or `"2ET"`, plus `parseCost()` returning `{ generic, colors: { E, T } }`. Declare the colors in one list, so adding a third color is a one-line change.
    - **Units and leaders:** the RULES.md stats:
      - HP and Attack

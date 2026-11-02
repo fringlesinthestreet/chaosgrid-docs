@@ -14,11 +14,11 @@ scope:
   - apps/web/src/app/app.test.tsx
   - apps/web/e2e/smoke.spec.ts
 context:
-  - docs/tasks/M4/README.md#Accounts
-  - docs/tasks/M4/README.md#HTTP API
-  - docs/tasks/M4/README.md#Web layout and ownership
-  - docs/tasks/M4/README.md#Routes
-  - docs/tasks/M4/README.md#Ports and the e2e DB
+  - docs/APPS.md#Accounts
+  - docs/APPS.md#HTTP API
+  - docs/APPS.md#Web layout and ownership
+  - docs/APPS.md#Routes
+  - docs/APPS.md#Ports and the e2e DB
 ---
 
 # T-074 — Web login, sign-up and the session
@@ -93,7 +93,7 @@ export function signUp(page: Page): Promise<{ username: string; password: string
 
 ## Acceptance
 
-- [ ] `scripts/check.sh` green
+- [ ] `crew check` green
 - [ ] `pnpm test:e2e` passes (smoke and auth)
 - [ ] With the API on 5074 and the web on 4074, signing up in a browser lands on `/decks` with the username in the nav bar
 
