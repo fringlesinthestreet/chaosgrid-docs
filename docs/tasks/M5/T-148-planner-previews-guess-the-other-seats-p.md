@@ -12,6 +12,13 @@ scope:
   - packages/bots/src/**
   - packages/bots/README.md
   - tools/sim-cli/test/planner.soak.test.ts
+  - tools/sim-cli/src/game.ts
+  - tools/sim-cli/src/**/*.test.ts
+  - apps/web/src/host/host.ts
+  - apps/web/src/host/*.test.ts
+  - packages/core/README.md
+  - docs/PROTOCOL.md
+  - packages/protocol/**
 context:
   - docs/DECISIONS.md#D49
   - packages/core/README.md#Previews
