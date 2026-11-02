@@ -5,8 +5,8 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 1 of 22 tasks merged
-- **Latest task completed:** [T-124](docs/tasks/M5/T-124-language-files.md) Language files and t() (2026-11-02)
+- **Milestone:** M5 — Balance pass · 2 of 22 tasks merged
+- **Latest task completed:** [T-130](docs/tasks/M5/T-130-bots-aim.md) Bots aim for points (2026-11-02)
 - **Next up:**
   - [T-119](docs/tasks/M5/T-119-art-manifest.md) Animated art manifest, sprites and stills
   - [T-125](docs/tasks/M5/T-125-deck-problems.md) Deck problems and quick add
@@ -14,8 +14,8 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
   - [T-127](docs/tasks/M5/T-127-card-browser.md) Card browser sorting, groups and views
   - [T-128](docs/tasks/M5/T-128-playback-timeline.md) Playback timeline
   - [T-129](docs/tasks/M5/T-129-round-previews.md) Round previews for bots
-  - [T-130](docs/tasks/M5/T-130-bots-aim.md) Bots aim for points
   - [T-131](docs/tasks/M5/T-131-balance-report.md) Balance report v2
+  - [T-133](docs/tasks/M5/T-133-bot-plays.md) Bots use traps, Leader moves and Rest
   - [T-140](docs/tasks/M5/T-140-card-view-attachments.md) List attached cards in the card view
 <!-- status:end -->
 
