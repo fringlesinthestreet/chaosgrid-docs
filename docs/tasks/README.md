@@ -536,6 +536,8 @@ graph LR
 | 25 | [T-137 Bot styles for the starter decks](M5/T-137-bot-styles.md) | T-131, T-135 | sonnet, high effort | `packages/bots`, `host`, `tools/sim-cli/src`, sim-cli's tests and README |
 | 26 | [T-138 Lobby presets and bot levels](M5/T-138-lobby-presets.md) | T-110, T-124, T-137 | sonnet, medium effort | `lobby`, `en/lobby.json` |
 | 26 | [T-139 Balance baseline](M5/T-139-balance-baseline.md) | T-132, T-137 | sonnet, medium effort | `docs/balance`, `packages/cards/stats` |
+| 27 | [T-150 Bots plan in a Web Worker](M5/T-150-bots-plan-in-a-web-worker.md) | — | opus, high effort | `host`, `match/session.ts`, one e2e spec, `ARCHITECTURE.md`, `APPS.md`, the web and bots READMEs |
+| 27 | [T-151 sim-cli test limits under load](M5/T-151-sim-cli-test-limits.md) | — | haiku, medium effort | sim-cli's regular tests |
 
 ## Later milestones
 
