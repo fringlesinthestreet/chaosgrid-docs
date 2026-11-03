@@ -9,6 +9,8 @@ effort: medium
 scope:
   - docs/balance/**
   - packages/cards/stats/**
+  - tools/sim-cli/src/report.ts
+  - tools/sim-cli/src/report.test.ts
 context:
   - docs/PLAN.md#M5
   - docs/RULES.md#Balance knobs
