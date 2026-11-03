@@ -5,11 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 27 of 29 tasks merged
-- **Latest task completed:** [T-138](docs/tasks/M5/T-138-lobby-presets.md) Lobby presets and bot levels (2026-11-02)
+- **Milestone:** M5 — Balance pass · 28 of 29 tasks merged
+- **Latest task completed:** [T-149](docs/tasks/M5/T-149-planner-beats-greedy-in-the-soak.md) Planner beats greedy in the soak (2026-11-02)
 - **Next up:**
   - [T-139](docs/tasks/M5/T-139-balance-baseline.md) Balance baseline
-  - [T-149](docs/tasks/M5/T-149-planner-beats-greedy-in-the-soak.md) Planner beats greedy in the soak
 <!-- status:end -->
 
 ## What's here
