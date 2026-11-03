@@ -5,11 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 29 of 31 tasks merged
-- **Latest task completed:** [T-139](docs/tasks/M5/T-139-balance-baseline.md) Balance baseline (2026-11-02)
+- **Milestone:** M5 — Balance pass · 30 of 31 tasks merged
+- **Latest task completed:** [T-151](docs/tasks/M5/T-151-sim-cli-test-limits.md) sim-cli test limits under load (2026-11-03)
 - **Next up:**
   - [T-150](docs/tasks/M5/T-150-bots-plan-in-a-web-worker.md) Bots plan in a Web Worker
-  - [T-151](docs/tasks/M5/T-151-sim-cli-test-limits.md) sim-cli test limits under load
 <!-- status:end -->
 
 ## What's here
