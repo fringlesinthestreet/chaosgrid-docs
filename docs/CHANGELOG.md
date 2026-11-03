@@ -4,6 +4,14 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-03 — Bots plan in a Web Worker (D56, T-150, T-151)
+
+Planning runs on the page's thread, and three Hard bots hold up a round's start by about 1 s on average and up to 1.8 s. T-135's default of 250 ms a decision and a 0.75 s freeze a round was never met. The human chose a Web Worker over accepting the freeze, and asked whether the bots need a queue: they don't, because each bot has its own RNG and reads only its seat's snapshot, and a worker takes its messages one at a time (D56, T-150).
+
+T-151 doubles sim-cli's test limits, the human's call as with T-143.
+
+The human will play the game before T-139's nine requests get tuning cards, so none are written yet. Squad abilities keep the rule T-120 chose: each unit with an `ability` animation plays it, the others flash, and the squad flashes once if none played.
+
 ## 2026-11-02 — The code repo names neither crew nor this repo (D54)
 
 People who work on the shared code repo without crew would wonder what its mentions of the plan repo, crew and lead branches mean. And a session the human started by hand didn't know it was the lead: it made a branch in the main checkout instead of a lead branch.
