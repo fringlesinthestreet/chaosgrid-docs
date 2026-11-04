@@ -5,10 +5,11 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 41 of 52 tasks merged
-- **Latest task completed:** [T-172](docs/tasks/M5/T-172-clicks-on-a-squad-s-footprint.md) Clicks on a squad's footprint (2026-11-04)
+- **Milestone:** M5 — Balance pass · 42 of 52 tasks merged
+- **Latest task completed:** [T-157](docs/tasks/M5/T-157-public-pools-in-core-and-protocol.md) Public pools in core and protocol (2026-11-04)
 - **Next up:**
-  - [T-157](docs/tasks/M5/T-157-public-pools-in-core-and-protocol.md) Public pools in core and protocol
+  - [T-163](docs/tasks/M5/T-163-pools-in-the-match-model-and-the-round-l.md) Pools in the match model and the round log
+  - [T-164](docs/tasks/M5/T-164-faster-start-and-faster-units.md) Faster start and faster units
   - [T-165](docs/tasks/M5/T-165-state-icon-keys-and-the-charge-color.md) State icon keys and the charge color
   - [T-168](docs/tasks/M5/T-168-piles-in-the-tray-and-the-zones-panel.md) Piles in the tray and the zones panel
 <!-- status:end -->
