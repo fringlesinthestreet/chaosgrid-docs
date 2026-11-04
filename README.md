@@ -5,13 +5,13 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 47 of 56 tasks merged
-- **Latest task completed:** [T-166](docs/tasks/M5/T-166-state-cues-in-plangrid.md) State cues in PlanGrid (2026-11-04)
+- **Milestone:** M5 — Balance pass · 48 of 56 tasks merged
+- **Latest task completed:** [T-169](docs/tasks/M5/T-169-live-costs-in-the-hand.md) Live costs in the hand (2026-11-04)
 - **Next up:**
   - [T-161](docs/tasks/M5/T-161-pools-and-piles-behind-each-grid.md) Pools and piles behind each grid
-  - [T-169](docs/tasks/M5/T-169-live-costs-in-the-hand.md) Live costs in the hand
   - [T-170](docs/tasks/M5/T-170-live-unit-stats-in-core-and-protocol.md) Live unit stats in core and protocol
   - [T-175](docs/tasks/M5/T-175-commas-in-color-lists.md) Commas in color lists
+  - [T-176](docs/tasks/M5/T-176-pool-cards-preview-on-hover-and-focus.md) Pool cards preview on hover and focus
 <!-- status:end -->
 
 ## What's here
