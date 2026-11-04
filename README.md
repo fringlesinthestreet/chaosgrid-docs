@@ -5,13 +5,12 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 33 of 52 tasks merged
-- **Latest task completed:** [T-153](docs/tasks/M5/T-153-hud-above-the-planning-grid.md) HUD above the planning grid (2026-11-04)
+- **Milestone:** M5 — Balance pass · 34 of 52 tasks merged
+- **Latest task completed:** [T-167](docs/tasks/M5/T-167-level-up-and-attach-only-when-they-apply.md) Level up and Attach only when they apply (2026-11-04)
 - **Next up:**
   - [T-152](docs/tasks/M5/T-152-one-card-face-in-three-sizes.md) One card face in three sizes
   - [T-155](docs/tasks/M5/T-155-floating-mana-in-core-and-protocol.md) Floating mana in core and protocol
   - [T-156](docs/tasks/M5/T-156-local-art-in-pnpm-dev.md) Local art in pnpm dev
-  - [T-167](docs/tasks/M5/T-167-level-up-and-attach-only-when-they-apply.md) Level up and Attach only when they apply
   - [T-172](docs/tasks/M5/T-172-clicks-on-a-squad-s-footprint.md) Clicks on a squad's footprint
 <!-- status:end -->
 
