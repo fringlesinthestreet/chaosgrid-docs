@@ -5,11 +5,12 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 35 of 52 tasks merged
-- **Latest task completed:** [T-156](docs/tasks/M5/T-156-local-art-in-pnpm-dev.md) Local art in pnpm dev (2026-11-04)
+- **Milestone:** M5 — Balance pass · 36 of 52 tasks merged
+- **Latest task completed:** [T-152](docs/tasks/M5/T-152-one-card-face-in-three-sizes.md) One card face in three sizes (2026-11-04)
 - **Next up:**
-  - [T-152](docs/tasks/M5/T-152-one-card-face-in-three-sizes.md) One card face in three sizes
   - [T-155](docs/tasks/M5/T-155-floating-mana-in-core-and-protocol.md) Floating mana in core and protocol
+  - [T-159](docs/tasks/M5/T-159-card-list-views-and-side-panel.md) Card list views and side panel
+  - [T-160](docs/tasks/M5/T-160-card-backs-for-piles.md) Card backs for piles
   - [T-172](docs/tasks/M5/T-172-clicks-on-a-squad-s-footprint.md) Clicks on a squad's footprint
 <!-- status:end -->
 
