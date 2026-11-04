@@ -15,6 +15,11 @@ scope:
   - apps/web/src/match/model/**
   - apps/web/test/fixtures/**
   - tools/sim-cli/test/golden/**
+  - apps/web/src/match/battlefield/pick.test.ts
+  - apps/web/src/match/CardView.test.tsx
+  - apps/web/src/match/MatchScreen.test.tsx
+  - packages/protocol/test/fixtures/samples.ts
+  - packages/core/test/fixtures/combat/setup.ts
 context:
   - docs/PROTOCOL.md#Conventions
   - docs/PROTOCOL.md#Board
