@@ -14,6 +14,7 @@ scope:
   - packages/bots/src/**/*.test.ts
   - tools/sim-cli/test/**
   - docs/RULES.md
+  - apps/web/src/host/host.test.ts
 context:
   - docs/RULES.md#Components and setup
   - docs/RULES.md#Sample cards
