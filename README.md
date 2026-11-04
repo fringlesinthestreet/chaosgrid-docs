@@ -5,10 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 44 of 52 tasks merged
-- **Latest task completed:** [T-168](docs/tasks/M5/T-168-piles-in-the-tray-and-the-zones-panel.md) Piles in the tray and the zones panel (2026-11-04)
+- **Milestone:** M5 — Balance pass · 45 of 52 tasks merged
+- **Latest task completed:** [T-163](docs/tasks/M5/T-163-pools-in-the-match-model-and-the-round-l.md) Pools in the match model and the round log (2026-11-04)
 - **Next up:**
-  - [T-163](docs/tasks/M5/T-163-pools-in-the-match-model-and-the-round-l.md) Pools in the match model and the round log
+  - [T-161](docs/tasks/M5/T-161-pools-and-piles-behind-each-grid.md) Pools and piles behind each grid
   - [T-164](docs/tasks/M5/T-164-faster-start-and-faster-units.md) Faster start and faster units
   - [T-166](docs/tasks/M5/T-166-state-cues-in-plangrid.md) State cues in PlanGrid
 <!-- status:end -->
