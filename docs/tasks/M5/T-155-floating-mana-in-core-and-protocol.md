@@ -19,6 +19,10 @@ scope:
   - apps/web/src/match/overlays/log.ts
   - apps/web/test/fixtures/**
   - packages/protocol/test/fixtures/**
+  - packages/bots/src/turtle-bot.test.ts
+  - packages/bots/test/fixtures/**
+  - apps/web/src/match/planning/targets.test.ts
+  - apps/web/src/match/planning/draft.test.ts
 context:
   - docs/RULES.md#Resources and attaching
   - docs/RULES.md#Round structure
