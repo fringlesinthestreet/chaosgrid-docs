@@ -52,8 +52,8 @@ What exists (copied on 2026-11-04):
 ```ts
 // packages/cards/src/schema.ts: the Card union, by `type`. Numbers are in the card text's units.
 // Every type has id, name, type, cost, text and abilities. A cost is a string: the generic number,
-// then one letter per colored pip, "2RR"; a free card costs "0". Resources and Chaos cards always
-// cost "0". Units, Leaders, spells, traps, artifacts and enchantments may carry `colorless: true`;
+// then one letter per colored pip, "2RR"; a free card costs "0". Resources and Chaos cards
+// cost "0" in every card file today. Units, Leaders, spells, traps, artifacts and enchantments may carry `colorless: true`;
 // units, traps, artifacts and enchantments `unique: true`.
 unit:        stats: { hp, attack, attackSpeed, speed, range: 'melee' | 'ranged' | 'artillery', charge },
              size: [w, h], squad (units per squad), keywords: Record<Keyword, true | undefined>,
@@ -187,7 +187,7 @@ export function CardFace({ card, size }: { card: Card; size: FaceSize }): JSX.El
 ## Notes
 
 - Defaults: the request named "trophies"; there's no such card type. Prizes and Emblems aren't cards (the card view's `PrizeSubject` stays), and a Chaos Emblem is a Chaos card. The eight types are unit, leader, spell, trap, artifact, enchantment, resource and chaos.
-- The look: a Magic: The Gathering face in pixel style. Hard edges, corners rounded 2 px at most, no shadows or gradients. The pixel font at 8 px is the smallest text; the rules text uses the body font. Text on the colored bars keeps 4.5:1: tint the bars with the frame color over `--cg-panel` (`color-mix()` is fine: the e2e runs Chromium, and Vite's target allows it) rather than filling them with it.
+- The look: a Magic: The Gathering face in pixel style. Hard edges, corners rounded 2 px at most, no shadows or gradients. The pixel font at 8 px is the smallest text; the rules text uses the body font. Text on the colored bars keeps 4.5:1: tint the bars with the frame color over `--cg-panel` (`color-mix()` is fine: Chromium, which the e2e runs, has had it since 111) rather than filling them with it.
 - The face takes a `Card` only. What the match knows about an instance (level, current HP, rested, attached) stays in the captions and panels around it.
 - A unit with `squad` 1 has no badge. A Leader's squad is usually 1.
 - The PR says which keys it added to `en/cards.json` and names the sizes it settled on.
