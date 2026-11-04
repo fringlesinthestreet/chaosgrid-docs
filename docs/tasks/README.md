@@ -453,6 +453,7 @@ After playing M4, the human set M5's priorities: gameplay, the UI, card balancin
 - **The card view (wave 21).** T-140 lists a squad's attached cards in the card view (the human's request, 2026-10-30). It waits for T-124's `t()` and for T-142 (M4), which edits `CardView.tsx` first.
 - **The match backdrop (wave 22, D51).** T-136 waits for T-118, the last playtest card, for T-128, whose timeline it places, and for T-140, since both edit `CardView.tsx`, `MatchScreen.tsx` and `theme.css`. The lead updates `apps/web/README.md`'s match section after T-136 merges. T-120 waits for T-136 as well, since both edit the battlefield and `MatchScreen.tsx`.
 - **Follow-ups from the handoffs (waves 22 and 23).** The human picked these on 2026-11-02, from the T-125 to T-140 handoffs. T-143 gives core's round perf test and the web's `host.test.ts` more time; T-135 and T-137 edit `host.test.ts` after it. T-144 and then T-145 change `packages/bots` before T-135. T-145 is a shared contract (planning rule 2): `SpawnedSquadSnapshot.pointsPerKill`, protocol v27. T-146 makes the replay keep the match's stored speed, before T-120 edits `ReplayPage.tsx`. T-147 waits for T-134, which owns the card browser's folder.
+- **The card face (wave 28).** T-152 draws every card in the DOM with one component in three sizes, in the frame style the human asked for on 2026-11-04 (PLAN.md › M5's "one card face in three sizes"). It replaces `CardDetail` and the inside of `CardTile`, so it runs alone: no other card edits `cards/`, `CardView.tsx` or `ZonesPanel.tsx` meanwhile.
 
 The art cards follow the playtest fixes: T-119 needs T-118. T-119 builds the art module: the version 2 manifest, sprite strips, `SpriteView` and stills. Then the battlefield changes one owner at a time, since all three cards edit `match/battlefield/`: T-120 animates units and permanents, T-121 winds attacks up from playback's look-ahead and flies projectile sprites (D47), and T-122 plays the `fx` sprites and the spell casts. T-120 and T-121 also edit `MatchScreen.tsx` and `replay/ReplayPage.tsx`, and T-121 `match/playback/`. T-123, the art pack, waits only for T-119, whose `manifest-schema.ts` it imports (planning rule 2), and its scope is disjoint from the battlefield cards'. The art cards add owners to M4/README.md's tree the same way as the playtest cards, one after another.
 
@@ -538,6 +539,7 @@ graph LR
 | 26 | [T-139 Balance baseline](M5/T-139-balance-baseline.md) | T-132, T-137 | sonnet, medium effort | `docs/balance`, `packages/cards/stats` |
 | 27 | [T-150 Bots plan in a Web Worker](M5/T-150-bots-plan-in-a-web-worker.md) | — | opus, high effort | `host`, `match/session.ts`, one e2e spec, `ARCHITECTURE.md`, `APPS.md`, the web and bots READMEs |
 | 27 | [T-151 sim-cli test limits under load](M5/T-151-sim-cli-test-limits.md) | — | haiku, medium effort | sim-cli's regular tests |
+| 28 | [T-152 One card face in three sizes](M5/T-152-one-card-face-in-three-sizes.md) | — | opus, high effort | `cards/` (the face, the tile, the browser page), the editor page, `CardView`, `ZonesPanel`, `en/cards.json`, `theme`, the web README, `APPS.md`, `ART.md` |
 
 ## Later milestones
 

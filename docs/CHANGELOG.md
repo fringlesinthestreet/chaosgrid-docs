@@ -4,6 +4,10 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-04 — One card face in three sizes (T-152)
+
+The human wants cards drawn as cards everywhere in the web (the hand, the card view, the resources, the discard piles, the deck editor and the card browser), in the style of a Magic: The Gathering face: a frame in the card's color, the cost at the top right, the art, a type line, the text, the numbers at the bottom right and the Durability at the left, with each card type showing only what it has. PLAN.md › M5 listed "one card face in three sizes" among the items to card once the code they build on had merged; T-152 cards it as one component, `CardFace`, that replaces `CardDetail` and the inside of `CardTile`, so every page that draws a card gets the face through them.
+
 ## 2026-11-03 — Bots plan in a Web Worker (D56, T-150, T-151)
 
 Planning runs on the page's thread, and three Hard bots hold up a round's start by about 1 s on average and up to 1.8 s. T-135's default of 250 ms a decision and a 0.75 s freeze a round was never met. The human chose a Web Worker over accepting the freeze, and asked whether the bots need a queue: they don't, because each bot has its own RNG and reads only its seat's snapshot, and a worker takes its messages one at a time (D56, T-150).
