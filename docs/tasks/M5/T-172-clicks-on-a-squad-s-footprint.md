@@ -11,6 +11,7 @@ scope:
   - apps/web/src/match/battlefield/pick.test.ts
   - apps/web/src/match/MatchScreen.tsx
   - apps/web/src/match/MatchScreen.test.tsx
+  - apps/web/src/match/CardView.test.tsx
 context:
   - apps/web/README.md#How a match flows
   - apps/web/README.md#Tests
