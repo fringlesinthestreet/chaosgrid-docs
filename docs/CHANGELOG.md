@@ -4,6 +4,32 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-04 — Tuning follow-ups (D62, D63, T-173 to T-176)
+
+The human went through the open questions from the reviews of T-152 to T-164 and answered two. Projectiles fly twice as fast too (D62, which replaces D61). A bot's preview uses every seat's own pool, public since D57, in place of its own (D63, which replaces D55). The decisions and RULES.md change on the code repo's `lead/projectiles-and-previews`, which merges first.
+
+- **Cards:**
+  - T-173 doubles every printed projectile speed and makes the schema take 10 to 60. It also brings the cards README up to date with D61.
+  - T-174 makes previews rebuild every pool. It also adds the event D57 lacked: Overclock's spend took resources off a squad mid-round with none.
+  - T-175 lists colors with commas ("Ember, Dark").
+  - T-176 previews a pool card in the deck editor's side panel on hover and focus; a click still adds a copy (the human's pick).
+- **RULES.md:**
+  - Projectiles are faster than any printed Speed, and a buffed unit can stay ahead of one until it stops.
+  - The round timer's note names Speed 1 as the slowest that moves.
+- **Kept as built:**
+  - The e2e wheel check waits 300 ms.
+  - T-156's dev server loads the art pack through `ssrLoadModule`.
+  - Its file whitelist duplicates `serve.ts`'s, two copies with no third.
+  - T-152's frame colors meet contrast.
+  - T-152's keywords line is on units and Leaders only.
+  - The equal cell size test can't measure pixels in jsdom.
+  - Cleanup's return of attached resources has no event: T-174 documents it under `round.ended`.
+- **For the human's playtest:** with T-164, rounds run longer, Chaos wins more rounds, and 6.3% of opening hands have nothing to cast in round 1, which D60's revisit condition ("most decks") doesn't reach yet. The card backs in the main checkout's `Art/reverse/` go to `Art/ui.cardBack/` as `back-small.png`, `back-medium.png` and `back-large.png` now that T-160 has merged.
+- **Lead defaults the human hasn't confirmed:**
+  - The projectile cap of 60.
+  - A preview that waits 100 ms before showing a pointed-at card.
+  - Guesses that plan without the other seats' draws for this round.
+
 ## 2026-11-04 — Playtest tuning (D60, D61, T-164 to T-172)
 
 The human asked for eleven more changes before any new cards. Two are rules. Nobody starts with resources, so round 1 has the 2 its Plan draws (D60). Every Speed doubles, so units meet before timed abilities fire many times (D61). The decisions, RULES.md and ART.md's state badges change on the code repo's `lead/tuning-11-04`, which merges first.
