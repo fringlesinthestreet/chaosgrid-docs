@@ -5,9 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · done (31 of 31 tasks merged)
+- **Milestone:** M5 — Balance pass · 31 of 32 tasks merged
 - **Latest task completed:** [T-150](docs/tasks/M5/T-150-bots-plan-in-a-web-worker.md) Bots plan in a Web Worker (2026-11-03)
-- **Next up:** plan M6 — Multiplayer
+- **Next up:**
+  - [T-152](docs/tasks/M5/T-152-one-card-face-in-three-sizes.md) One card face in three sizes
 <!-- status:end -->
 
 ## What's here
