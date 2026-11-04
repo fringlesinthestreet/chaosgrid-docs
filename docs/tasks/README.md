@@ -454,7 +454,8 @@ After playing M4, the human set M5's priorities: gameplay, the UI, card balancin
 - **The match backdrop (wave 22, D51).** T-136 waits for T-118, the last playtest card, for T-128, whose timeline it places, and for T-140, since both edit `CardView.tsx`, `MatchScreen.tsx` and `theme.css`. The lead updates `apps/web/README.md`'s match section after T-136 merges. T-120 waits for T-136 as well, since both edit the battlefield and `MatchScreen.tsx`.
 - **Follow-ups from the handoffs (waves 22 and 23).** The human picked these on 2026-11-02, from the T-125 to T-140 handoffs. T-143 gives core's round perf test and the web's `host.test.ts` more time; T-135 and T-137 edit `host.test.ts` after it. T-144 and then T-145 change `packages/bots` before T-135. T-145 is a shared contract (planning rule 2): `SpawnedSquadSnapshot.pointsPerKill`, protocol v27. T-146 makes the replay keep the match's stored speed, before T-120 edits `ReplayPage.tsx`. T-147 waits for T-134, which owns the card browser's folder.
 - **The card face (wave 28).** T-152 draws every card in the DOM with one component in three sizes, in the frame style the human asked for on 2026-11-04 (PLAN.md › M5's "one card face in three sizes"). It replaces `CardDetail` and the inside of `CardTile`, so it runs alone: no other card edits `cards/`, `CardView.tsx` or `ZonesPanel.tsx` meanwhile.
-- **The 11-04 playtest (waves 28 to 32, D57 to D59).** What the human asked for after playing on 2026-11-04 (PLAN.md › M5). Wave 28 runs beside T-152, with no file in common: T-153 (the HUD over the planning grid), T-154 (confirm before leaving a match), T-155 (floating mana in core and the protocol, version 28) and T-156 (local art in `pnpm dev`). Wave 29: T-157 (public pools, version 29) after T-155; T-158 (rest for mana) after T-152's `CostPips` and T-155; T-159 (card lists) after T-152; T-160 (card backs) after T-152 and T-156, which edit the web README and the art pack before it. The pools then go one card at a time, since they share the model and `scene.ts`: T-163 folds them into the model (wave 30), T-161 draws them behind the grids (wave 31), and T-162 adds the rested and charged cues (wave 32). T-161 also waits for T-153 (`MatchScreen.tsx`, `m4.spec.ts`) and T-154 (`en/match.json`).
+- **The 11-04 playtest (waves 28 to 32, D57 to D59).** What the human asked for after playing on 2026-11-04 (PLAN.md › M5). Wave 28 runs beside T-152, with no file in common: T-153 (the HUD over the planning grid), T-154 (confirm before leaving a match), T-155 (floating mana in core and the protocol, version 28) and T-156 (local art in `pnpm dev`). Wave 29: T-157 (public pools, version 29) after T-155; T-158 (rest for mana) after T-152's `CostPips` and T-155; T-159 (card lists) after T-152; T-160 (card backs) after T-152 and T-156, which edit the web README and the art pack before it. The pools then go one card at a time, since they share the model and `scene.ts`: T-163 folds them into the model (wave 30), T-161 draws them behind the grids (wave 31), and T-162 draws the state cues on the battlefield (wave 32, with the tuning below). T-161 also waits for T-153 (`MatchScreen.tsx`, `m4.spec.ts`) and T-154 (`en/match.json`).
+- **The 11-04 tuning (waves 28 to 32, D60 and D61).** What the human asked for next on 2026-11-04, before any new cards (PLAN.md › M5). Wave 28: T-167 (Level up and Attach only when they apply) edits only `SquadPanel` and its test. Wave 29: T-172 (clicks on a squad's footprint, the focus bug) after T-153 (`MatchScreen`); T-161 waits for it (`pick.ts`, `MatchScreen`). Wave 30: T-164 (no starting resources, D60, and Speed doubled, D61) after T-157, the last core card before it; T-165 (the state icons' keys and the Charge color) after T-160's art changes; T-168 (the piles in the tray) after T-158 and T-160. Wave 31: T-166 (the state cues in PlanGrid) after T-165 and T-168, which edits `en/planning.json` and `theme.css` before it; T-169 (live costs in the hand) after T-159 (`CardTile`) and T-164 (the card data and RULES.md); T-170 (live unit stats, version 30) after T-163 (the model) and T-164 (core and the goldens). Wave 32: T-171 shows them in the card view after T-161 (`CardView`, `MatchScreen`), and T-162 draws the state cues on the battlefield with T-170's keywords.
 
 The art cards follow the playtest fixes: T-119 needs T-118. T-119 builds the art module: the version 2 manifest, sprite strips, `SpriteView` and stills. Then the battlefield changes one owner at a time, since all three cards edit `match/battlefield/`: T-120 animates units and permanents, T-121 winds attacks up from playback's look-ahead and flies projectile sprites (D47), and T-122 plays the `fx` sprites and the spell casts. T-120 and T-121 also edit `MatchScreen.tsx` and `replay/ReplayPage.tsx`, and T-121 `match/playback/`. T-123, the art pack, waits only for T-119, whose `manifest-schema.ts` it imports (planning rule 2), and its scope is disjoint from the battlefield cards'. The art cards add owners to M4/README.md's tree the same way as the playtest cards, one after another.
 
@@ -518,7 +519,27 @@ graph LR
   T154["T-154 leave confirmation"] --> T161
   T160 --> T161
   T163 --> T161
-  T161 --> T162["T-162 rested and charged cues"]
+  T161 --> T162["T-162 state cues on the battlefield"]
+  T153 --> T172["T-172 clicks on a footprint"]
+  T172 --> T161
+  T167["T-167 level up and attach when they apply"]
+  T157 --> T164["T-164 faster start and units"]
+  T160 --> T165["T-165 state icon keys"]
+  T152 --> T168["T-168 piles in the tray"]
+  T158 --> T168
+  T160 --> T168
+  T156 --> T166["T-166 state cues in PlanGrid"]
+  T165 --> T166
+  T168 --> T166
+  T159 --> T169["T-169 live costs in the hand"]
+  T164 --> T169
+  T157 --> T170["T-170 live unit stats"]
+  T163 --> T170
+  T164 --> T170
+  T161 --> T171["T-171 live stats in the card view"]
+  T170 --> T171
+  T165 --> T162
+  T170 --> T162
 ```
 
 | Wave | Task | Depends on | Model | Scope |
@@ -557,13 +578,22 @@ graph LR
 | 28 | [T-154 Confirm before leaving a match](M5/T-154-confirm-before-leaving-a-match.md) | — | sonnet, low effort | `match/index.tsx`, `LeaveGuard`, `en/match.json`, `e2e/bot-worker.spec.ts` |
 | 28 | [T-155 Floating mana in core and protocol](M5/T-155-floating-mana-in-core-and-protocol.md) | — | opus, high effort | protocol, core, `docs/PROTOCOL.md`, the protocol README, a bots test, sim-cli's `scripted.ts`, the web model's `apply.ts`, `planning/index.tsx` and `draft.ts`, `overlays/log.ts`, fixtures |
 | 28 | [T-156 Local art in pnpm dev](M5/T-156-local-art-in-pnpm-dev.md) | — | sonnet, high effort | `vite.config.ts`, `art-pack/dev.ts`, `PlanGrid`, the root README |
+| 28 | [T-167 Level up and Attach only when they apply](M5/T-167-level-up-and-attach-only-when-they-apply.md) | — | sonnet, low effort | `SquadPanel`, `PlanningActions.test.tsx` |
 | 29 | [T-157 Public pools in core and protocol](M5/T-157-public-pools-in-core-and-protocol.md) | T-155 | opus, high effort | protocol, core, `docs/PROTOCOL.md`, the protocol README, the web model's `apply.ts`, `overlays/log.ts`, fixtures |
 | 29 | [T-158 Rest for mana in the tray](M5/T-158-rest-for-mana-in-the-tray.md) | T-152, T-155 | sonnet, medium effort | `ResourceEntry`, `Tray`, `FloatingMana`, `en/planning.json` |
 | 29 | [T-159 Card list views and side panel](M5/T-159-card-list-views-and-side-panel.md) | T-152 | sonnet, medium effort | the browser's files in `cards`, `CardTile`, `ViewSwitch`, the editor page, `en/cards.json`, `en/deckEditor.json` |
 | 29 | [T-160 Card backs for piles](M5/T-160-card-backs-for-piles.md) | T-152, T-156 | sonnet, high effort | `art`, `art-pack`, `apps/web/README.md` |
+| 29 | [T-172 Clicks on a squad's footprint](M5/T-172-clicks-on-a-squad-s-footprint.md) | T-153 | sonnet, medium effort | `pick.ts`, `MatchScreen`, their tests |
 | 30 | [T-163 Pools in the match model and the round log](M5/T-163-pools-in-the-match-model-and-the-round-l.md) | T-157 | sonnet, medium effort | `match/model`, `overlays/log.ts`, `en/overlays.json` |
-| 31 | [T-161 Pools and piles behind each grid](M5/T-161-pools-and-piles-behind-each-grid.md) | T-153, T-154, T-160, T-163 | opus, high effort | `match/battlefield`, `CardView`, `MatchScreen`, `en/battlefield.json`, `en/match.json`, `e2e/m4.spec.ts`, `APPS.md` |
-| 32 | [T-162 Rested and charged cues](M5/T-162-rested-and-charged-cues.md) | T-161 | sonnet, medium effort | `scene.ts`, `PlanGrid`, `theme` |
+| 30 | [T-164 Faster start and faster units](M5/T-164-faster-start-and-faster-units.md) | T-157 | sonnet, high effort | core, the card data and schema, the bots' tests, sim-cli's tests, the core README, `RULES.md` |
+| 30 | [T-165 State icon keys and the charge color](M5/T-165-state-icon-keys-and-the-charge-color.md) | T-160 | sonnet, low effort | `art`, `art-pack`, `palette` |
+| 30 | [T-168 Piles in the tray and the zones panel](M5/T-168-piles-in-the-tray-and-the-zones-panel.md) | T-152, T-158, T-160 | sonnet, medium effort | `Pile`, `Tray`, `ZonesPanel`, their tests, `theme.css`, `en/planning.json` |
+| 31 | [T-161 Pools and piles behind each grid](M5/T-161-pools-and-piles-behind-each-grid.md) | T-153, T-154, T-160, T-163, T-172 | opus, high effort | `match/battlefield`, `CardView`, `MatchScreen`, `en/battlefield.json`, `en/match.json`, `e2e/m4.spec.ts`, `APPS.md` |
+| 31 | [T-166 State cues in PlanGrid](M5/T-166-state-cues-in-plangrid.md) | T-156, T-165, T-168 | sonnet, medium effort | `PlanGrid` and its test, `theme.css`, `en/planning.json` |
+| 31 | [T-169 Live costs in the hand](M5/T-169-live-costs-in-the-hand.md) | T-159, T-164 | sonnet, medium effort | `CardFace`, `CardTile`, `HandEntry`, their tests, two card files, `RULES.md` |
+| 31 | [T-170 Live unit stats in core and protocol](M5/T-170-live-unit-stats-in-core-and-protocol.md) | T-157, T-163, T-164 | opus, high effort | protocol, core, `docs/PROTOCOL.md`, the protocol and core READMEs, `match/model`, fixtures, sim-cli's goldens |
+| 32 | [T-162 State cues on the battlefield](M5/T-162-rested-and-charged-cues.md) | T-161, T-165, T-170 | sonnet, medium effort | `scene.ts` and its test |
+| 32 | [T-171 Live stats in the card view](M5/T-171-live-stats-in-the-card-view.md) | T-161, T-170 | sonnet, medium effort | `CardView`, `MatchScreen`, their tests, `en/match.json` |
 
 ## Later milestones
 

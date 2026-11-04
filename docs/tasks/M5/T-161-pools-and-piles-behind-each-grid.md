@@ -2,7 +2,7 @@
 id: T-161
 title: Pools and piles behind each grid
 milestone: M5
-depends_on: [T-153, T-154, T-160, T-163]
+depends_on: [T-153, T-154, T-160, T-163, T-172]
 branch: agent/T-161-pools-and-piles-behind-each-grid
 model: opus
 effort: high
@@ -53,7 +53,7 @@ What exists (copied on 2026-11-04, and from the T-153, T-157, T-160 and T-163 ca
 // scene.ts: CELL = 16 world px per cell; DETAIL_PX = 16, below which units and permanents draw as
 //   markers; LAYERS = ['cells', 'permanents', 'ground', 'projectiles', 'air', 'effects'];
 //   Scene.draw(model, step). IconView draws pixel digits (glyphs.ts).
-// pick.ts: BattlefieldPick { world, seat, cell, unit, permanent }; worldAt(point, camera, viewport, view);
+// pick.ts: BattlefieldPick { world, seat, cell, unit, permanent, squad } (squad: T-172); worldAt(point, camera, viewport, view);
 //   pickAt(model, world).
 // units-list.ts: unitListItems(model, cards): one line per living unit, which Battlefield.tsx
 //   keeps in a visually hidden list beside the canvas.
