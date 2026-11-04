@@ -18,6 +18,7 @@ scope:
   - apps/web/src/match/planning/draft.ts
   - apps/web/src/match/overlays/log.ts
   - apps/web/test/fixtures/**
+  - packages/protocol/test/fixtures/**
 context:
   - docs/RULES.md#Resources and attaching
   - docs/RULES.md#Round structure
