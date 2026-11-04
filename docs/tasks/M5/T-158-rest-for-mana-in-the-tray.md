@@ -12,6 +12,7 @@ scope:
   - apps/web/src/match/planning/FloatingMana.tsx
   - apps/web/src/match/planning/FloatingMana.test.tsx
   - apps/web/src/i18n/en/planning.json
+  - apps/web/src/match/planning/PlanningPanel.test.tsx
 context:
   - docs/RULES.md#Resources and attaching
   - docs/PROTOCOL.md#Plans
