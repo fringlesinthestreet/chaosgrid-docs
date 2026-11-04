@@ -15,6 +15,8 @@ scope:
   - packages/cards/data/enchantments/tidal_ledger.json
   - packages/cards/data/artifacts/dark_toll.json
   - docs/RULES.md
+  - apps/web/src/i18n/en/cards.json
+  - apps/web/src/cards/face.css
 context:
   - docs/RULES.md#Resources and attaching
   - apps/web/README.md#Tests
