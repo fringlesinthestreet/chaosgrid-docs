@@ -4,6 +4,31 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-04 — Playtest tuning (D60, D61, T-164 to T-172)
+
+The human asked for eleven more changes before any new cards. Two are rules. Nobody starts with resources, so round 1 has the 2 its Plan draws (D60). Every Speed doubles, so units meet before timed abilities fire many times (D61). The decisions, RULES.md and ART.md's state badges change on the code repo's `lead/tuning-11-04`, which merges first.
+
+- **Bugs:**
+  - A click on a squad's footprint, or on a card attached to it, opened nothing once its units had walked off (T-172).
+  - Core charges what RULES.md › Cost changes says: a cost change counts from the round after its permanent is cast. But the hand showed printed costs, and the two cards that change costs didn't say when (T-169).
+- **Not bugs:**
+  - Flyers hitting flyers follows RULES.md › Flying and reach: a flying Melee unit can, and the others need Reach.
+  - The grids keep their layout when the seats move. The human's seat never moves, and the bots' grids turn with their side so their front rows face the Chaos Grid.
+- **Core and protocol:** no starting resources and Speed doubled (T-164), then live unit stats and keywords, version 30 (T-170).
+- **Web:** state icon keys and the Charge color (T-165), state cues in PlanGrid (T-166) and on the battlefield (T-162), Level up and Attach only when they apply (T-167), the piles in the tray (T-168), live costs in the hand (T-169) and live stats in the card view (T-171).
+- **Changed cards:**
+  - T-162 draws the state cues on the battlefield only, badges included, with T-170's keywords; it now also waits for T-165 and T-170.
+  - T-166 takes PlanGrid's part.
+  - T-161 waits for T-172, which changes `pick.ts` and `MatchScreen` before it.
+- **Lead defaults the human hasn't confirmed:**
+  - Live stats go out per second, as cards print them: a second exception to the protocol's time rule.
+  - Cost changes still start the next round; the cards say so.
+  - Projectile speeds stay.
+  - The card view shows live stats without marking which ones a buff changed.
+  - A footprint click opens the squad's card, which lists its attached cards, rather than picking each icon.
+  - The level-up badge shows only while planning.
+  - The resource deck is a pile in the tray too, and every pile starts folded.
+
 ## 2026-11-04 — Playtest fixes, public pools and floating mana (D57 to D59, T-153 to T-163)
 
 The human played the game and asked for eleven changes. Two are rules. Resources in play are public and lie behind each grid, outside it (D57): every seat sees every pool, and during Plan the other seats show as they were when Plan opened, before its draws. Costs are paid with floating mana, so a player chooses which resources pay for each card, and auto-pay covers what's left (D58). The card backs the human drew become `ui.cardBack`'s `back` role (D59). The decisions, RULES.md, ART.md and the README change on the code repo's `lead/pools-and-mana`, which merges first.
