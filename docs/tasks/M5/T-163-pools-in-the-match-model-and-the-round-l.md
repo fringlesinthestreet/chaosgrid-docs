@@ -11,6 +11,9 @@ scope:
   - apps/web/src/match/overlays/log.ts
   - apps/web/src/match/overlays/log.test.ts
   - apps/web/src/i18n/en/overlays.json
+  - apps/web/src/match/CardView.test.tsx
+  - apps/web/src/match/MatchScreen.test.tsx
+  - apps/web/src/match/battlefield/pick.test.ts
 context:
   - docs/APPS.md#The match
   - apps/web/README.md#Text (D50)
