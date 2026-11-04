@@ -5,11 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 37 of 52 tasks merged
-- **Latest task completed:** [T-155](docs/tasks/M5/T-155-floating-mana-in-core-and-protocol.md) Floating mana in core and protocol (2026-11-04)
+- **Milestone:** M5 — Balance pass · 38 of 52 tasks merged
+- **Latest task completed:** [T-158](docs/tasks/M5/T-158-rest-for-mana-in-the-tray.md) Rest for mana in the tray (2026-11-04)
 - **Next up:**
   - [T-157](docs/tasks/M5/T-157-public-pools-in-core-and-protocol.md) Public pools in core and protocol
-  - [T-158](docs/tasks/M5/T-158-rest-for-mana-in-the-tray.md) Rest for mana in the tray
   - [T-159](docs/tasks/M5/T-159-card-list-views-and-side-panel.md) Card list views and side panel
   - [T-160](docs/tasks/M5/T-160-card-backs-for-piles.md) Card backs for piles
   - [T-172](docs/tasks/M5/T-172-clicks-on-a-squad-s-footprint.md) Clicks on a squad's footprint
