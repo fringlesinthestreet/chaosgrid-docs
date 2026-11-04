@@ -14,6 +14,10 @@ scope:
   - apps/web/src/match/model/apply.ts
   - apps/web/src/match/overlays/log.ts
   - apps/web/test/fixtures/**
+  - packages/protocol/test/fixtures/**
+  - packages/bots/test/fixtures/**
+  - packages/core/test/fixtures/**
+  - tools/sim-cli/test/golden/**
 context:
   - docs/RULES.md#Components and setup
   - docs/RULES.md#Resources and attaching
