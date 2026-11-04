@@ -24,6 +24,7 @@ scope:
   - apps/web/src/match/planning/targets.test.ts
   - apps/web/src/match/planning/draft.test.ts
   - tools/sim-cli/test/golden/**
+  - packages/bots/test/referee.ts
 context:
   - docs/RULES.md#Resources and attaching
   - docs/RULES.md#Round structure
