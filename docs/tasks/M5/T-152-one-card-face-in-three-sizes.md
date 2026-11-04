@@ -117,14 +117,16 @@ What this task adds:
 export type FaceSize = 'small' | 'medium' | 'large';
 /** One card drawn as a card: the frame in its color, the name and cost, the art, the type line, the text and the numbers. */
 export function CardFace({ card, size }: { card: Card; size: FaceSize }): JSX.Element;
+/** The name bar's cost pips on their own, for T-158's floating mana and T-159's list rows. */
+export function CostPips({ cost }: { cost: string }): JSX.Element;
 ```
 
-`cards/index.tsx` exports `CardFace` and `FaceSize` in place of `CardDetail`.
+`cards/index.tsx` exports `CardFace`, `FaceSize` and `CostPips` in place of `CardDetail`.
 
 ## Deliverables
 
 1. **`CardFace`**, in `cards/CardFace.tsx`, its CSS in `cards/face.css` (imported by the component, as `CardsPage.tsx` imports `cards.css`). The root carries `data-card-face={card.id}`, `data-face-size` and `data-face-color`. Top to bottom:
-   - **The name bar:** the name at the left, in the pixel font, cut with an ellipsis when it doesn't fit (the full name is the article's label, or the tile button's name). The cost at the right as pips: the generic number in a grey pip, then one pip per colored pip in `COLORS` order, each a disc in its color with the color's letter in it; a cost of "0" is one grey "0" pip. Resources and Chaos cards show no cost. The cost's accessible text is `t('cards.face.cost', { cost })`, "Cost {cost}".
+   - **The name bar:** the name at the left, in the pixel font, cut with an ellipsis when it doesn't fit (the full name is the article's label, or the tile button's name). The cost at the right as pips, drawn by `CostPips`: the generic number in a grey pip, then one pip per colored pip in `COLORS` order, each a disc in its color with the color's letter in it; a cost of "0" is one grey "0" pip. Resources and Chaos cards show no cost. The cost's accessible text is `t('cards.face.cost', { cost })`, "Cost {cost}".
    - **The art:** `CardArt` in a window the face's inner width, so the still draws at the largest whole multiple that fits, centred on a dark backdrop. Units, Leaders and Chaos units with a squad of more than one carry a badge on the window's corner, "×{squad}", with the accessible text `t('cards.face.squad', { squad })`, "Squad {squad}".
    - **The type line:** "Unique" when `isUnique(card)`, the color word, the type, and what the type adds (the table below). The color word is the one color's name, "Multicolor" for several, "Colorless" for none; a Chaos card has no color word.
    - **The text box** (medium and large only): a keywords line for units and Leaders (the keywords that are `true`, named from `cards.keyword.*`, in `KEYWORDS` order, comma-separated), then `card.text`, in the body font.
@@ -143,13 +145,13 @@ export function CardFace({ card, size }: { card: Card; size: FaceSize }): JSX.El
 
    The frame's color: `data-face-color` is the one color's name (`ember`, `tide`, `earth`, `dark`, `light`), `gold` for several, `grey` for none and `chaos` for a Chaos card; `face.css` colors the border, the name bar and the type line from it. Nothing depends on the color alone: the type line says it, and the pips carry their letters.
 
-2. **Three sizes**, `data-face-size`. The small face is a `<div>`; the medium and the large one are `<article aria-label={card.name}>`, as `CardDetail` is today, so a page that shows tiles and a detail has one article per card. The defaults below are a starting point: the worker tunes them by a few pixels as the fonts need, and the face grows with its text (the panels that hold a medium or large face scroll already).
+2. **Three sizes**, `data-face-size`. The small face is a `<div>`; the medium and the large one are `<article aria-label={card.name}>`, as `CardDetail` is today, so a page that shows tiles and a detail has one article per card. The defaults below are a starting point: the worker tunes them by a few pixels as the fonts need. The small face has one fixed size whatever its card, 112×154 px, a card's shape (8:11, the small card back at ×7, D59), so tiles line up in a grid: its name and type line cut with an ellipsis. The medium and the large face are at least 8:11 tall and grow with their text (the panels that hold them scroll already).
 
-   | Size | Width | Art (about) | Name | Shows |
+   | Size | Box | Art (about) | Name | Shows |
    | --- | --- | --- | --- | --- |
-   | small | 112 px | ×3, 96 px | pixel font 8 px | the name bar, the art, the type line, the bottom row |
-   | medium | 192 px | ×5, 160 px | pixel font 10 px | everything, body text 12 px |
-   | large | 320 px | ×9, 288 px | pixel font 12 px | everything, body text 14 px |
+   | small | 112×154 px, fixed | ×3, 96 px | pixel font 8 px | the name bar, the art, the type line, the bottom row |
+   | medium | 192 px wide, at least 264 tall | ×5, 160 px | pixel font 10 px | everything, body text 12 px |
+   | large | 320 px wide, at least 440 tall | ×9, 288 px | pixel font 12 px | everything, body text 14 px |
 
 3. **Color tokens** in `theme/palette.ts`' `COLORS`: `'card-ember': 0xc9452e`, `'card-tide': 0x2f7fd1`, `'card-earth': 0x3f9a4a`, `'card-dark': 0x6c5a8c`, `'card-light': 0xe8dcb0`, `'card-gold': 0xd4a017`, `'card-grey': 0x8a90a0`; a Chaos frame uses `--cg-chaos`. They reach CSS as `--cg-card-ember` and so on through `CSS_VARIABLES`; `PALETTE` stays as it is, since Pixi draws no card colors yet. The worker may pick other values that keep each frame at 3:1 against `--cg-panel` and apart from the others. `palette.test.ts` checks the new properties as it checks `--cg-chaos`. A `.cg-visually-hidden` utility goes in `theme.css`.
 
@@ -164,7 +166,7 @@ export function CardFace({ card, size }: { card: Card; size: FaceSize }): JSX.El
 8. **Docs:** `apps/web/README.md` › Folders (`cards/` owns `CardFace` and `CardTile`, not `CardDetail`) and › Rules a change must keep (a bullet: a card in the DOM is always a `CardFace`, through `CardTile` when it's clickable; a page never composes a card's fields); `docs/ART.md` › Stills, the rows of the boxes table for the card view, the card tiles and the resource pool, with the faces' art boxes; `docs/APPS.md` › Web layout and ownership, where `cards/`'s line gains `T-152 CardFace`.
 
 9. **Tests**, finding text by its English:
-   - `cards/CardFace.test.tsx`, with real cards from `loadCards()` as `cards.test.tsx` does: the small face shows the name, the cost's accessible text, the type line and the bottom row, and no text box; the medium face adds the keywords line, the text and the stats; an artifact shows no Attack, HP or squad badge; a resource shows what it gives and no cost; a Chaos emblem shows Points and Durability; `data-face-color` for a one-color, a two-color, a colorless and a Chaos card; a two-pip cost renders two pips in order.
+   - `cards/CardFace.test.tsx`, with real cards from `loadCards()` as `cards.test.tsx` does: the small face shows the name, the cost's accessible text, the type line and the bottom row, and no text box; the medium face adds the keywords line, the text and the stats; an artifact shows no Attack, HP or squad badge; a resource shows what it gives and no cost; a Chaos emblem shows Points and Durability; `data-face-color` for a one-color, a two-color, a colorless and a Chaos card; a two-pip cost renders two pips in order, and `CostPips` alone renders the same pips; a unit's and a resource's small faces carry the same fixed size (jsdom has no layout: check the class or style that sets it).
    - `cards.test.tsx` › CardTile: as today, plus: the button is named by the card alone, and a tile without `onClick` has no button.
    - `editor.test.tsx`: `tile()` finds a tile by its button's name and climbs to `.cg-tile`.
    - `Zones.test.tsx`: a pile's entries are tiles, newest first, whose button opens the card view with the caption.
@@ -179,9 +181,9 @@ export function CardFace({ card, size }: { card: Card; size: FaceSize }): JSX.El
 
 ## Out of scope
 
-- The deck list's tiles (T-126: the Leader at 96 px, the key cards at 32 px), the lobby's deck, the deck panel's list (names with counts and +/−), quick add's candidates and the browser's list and table views: they keep what they show. A later card may put small faces there.
+- The deck list's tiles (T-126: the Leader at 96 px, the key cards at 32 px), the lobby's deck, the deck panel's list (names with counts and +/−), quick add's candidates and the browser's list and table views: they keep what they show. T-159 reworks the list views after this card.
 - `HandEntry`'s line under the tile (the live cost and a spell's timing) and `ResourceEntry`'s state words stay.
-- A card's back (`ui.cardBack`) for face-down cards, a hover or long-press preview of the large face, the current stats against the printed ones in the match (PLAN.md › M5, combat readability), level unlocks and bot stats on the face, and icons for the stats: later cards.
+- A card's back (`ui.cardBack`) for face-down cards (T-160 draws the piles' backs), a hover or long-press preview of the large face, the current stats against the printed ones in the match (PLAN.md › M5, combat readability), level unlocks and bot stats on the face, and icons for the stats: later cards.
 - The battlefield: Pixi draws no faces.
 
 ## Notes

@@ -454,6 +454,7 @@ After playing M4, the human set M5's priorities: gameplay, the UI, card balancin
 - **The match backdrop (wave 22, D51).** T-136 waits for T-118, the last playtest card, for T-128, whose timeline it places, and for T-140, since both edit `CardView.tsx`, `MatchScreen.tsx` and `theme.css`. The lead updates `apps/web/README.md`'s match section after T-136 merges. T-120 waits for T-136 as well, since both edit the battlefield and `MatchScreen.tsx`.
 - **Follow-ups from the handoffs (waves 22 and 23).** The human picked these on 2026-11-02, from the T-125 to T-140 handoffs. T-143 gives core's round perf test and the web's `host.test.ts` more time; T-135 and T-137 edit `host.test.ts` after it. T-144 and then T-145 change `packages/bots` before T-135. T-145 is a shared contract (planning rule 2): `SpawnedSquadSnapshot.pointsPerKill`, protocol v27. T-146 makes the replay keep the match's stored speed, before T-120 edits `ReplayPage.tsx`. T-147 waits for T-134, which owns the card browser's folder.
 - **The card face (wave 28).** T-152 draws every card in the DOM with one component in three sizes, in the frame style the human asked for on 2026-11-04 (PLAN.md › M5's "one card face in three sizes"). It replaces `CardDetail` and the inside of `CardTile`, so it runs alone: no other card edits `cards/`, `CardView.tsx` or `ZonesPanel.tsx` meanwhile.
+- **The 11-04 playtest (waves 28 to 32, D57 to D59).** What the human asked for after playing on 2026-11-04 (PLAN.md › M5). Wave 28 runs beside T-152, with no file in common: T-153 (the HUD over the planning grid), T-154 (confirm before leaving a match), T-155 (floating mana in core and the protocol, version 28) and T-156 (local art in `pnpm dev`). Wave 29: T-157 (public pools, version 29) after T-155; T-158 (rest for mana) after T-152's `CostPips` and T-155; T-159 (card lists) after T-152; T-160 (card backs) after T-152 and T-156, which edit the web README and the art pack before it. The pools then go one card at a time, since they share the model and `scene.ts`: T-163 folds them into the model (wave 30), T-161 draws them behind the grids (wave 31), and T-162 adds the rested and charged cues (wave 32). T-161 also waits for T-153 (`MatchScreen.tsx`, `m4.spec.ts`) and T-154 (`en/match.json`).
 
 The art cards follow the playtest fixes: T-119 needs T-118. T-119 builds the art module: the version 2 manifest, sprite strips, `SpriteView` and stills. Then the battlefield changes one owner at a time, since all three cards edit `match/battlefield/`: T-120 animates units and permanents, T-121 winds attacks up from playback's look-ahead and flies projectile sprites (D47), and T-122 plays the `fx` sprites and the spell casts. T-120 and T-121 also edit `MatchScreen.tsx` and `replay/ReplayPage.tsx`, and T-121 `match/playback/`. T-123, the art pack, waits only for T-119, whose `manifest-schema.ts` it imports (planning rule 2), and its scope is disjoint from the battlefield cards'. The art cards add owners to M4/README.md's tree the same way as the playtest cards, one after another.
 
@@ -506,6 +507,18 @@ graph LR
   T120 --> T121["T-121 attack wind-ups"]
   T121 --> T122["T-122 effect sprites"]
   T119 --> T123["T-123 art pack"]
+  T152["T-152 card face"] --> T158["T-158 rest for mana"]
+  T155["T-155 floating mana"] --> T157["T-157 public pools"]
+  T155 --> T158
+  T152 --> T159["T-159 card list views"]
+  T152 --> T160["T-160 card backs"]
+  T156["T-156 local art in pnpm dev"] --> T160
+  T157 --> T163["T-163 pools in the model"]
+  T153["T-153 HUD over the grid"] --> T161["T-161 pools behind the grids"]
+  T154["T-154 leave confirmation"] --> T161
+  T160 --> T161
+  T163 --> T161
+  T161 --> T162["T-162 rested and charged cues"]
 ```
 
 | Wave | Task | Depends on | Model | Scope |
@@ -540,6 +553,17 @@ graph LR
 | 27 | [T-150 Bots plan in a Web Worker](M5/T-150-bots-plan-in-a-web-worker.md) | — | opus, high effort | `host`, `match/session.ts`, one e2e spec, `ARCHITECTURE.md`, `APPS.md`, the web and bots READMEs |
 | 27 | [T-151 sim-cli test limits under load](M5/T-151-sim-cli-test-limits.md) | — | haiku, medium effort | sim-cli's regular tests |
 | 28 | [T-152 One card face in three sizes](M5/T-152-one-card-face-in-three-sizes.md) | — | opus, high effort | `cards/` (the face, the tile, the browser page), the editor page, `CardView`, `ZonesPanel`, `en/cards.json`, `theme`, the web README, `APPS.md`, `ART.md` |
+| 28 | [T-153 HUD above the planning grid](M5/T-153-hud-above-the-planning-grid.md) | — | sonnet, medium effort | `MatchScreen`, the battlefield's `Battlefield.tsx`, `e2e/m4.spec.ts` |
+| 28 | [T-154 Confirm before leaving a match](M5/T-154-confirm-before-leaving-a-match.md) | — | sonnet, low effort | `match/index.tsx`, `LeaveGuard`, `en/match.json`, `e2e/bot-worker.spec.ts` |
+| 28 | [T-155 Floating mana in core and protocol](M5/T-155-floating-mana-in-core-and-protocol.md) | — | opus, high effort | protocol, core, `docs/PROTOCOL.md`, the protocol README, a bots test, sim-cli's `scripted.ts`, the web model's `apply.ts`, `planning/index.tsx` and `draft.ts`, `overlays/log.ts`, fixtures |
+| 28 | [T-156 Local art in pnpm dev](M5/T-156-local-art-in-pnpm-dev.md) | — | sonnet, high effort | `vite.config.ts`, `art-pack/dev.ts`, `PlanGrid`, the root README |
+| 29 | [T-157 Public pools in core and protocol](M5/T-157-public-pools-in-core-and-protocol.md) | T-155 | opus, high effort | protocol, core, `docs/PROTOCOL.md`, the protocol README, the web model's `apply.ts`, `overlays/log.ts`, fixtures |
+| 29 | [T-158 Rest for mana in the tray](M5/T-158-rest-for-mana-in-the-tray.md) | T-152, T-155 | sonnet, medium effort | `ResourceEntry`, `Tray`, `FloatingMana`, `en/planning.json` |
+| 29 | [T-159 Card list views and side panel](M5/T-159-card-list-views-and-side-panel.md) | T-152 | sonnet, medium effort | the browser's files in `cards`, `CardTile`, `ViewSwitch`, the editor page, `en/cards.json`, `en/deckEditor.json` |
+| 29 | [T-160 Card backs for piles](M5/T-160-card-backs-for-piles.md) | T-152, T-156 | sonnet, high effort | `art`, `art-pack`, `apps/web/README.md` |
+| 30 | [T-163 Pools in the match model and the round log](M5/T-163-pools-in-the-match-model-and-the-round-l.md) | T-157 | sonnet, medium effort | `match/model`, `overlays/log.ts`, `en/overlays.json` |
+| 31 | [T-161 Pools and piles behind each grid](M5/T-161-pools-and-piles-behind-each-grid.md) | T-153, T-154, T-160, T-163 | opus, high effort | `match/battlefield`, `CardView`, `MatchScreen`, `en/battlefield.json`, `en/match.json`, `e2e/m4.spec.ts`, `APPS.md` |
+| 32 | [T-162 Rested and charged cues](M5/T-162-rested-and-charged-cues.md) | T-161 | sonnet, medium effort | `scene.ts`, `PlanGrid`, `theme` |
 
 ## Later milestones
 

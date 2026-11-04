@@ -4,6 +4,16 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-04 — Playtest fixes, public pools and floating mana (D57 to D59, T-153 to T-163)
+
+The human played the game and asked for eleven changes. Two are rules. Resources in play are public and lie behind each grid, outside it (D57): every seat sees every pool, and during Plan the other seats show as they were when Plan opened, before its draws. Costs are paid with floating mana, so a player chooses which resources pay for each card, and auto-pay covers what's left (D58). The card backs the human drew become `ui.cardBack`'s `back` role (D59). The decisions, RULES.md, ART.md and the README change on the code repo's `lead/pools-and-mana`, which merges first.
+
+- **Bugs:** the planning grid covered the HUD's tray, a stacking context (T-153). `pnpm dev` served no art, so permanents stayed blocks of color, and PlanGrid shrank the art box by 6 px (T-156).
+- **Core and protocol:** floating mana and `restForMana`, version 28 (T-155), then public pools and their events, version 29 (T-157).
+- **Web:** rest for mana in the tray (T-158), the pools in the match model and the round log (T-163), the pools and piles behind each grid (T-161), rested and charged cues (T-162), card backs (T-160), card list views and the deck editor's side panel (T-159), and a confirmation before leaving a match (T-154).
+- **T-152 changes:** its small face is a fixed 112×154 px, and it exports `CostPips`, which T-158 and T-159 use.
+- **Lead defaults the human hasn't confirmed:** auto-pay stays as a fallback; one `resource.rested` event with a reason, not two event types; a target kind for resources waits for the first card that needs one; "charge abilities" means Charge, not every usable ability; the card browser keeps its Table view; a click in the editor's pool still adds a copy.
+
 ## 2026-11-04 — One card face in three sizes (T-152)
 
 The human wants cards drawn as cards everywhere in the web (the hand, the card view, the resources, the discard piles, the deck editor and the card browser), in the style of a Magic: The Gathering face: a frame in the card's color, the cost at the top right, the art, a type line, the text, the numbers at the bottom right and the Durability at the left, with each card type showing only what it has. PLAN.md › M5 listed "one card face in three sizes" among the items to card once the code they build on had merged; T-152 cards it as one component, `CardFace`, that replaces `CardDetail` and the inside of `CardTile`, so every page that draws a card gets the face through them.
