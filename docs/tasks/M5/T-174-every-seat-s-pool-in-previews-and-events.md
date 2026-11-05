@@ -24,6 +24,7 @@ scope:
   - packages/protocol/test/fixtures/samples.ts
   - packages/protocol/README.md
   - apps/web/src/host/host.test.ts
+  - apps/web/test/fixtures/planning/*.json
 context:
   - docs/DECISIONS.md#Decision log
   - packages/core/README.md#Previews
