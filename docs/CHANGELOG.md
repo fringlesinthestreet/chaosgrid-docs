@@ -4,6 +4,28 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-05 — Playtest bugs (D64, T-179 to T-182)
+
+The human played again and sent the open questions from the reviews of T-162 to T-174, with three bugs. Casting a card rested resources by itself, so costs are now paid only with floating mana, for every seat (D64, which replaces D58). The human picked every seat over the player's seat alone. D64, RULES.md's mana rule and CORE.md's Paying default change on the code repo's `lead/pay-by-hand`, which merges first.
+
+- **Cards:**
+  - T-179 points T-162's state cue tests at the regenerated logs. T-178 changed what `planned` holds and T-162 merged first, so five tests fail on main.
+  - T-180 makes a squad's cues follow its units once they leave its footprint: each unit of a charged squad glows, and the badge row rides with its first alive unit.
+  - T-181 has every bot rest for mana right before each action that pays, with the resources auto-pay picked, so the bots' games don't change.
+  - T-182 then takes auto-pay out of core. Every plan that relied on it rests for mana, and the web says "Not enough mana: rest resources first".
+- **Dropped:** the opponents' grids after the seats rotate. Core turns each grid and puts every unit back on its turned footprint, the battlefield draws from each round's layout, and the human dropped the point.
+- **Done already:** T-169's two notes, the accessible "printed" wording and the marked cost's outline, were T-177.
+- **Kept as built:**
+  - sim-cli's golden game plays frozen copies of its cards, so its `dark_toll.json` keeps the old text.
+  - Overclock spends its attached resources at Cleanup, as its text says, so its `resources.detached` arrives at Cleanup's first step.
+  - T-173's sim table has no projectile flight time and only 10 games. The human's playtest decides D62's revisit.
+  - With D63 a guess is often empty early in a game: another seat's pool shows as it was before the round's draws, and its colors seldom match the planner's hand. The soak moved within noise, and going back to D55 would bring back guesses paid with resources the seat doesn't have.
+- **Board:** T-177 and T-178 get their rows, in wave 32.
+- **Lead defaults the human hasn't confirmed:**
+  - A squad's cues stay on its footprint while all its alive units stand there, as in Plan.
+  - With the units, the glow goes on every alive unit and the badge row rides with the first.
+  - A snapshot's `usable` still counts the resources a seat could rest.
+
 ## 2026-11-04 — Tuning follow-ups (D62, D63, T-173 to T-176)
 
 The human went through the open questions from the reviews of T-152 to T-164 and answered two. Projectiles fly twice as fast too (D62, which replaces D61). A bot's preview uses every seat's own pool, public since D57, in place of its own (D63, which replaces D55). The decisions and RULES.md change on the code repo's `lead/projectiles-and-previews`, which merges first.
