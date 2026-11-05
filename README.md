@@ -5,11 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 51 of 58 tasks merged
-- **Latest task completed:** [T-176](docs/tasks/M5/T-176-pool-cards-preview-on-hover-and-focus.md) Pool cards preview on hover and focus (2026-11-05)
+- **Milestone:** M5 — Balance pass · 52 of 58 tasks merged
+- **Latest task completed:** [T-177](docs/tasks/M5/T-177-cost-label-text-and-marked-cost-style-ou.md) Cost label text and marked-cost style out of CardFace (2026-11-05)
 - **Next up:**
   - [T-170](docs/tasks/M5/T-170-live-unit-stats-in-core-and-protocol.md) Live unit stats in core and protocol
-  - [T-177](docs/tasks/M5/T-177-cost-label-text-and-marked-cost-style-ou.md) Cost label text and marked-cost style out of CardFace
 <!-- status:end -->
 
 ## What's here
