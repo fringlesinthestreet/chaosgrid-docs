@@ -4,6 +4,25 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-05 — Second playtest batch (D65 to D72, T-183 to T-202)
+
+The human's next requests after playing on 2026-11-05: Chaos balance, two rule changes (no Durability, Charge paid in mana instead of attaching resources), Unique resources and colorless cards, new removal cards, and the pages and the match UI. Eight decisions, in the code repo's DECISIONS.md with the matching RULES.md, CORE.md and APPS.md text and the sample cards: D65 (one Chaos card a round, scaled by the Chaos factor, no tier-1 flyers), D66 (stacking timed cards are Unique), D67 (no Durability; Fleeting and Destroy; replaces D48), D68 (Charge is a Plan ability paid in generic mana; narrows D57), D69 (Unique resources; extends D26), D70 (a colorless Leader allows only colorless cards, a colorless resource gives one generic mana), D71 (the grid is the planning surface; extends D51), D72 (`payable` in the snapshot; extends D29 and D64). The human picked "only colorless cards" and "one generic mana" for D70.
+
+- **Cards:** T-183 to T-202 in waves 36 to 42; the board has the order and the reasons. The shared types change in steps: T-189 sends every Durability field as null, T-193 adds `charge` beside a still-working `attach`, and the new snapshot fields (`charged`, the `payable` facts) start optional; T-194, T-196 and T-197 drop the readers; T-200, alone in wave 40, removes `attach`, `attachedTo`, `attached`, the `resources.attached`/`detached` and `*.durabilityChanged` events and every `durability` field, and makes the new fields required.
+- **Already there:** the protocol publishes every seat's hand size, discard pile and void since D57, so making them public is UI work (T-190). The deck editor saves illegal decks, the deck list flags them and the lobby refuses them, so "save unfinished decks with an incomplete flag" needs nothing; T-187 says so in its Notes. Core refuses a rested resource's Rest ability, a rested squad's resting ability and a rested artifact's abilities; T-195 pins it with tests on the snapshot after a plan step, and T-202 shows the ability inactive.
+- **Bug:** the Leader that couldn't be focused during Plan is T-185, which starts with the repro. The likely cause: a click on a squad during Plan opens only the Squad panel, which has no way to the card view, and the Leader section is gone once the Leader stands on the grid. The grid behind the tray is T-188: the battlefield watches only its host's size, never the free area's.
+- **A data fix:** 18 cards printed Charge and no "If charged" ability, so charging them would pay mana for nothing. T-193 sets their Charge to 0, and the schema ties Charge to an "If charged" ability (RULES.md › Resources and mana already said so).
+- **Lead defaults the human hasn't confirmed:**
+  - The Chaos factor is the old draw count (tier 1 the round number, tier 2 round − 4, tier 3 two), so the pressure stays and the variety drops to one card; Extra Chaos keeps adding whole cards. Scavenger Drone keeps its stats and loses Flying.
+  - The Unique cards under D66: Lightbringer Priest, Mender of Dawn, Current Mage, Mossy Shrine, Tide Clock and Gravewheel; Stonebark Troll heals only itself and isn't.
+  - Destroy scores nothing unless the card says so, like banish; a destroyed card goes to the discard pile at Cleanup, like a sacrificed one; a destroyed Leader dies instead; `allPermanents` and `allUnits` include the caster's own.
+  - The keyword for the old Durability 0 is Fleeting. Kettle, which healed Durability, now reads "If survives round, draw {level} card"; Overclock costs 4RT and lost its attached-resource clause.
+  - A charge costs N generic mana, once a round, doesn't rest the unit, and works on a rested squad.
+  - The colored Harvest Cycles give their color; Brass Arbiter is the colorless Leader, Waystone the colorless resource, and at least four colorless main-deck cards join so a colorless deck is legal (T-198).
+  - T-201's removal names and costs are the lead's suggestions, and each starter deck plays two of the new cards.
+  - The Leader keeps its ★ on its grid block when the names go (T-185). The camera re-frames for the tray only while the player hasn't moved it (T-188).
+  - The Leader's slot stays empty for the game once the Leader is cast, since a Leader respawns and can't be banished.
+
 ## 2026-11-05 — Playtest bugs (D64, T-179 to T-182)
 
 The human played again and sent the open questions from the reviews of T-162 to T-174, with three bugs. Casting a card rested resources by itself, so costs are now paid only with floating mana, for every seat (D64, which replaces D58). The human picked every seat over the player's seat alone. D64, RULES.md's mana rule and CORE.md's Paying default change on the code repo's `lead/pay-by-hand`, which merges first.
