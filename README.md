@@ -5,10 +5,9 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 61 of 62 tasks merged
-- **Latest task completed:** [T-180](docs/tasks/M5/T-180-squad-cues-follow-their-units.md) Squad cues follow their units (2026-11-05)
-- **Next up:**
-  - [T-182](docs/tasks/M5/T-182-no-auto-pay-in-core.md) No auto-pay in core
+- **Milestone:** M5 — Balance pass · done (62 of 62 tasks merged)
+- **Latest task completed:** [T-182](docs/tasks/M5/T-182-no-auto-pay-in-core.md) No auto-pay in core (2026-11-05)
+- **Next up:** plan M6 — Multiplayer
 <!-- status:end -->
 
 ## What's here
