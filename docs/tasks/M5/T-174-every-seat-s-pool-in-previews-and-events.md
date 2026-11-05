@@ -17,6 +17,13 @@ scope:
   - packages/bots/test/fixtures/**
   - packages/bots/README.md
   - tools/sim-cli/test/**
+  - packages/protocol/src/snapshot.ts
+  - packages/protocol/src/snapshot.test.ts
+  - packages/protocol/src/version.ts
+  - packages/protocol/src/version.test.ts
+  - packages/protocol/test/fixtures/samples.ts
+  - packages/protocol/README.md
+  - apps/web/src/host/host.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - packages/core/README.md#Previews
