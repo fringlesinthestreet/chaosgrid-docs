@@ -23,6 +23,7 @@ scope:
   - packages/protocol/src/version.test.ts
   - packages/protocol/test/fixtures/samples.ts
   - packages/protocol/README.md
+  - apps/web/src/host/host.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - packages/core/README.md#Previews
