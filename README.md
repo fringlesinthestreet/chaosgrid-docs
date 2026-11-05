@@ -5,10 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 58 of 62 tasks merged
-- **Latest task completed:** [T-174](docs/tasks/M5/T-174-every-seat-s-pool-in-previews-and-events.md) Every seat's pool in previews and events (2026-11-05)
+- **Milestone:** M5 — Balance pass · 59 of 62 tasks merged
+- **Latest task completed:** [T-179](docs/tasks/M5/T-179-state-cue-tests-on-the-regenerated-logs.md) State cue tests on the regenerated logs (2026-11-05)
 - **Next up:**
-  - [T-179](docs/tasks/M5/T-179-state-cue-tests-on-the-regenerated-logs.md) State cue tests on the regenerated logs
+  - [T-180](docs/tasks/M5/T-180-squad-cues-follow-their-units.md) Squad cues follow their units
   - [T-181](docs/tasks/M5/T-181-bots-rest-for-mana-before-they-pay.md) Bots rest for mana before they pay
 <!-- status:end -->
 
