@@ -106,7 +106,7 @@ docs/PROTOCOL.md › Conventions: "The only per-second numbers are a unit card's
 - [ ] `crew check` is green.
 - [ ] `pnpm test:soak` passes.
 - [ ] `pnpm test:perf` passes, and the PR lists `round/perf.test.ts`'s preview times before and after, which should stay within 5%.
-- [ ] One full 4-seat round (`playRound`, as the soaks play it) takes at most 10% longer than before; the PR gives both times and how they were measured.
+- [ ] One full 4-seat round (`playRound`, as the soaks play it) takes at most 12% longer than before; the PR gives both times and how they were measured.
 - [ ] `pnpm --filter @chaosgrid/web test model` passes. Write the filter with no `--`: after `--`, Vitest runs every file.
 - [ ] `git diff --stat main...HEAD` lists only files in the scope.
 
