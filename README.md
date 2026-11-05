@@ -5,10 +5,9 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 57 of 58 tasks merged
-- **Latest task completed:** [T-173](docs/tasks/M5/T-173-faster-projectiles.md) Faster projectiles (2026-11-05)
-- **Next up:**
-  - [T-174](docs/tasks/M5/T-174-every-seat-s-pool-in-previews-and-events.md) Every seat's pool in previews and events
+- **Milestone:** M5 — Balance pass · done (58 of 58 tasks merged)
+- **Latest task completed:** [T-174](docs/tasks/M5/T-174-every-seat-s-pool-in-previews-and-events.md) Every seat's pool in previews and events (2026-11-05)
+- **Next up:** plan M6 — Multiplayer
 <!-- status:end -->
 
 ## What's here
