@@ -5,11 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 55 of 58 tasks merged
-- **Latest task completed:** [T-171](docs/tasks/M5/T-171-live-stats-in-the-card-view.md) Live stats in the card view (2026-11-05)
+- **Milestone:** M5 — Balance pass · 56 of 58 tasks merged
+- **Latest task completed:** [T-178](docs/tasks/M5/T-178-regenerate-the-web-event-log-fixtures.md) Regenerate the web event-log fixtures (2026-11-05)
 - **Next up:**
   - [T-173](docs/tasks/M5/T-173-faster-projectiles.md) Faster projectiles
-  - [T-178](docs/tasks/M5/T-178-regenerate-the-web-event-log-fixtures.md) Regenerate the web event-log fixtures
 <!-- status:end -->
 
 ## What's here
