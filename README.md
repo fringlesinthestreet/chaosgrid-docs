@@ -5,10 +5,13 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 75 of 86 tasks merged
-- **Latest task completed:** [T-194](docs/tasks/M5/T-194-no-durability-in-the-web.md) No Durability in the web (2026-11-06)
+- **Milestone:** M5 — Balance pass · 76 of 89 tasks merged
+- **Latest task completed:** [T-193](docs/tasks/M5/T-193-charge-as-a-plan-ability-in-core.md) Charge as a Plan ability in core (2026-11-06)
 - **Next up:**
-  - [T-193](docs/tasks/M5/T-193-charge-as-a-plan-ability-in-core.md) Charge as a Plan ability in core
+  - [T-195](docs/tasks/M5/T-195-payable-facts-in-the-snapshot.md) Payable facts in the snapshot
+  - [T-196](docs/tasks/M5/T-196-charge-in-the-bots.md) Charge in the bots
+  - [T-197](docs/tasks/M5/T-197-charge-in-the-web.md) Charge in the web
+  - [T-198](docs/tasks/M5/T-198-unique-resources-and-the-colorless-cards.md) Unique resources and the colorless cards
   - [T-205](docs/tasks/M5/T-205-plan-ability-keeps-target-cells.md) A Plan ability keeps its target's cells
 <!-- status:end -->
 
