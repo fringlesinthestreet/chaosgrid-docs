@@ -33,6 +33,9 @@ scope:
   - apps/web/src/i18n/en/overlays.json
   - packages/cards/src/spells.test.ts
   - packages/cards/test/fixtures/**
+  - packages/db/test/fixtures/**
+  - apps/web/test/fixtures/planning/**
+  - apps/web/src/match/battlefield/scene.test.ts
 context:
   - docs/RULES.md#Resources and mana
   - docs/RULES.md#Round structure
