@@ -27,7 +27,7 @@ context:
 
 ## Goal
 
-D67 and D74 end with this PR. Since T-189 every Durability field is null and no `*.durabilityChanged` event is sent; since T-196 and T-197 nobody plans `attach` but the random bot, and since T-212 nothing reads it. The transitional types go, and the optional fields that replaced them become required, so a snapshot, an event and a plan say only what the game still has. Nothing changes for a player.
+D67 and D74 end with this PR. Since T-189 every Durability field is null and no `*.durabilityChanged` event is sent; since T-196 and T-197 nobody plans `attach` but the random bot, and since T-212 it switches nothing on. The transitional types go, and the optional fields that replaced them become required, so a snapshot, an event and a plan say only what the game still has. Nothing changes for a player.
 
 ## Interfaces
 
