@@ -35,6 +35,9 @@ scope:
   - apps/web/src/i18n/en/planning.json
   - apps/web/src/i18n/en/battlefield.json
   - apps/web/README.md
+  - apps/web/src/match/CardView.tsx
+  - apps/web/src/match/planning/PlanLayer.tsx
+  - apps/web/src/match/planning/PlanningActions.test.tsx
 context:
   - docs/DECISIONS.md#Decision log
   - docs/APPS.md#The match
