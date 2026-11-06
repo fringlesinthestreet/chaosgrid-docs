@@ -23,7 +23,7 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 | [.crew/](.crew/config.sh) | crew's settings, the code repo's lead paths, and the commits that only look like task merges |
 | [scripts/dev.sh](scripts/dev.sh), [docker-compose.yml](docker-compose.yml) | ChaosGrid on this machine with Redis and the DB viewer |
 
-Paths under `docs/` read the same from either repo: a card's `context:` entry or a code comment that says `docs/PLAN.md` means this repo's file, and one this repo doesn't have, such as `docs/RULES.md`, the code repo's.
+Paths under `docs/` read the same from either repo: a card's `context:` entry that says `docs/PLAN.md` means this repo's file, and one this repo doesn't have, such as `docs/RULES.md`, the code repo's. Nothing in the code repo cites this repo (D73).
 
 ## How it changes
 
