@@ -16,6 +16,8 @@ scope:
   - packages/cards/decks/**
   - packages/cards/src/node/starter.test.ts
   - packages/cards/test/sets/**
+  - packages/cards/test/fixtures/decks/legal.json
+  - packages/cards/stats/cards.json
 context:
   - docs/RULES.md#Components and setup
   - docs/DECISIONS.md#Decision log
