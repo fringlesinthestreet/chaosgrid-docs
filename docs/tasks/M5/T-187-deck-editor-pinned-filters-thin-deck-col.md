@@ -1,6 +1,6 @@
 ---
 id: T-187
-title: Deck editor pinned filters, thin deck column and no Chaos cards
+title: Deck editor pinned filters, thin deck column, no Chaos
 milestone: M5
 depends_on: []
 branch: agent/T-187-deck-editor-pinned-filters-thin-deck-col
@@ -15,7 +15,7 @@ context:
   - docs/RULES.md#Components and setup
 ---
 
-# T-187 — Deck editor pinned filters, thin deck column and no Chaos cards
+# T-187 — Deck editor pinned filters, thin deck column, no Chaos
 
 ## Goal
 
