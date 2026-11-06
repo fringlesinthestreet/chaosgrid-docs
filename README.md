@@ -5,11 +5,13 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 68 of 84 tasks merged
-- **Latest task completed:** [T-184](docs/tasks/M5/T-184-unique-timed-cards.md) Unique timed cards (2026-11-06)
+- **Milestone:** M5 — Balance pass · 69 of 84 tasks merged
+- **Latest task completed:** [T-183](docs/tasks/M5/T-183-chaos-factor-and-no-tier-1-flyers.md) Chaos factor and no tier-1 flyers (2026-11-06)
 - **Next up:**
-  - [T-183](docs/tasks/M5/T-183-chaos-factor-and-no-tier-1-flyers.md) Chaos factor and no tier-1 flyers
+  - [T-189](docs/tasks/M5/T-189-no-durability-in-core-and-the-cards.md) No Durability in core and the cards
   - [T-190](docs/tasks/M5/T-190-every-seat-s-piles-on-its-strip.md) Every seat's piles on its strip
+  - [T-203](docs/tasks/M5/T-203-planner-bot-against-the-early-chaos-wave.md) Planner bot against the early Chaos waves
+  - [T-204](docs/tasks/M5/T-204-preview-cost-with-the-bigger-chaos-waves.md) Preview cost with the bigger Chaos waves
 <!-- status:end -->
 
 ## What's here
