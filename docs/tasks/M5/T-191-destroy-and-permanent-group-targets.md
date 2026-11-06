@@ -15,6 +15,8 @@ scope:
   - packages/core/src/round/cleanup.test.ts
   - packages/core/test/fixtures/effects/**
   - packages/core/README.md
+  - packages/cards/src/spells.ts
+  - packages/cards/src/spells.test.ts
 context:
   - docs/RULES.md#Zone mechanics
   - docs/DECISIONS.md#Decision log
