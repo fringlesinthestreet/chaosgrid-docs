@@ -18,6 +18,7 @@ scope:
   - tools/sim-cli/test/**
   - packages/core/src/round/round.test.ts
   - packages/core/src/round/preview.test.ts
+  - apps/web/src/host/host.test.ts
 context:
   - docs/RULES.md#Chaos deck and Emblems
   - docs/DECISIONS.md#Decision log
