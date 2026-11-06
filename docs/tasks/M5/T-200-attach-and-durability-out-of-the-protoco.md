@@ -58,12 +58,13 @@ Attached permanents (equipment and auras: `mode: 'attached'`, `castPermanent` wi
 
 ## Deliverables
 
-1. **The protocol.** Remove everything listed above, the `Durability` primitive with them unless an Emblem field still uses it. Make `charged`, the `payable` fields, `levelUpPayable` and `chargePayable` required. Bump `PROTOCOL_VERSION` (35), with docs/PROTOCOL.md's title, its field types, Plans, Planning and Board events, Visibility and Snapshot sections, and a Versioning row naming D67 and D68.
+1. **The protocol.** Remove everything listed above, the `Durability` primitive with them unless an Emblem field still uses it. Make `charged`, the `payable` fields, `levelUpPayable` and `chargePayable` required. Bump `PROTOCOL_VERSION` (35), with docs/PROTOCOL.md's title, its field types, Plans, Planning and Board events, Visibility and Snapshot sections, and a Versioning row naming D67 and D68. In `plan.ts`, `RestForManaAction`'s doc comment cites D58, which D64 replaced: make it D64.
 2. **Core** stops building and reading what's gone: the `attach` step and its zone functions, `Squad.attached` and the resources' attached state, isCharged's attached clause (a squad is charged only by `charge`), the views' fields, the rebuild's reads.
 3. **The bots.** The random bot stops attaching (its every-type test follows `PlanActionType`). The referee loses its attach case. Fixtures and literals drop the gone fields and gain the required ones.
 4. **sim-cli.** `game.ts` counts unrested resources. The golden script charges where it attached (the squad it attached to, if its card has Charge; else say what you picked), and its fixture cards follow; regenerate the golden streams as `golden.test.ts` says, and say why in the PR.
 5. **The web.** The model drops its Durability and attach leftovers. Every test literal and the planning fixtures drop the gone fields and gain the required ones. Regenerate the two event logs with the commands in `apps/web/test/fixtures/logs/README.md`, then Prettier, and update that README's table; the old logs no longer parse.
 6. **Tests.** `plan.test.ts` refuses an `attach` action as an unknown action; the event tests have no attach or Durability event; the snapshot tests require the new fields. Everything that passed before passes.
+7. **The preview table.** The core README's "What a preview costs" table predates the Chaos factor (D65): the busiest scripted snapshot is no longer round 8 with 178 units. You run alone, so rerun `round/perf.test.ts` (`pnpm --filter @chaosgrid/core exec vitest run src/round/perf.test.ts --silent=false`) and put the times it prints in the table, with the snapshot's round and unit count. T-204 measured 371 units, about 1.3 s for 1,000 ticks and about 2.2 s for 3,000, beside other workers.
 
 ## Acceptance
 
