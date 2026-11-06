@@ -682,7 +682,7 @@ graph LR
 | 36 | [T-184 Unique timed cards](M5/T-184-unique-timed-cards.md) | — | haiku, low effort | six card files, the starter decks and their test, the set tests |
 | 36 | [T-185 Focusing the Leader during Plan and nameless grid icons](M5/T-185-focusing-the-leader-during-plan-and-name.md) | — | sonnet, medium effort | `planning/`, `CardView`, `en/planning.json` |
 | 36 | [T-186 Cards page pinned toolbar, pinned detail and Overall stats](M5/T-186-cards-page-pinned-toolbar-pinned-detail.md) | — | sonnet, medium effort | `CardsPage`, `BotGames`, `cards.css`, their tests, `en/cards.json` |
-| 36 | [T-187 Deck editor pinned filters, thin deck column and no Chaos cards](M5/T-187-deck-editor-pinned-filters-thin-deck-col.md) | — | sonnet, medium effort | `decks/editor/`, `en/deckEditor.json` |
+| 36 | [T-187 Deck editor pinned filters, thin deck column, no Chaos](M5/T-187-deck-editor-pinned-filters-thin-deck-col.md) | — | sonnet, medium effort | `decks/editor/`, `en/deckEditor.json` |
 | 36 | [T-188 Grid clear of the tray and seat colors on the TopBar](M5/T-188-grid-clear-of-the-tray-and-seat-colors-o.md) | — | sonnet, medium effort | `camera.ts`, `mount.ts`, `scene.ts`, `Battlefield.tsx`, `MatchScreen.tsx`, their tests, `theme.css`, `en/match.json` |
 | 36 | [T-191 Destroy and permanent group targets](M5/T-191-destroy-and-permanent-group-targets.md) | — | opus, high effort | `dsl.ts`, core's effects and Cleanup, their fixtures, the cards and core READMEs |
 | 37 | [T-189 No Durability in core and the cards](M5/T-189-no-durability-in-core-and-the-cards.md) | T-183, T-184, T-186, T-191 | opus, high effort | core, the cards package, the protocol's `HandCard` and version, `docs/PROTOCOL.md`, two cards page tests, sim-cli's tests |
