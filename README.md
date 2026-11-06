@@ -5,12 +5,12 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 65 of 82 tasks merged
-- **Latest task completed:** [T-187](docs/tasks/M5/T-187-deck-editor-pinned-filters-thin-deck-col.md) Deck editor pinned filters, thin deck column and no Chaos cards (2026-11-06)
+- **Milestone:** M5 — Balance pass · 66 of 82 tasks merged
+- **Latest task completed:** [T-188](docs/tasks/M5/T-188-grid-clear-of-the-tray-and-seat-colors-o.md) Grid clear of the tray and seat colors on the TopBar (2026-11-06)
 - **Next up:**
   - [T-183](docs/tasks/M5/T-183-chaos-factor-and-no-tier-1-flyers.md) Chaos factor and no tier-1 flyers
   - [T-184](docs/tasks/M5/T-184-unique-timed-cards.md) Unique timed cards
-  - [T-188](docs/tasks/M5/T-188-grid-clear-of-the-tray-and-seat-colors-o.md) Grid clear of the tray and seat colors on the TopBar
+  - [T-190](docs/tasks/M5/T-190-every-seat-s-piles-on-its-strip.md) Every seat's piles on its strip
   - [T-191](docs/tasks/M5/T-191-destroy-and-permanent-group-targets.md) Destroy and permanent group targets
 <!-- status:end -->
 
