@@ -16,6 +16,7 @@ scope:
   - packages/cards/src/schema.ts
   - packages/cards/src/schema.test.ts
   - tools/sim-cli/test/**
+  - packages/core/src/round/round.test.ts
 context:
   - docs/RULES.md#Chaos deck and Emblems
   - docs/DECISIONS.md#Decision log
