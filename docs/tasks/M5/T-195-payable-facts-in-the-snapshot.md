@@ -25,7 +25,7 @@ context:
 
 ## Goal
 
-D72: the snapshot says what the floating mana pays now. Each hand card, the Leader in the command zone, each Plan ability, and each of the seat's squads' level-up and Charge carry `payable`: whether the seat's floating mana pays the cost as the plan stands, the way `plan.checked`'s snapshot shows it. With it the UI can show an action inactive, with its cost, before the click instead of after a refusal (the human's playtest, 2026-11-05), and affordability stays core's (D29). The fields are optional for now so the bots' and the web's literals parse; T-200 makes them required.
+D72: the snapshot says what the floating mana pays now. Each hand card, the Leader in the command zone, each Plan ability, and each of the seat's squads' level-up carry `payable`: whether the seat's floating mana pays the cost as the plan stands, the way `plan.checked`'s snapshot shows it. With it the UI can show an action inactive, with its cost, before the click instead of after a refusal (the human's playtest, 2026-11-05), and affordability stays core's (D29). The fields are optional for now so the bots' and the web's literals parse; T-200 makes them required. Charge gets no payable fact: D74 removes it, in T-212.
 
 ## Interfaces
 
@@ -42,7 +42,7 @@ export const LeaderCard = z.strictObject({ … })                       // :215:
 export const PoolResource = z.strictObject({ card, cardId, gives, rested, floating, attachedTo, spell, target? }) // :223
 // A resource's Rest ability costs no mana (no resource card prints one): `rested` already says whether it works.
 export const SquadSnapshot = z.strictObject({ …, level, durability, unlocked, attached, rested, uses, charged?: boolean }) // :252
-// (`charged` optional since T-193; the squad's Charge is `stats.charge`)
+// (`charged` optional since T-193, until T-212 removes it with Charge, D74)
 
 // packages/core/src/zones/pay.ts
 export function planPayment(payers: readonly Payer[], cost: CostInput): CardInstanceId[] | null // :57: which payers pay
@@ -66,14 +66,14 @@ export function pay(state, seat, cost)                                          
 2. **The facts**, each optional, each with a doc comment:
    - `payable` on every `HandCard` variant and on `LeaderCard`: the floating mana pays the card's cost as core would charge it (cost changes applied);
    - `payable` on `AbilityUse`, beside `usable`;
-   - on `SquadSnapshot`, `levelUpCost` (what a level-up pays now, cost changes applied) and `levelUpPayable`, and `chargePayable` (the floating mana pays its Charge in generic mana).
-   For another seat's squads, and for a squad whose action doesn't apply (max level or not unlocked; Charge 0 or charged already), the payable fact is false. `levelUpCost` is left out for another seat's squads.
+   - on `SquadSnapshot`, `levelUpCost` (what a level-up pays now, cost changes applied) and `levelUpPayable`.
+   For another seat's squads, and for a squad whose action doesn't apply (max level or not unlocked), the payable fact is false. `levelUpCost` is left out for another seat's squads.
 3. **The version.** Bump `PROTOCOL_VERSION` (34, after T-193's 33) with docs/PROTOCOL.md's title, the `HandCard`, `LeaderCard`, `SquadSnapshot` and `AbilityUse` sections, and a Versioning row naming D72.
 4. **A rested card's resting ability.** Pin what the human reported ("already rested permanents can cast an ability that rests them") with tests on the snapshot after a plan step: a squad the plan rested shows `usable: false` and `payable: false` on its `rest` abilities; a rested artifact shows `usable: false` on all of them; core refuses both. Core does this already (`abilityBlocked`); if a test fails, fix core and say what was wrong.
 5. **Tests in core:**
    - a hand card's `payable` turns true after the `restForMana` that pays it, and false again after a cast spends the mana;
    - a cost change shows in `payable` and in `levelUpCost`;
-   - a level-up and a charge `payable` from floating mana, false when not unlocked, at max level, at Charge 0 or charged already;
+   - a level-up's `payable` from floating mana, false when not unlocked or at max level;
    - the Leader's `payable`;
    - another seat's squad has false, and no `levelUpCost`.
 

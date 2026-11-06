@@ -67,7 +67,7 @@ it("says so when it can't save the log", () => {
 ## Out of scope
 
 - Core's room check: it is right to refuse that plan.
-- The bots charging (T-196) and the random bot's charge (T-193).
+- The bots' attaching (T-196) and the random bot's charge (T-212).
 - The other sim-cli tests' budgets: leave them unless one fails, and then report it.
 - Another soak seed or table that fails: report it in the PR, with the seed and the reason.
 
