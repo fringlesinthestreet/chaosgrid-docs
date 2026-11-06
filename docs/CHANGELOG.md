@@ -4,6 +4,15 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-06 — Nothing in the code repo refers to the plan (D73, T-207 to T-209)
+
+The human's rule: the code repo is for anyone working on the code, so its code, comments, tests and docs never cite a task id, a milestone or this repo's docs. About 480 lines on its main still did, many of them as D53 allowed: it said a comment may cite `PLAN.md › M<n>`.
+
+- **Decisions:** D73 replaces D53. It keeps D53's split of the two repos and adds the rule. Task ids stay in PR titles and `Task:` trailers (D16), and the code repo's DECISIONS.md rows keep theirs, since a decision is never rewritten.
+- **Cards:** T-207 (core and the protocol), T-208 (the web app) and T-209 (the other packages, sim-cli, three docs and two root files) remove the references in wave 44, after the whole M5 queue, since every card in it edits these files. Their scopes are disjoint.
+- **The notes:** this repo's CLAUDE.md and README.md and the workers' notes (docs/agents/CREW.md) no longer say a code comment may cite this repo. The code repo's CLAUDE.md drops its line saying the same and gets the rule under Conventions, on the `--code` lead branch `claude-md-without-task-ids`.
+- **crew:** the worker playbook asks for the same, and checks a task's diff for task ids and `PLAN.md` before the handoff.
+
 ## 2026-11-06 — Open questions from waves 36 and 37 (T-205, T-206)
 
 The workers' open questions after waves 36 and 37, as the human passed them on, T-189's from its PR, and one answer from the human.
