@@ -9,6 +9,7 @@ effort: high
 scope:
   - packages/core/src/round/**
   - packages/bots/**
+  - packages/core/src/targeting/**
 context:
   - docs/CORE.md
   - packages/core/README.md
