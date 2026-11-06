@@ -4,6 +4,15 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-06 — No Charge (D74, T-212)
+
+The human's request: Charge was a second way to spend mana on a unit beside its Plan abilities, with its own stat, plan action, payable fact and button, and attaching resources, which it replaced, goes as well. A unit spends mana during Plan only on its level-ups and its Plan abilities, which may rest it or not. The human chose to keep each card's effect behind a Plan ability with one new effect over making the abilities always on, and to keep attached artifacts and enchantments (equipment and auras).
+
+- **Decisions:** D74 replaces D68 and narrows D57, D71 and D72, on the `--code` lead branch `no-charge`, with RULES.md (the Plan step, Cleanup, Resources and mana, the stat table, Leveling, Plan abilities, the sample tables and their four Leaders), CORE.md, APPS.md, ARCHITECTURE.md and the README. Merge it first.
+- **Cards:** T-212 (wave 40, alone) takes Charge out of the cards, core and the protocol, adds `grantAbility` and gives the 13 cards that printed Charge their Plan abilities. T-196 becomes "No attach in the bots" and waits for T-205, which edits the same bot code. T-197 becomes "No attach or Charge in the web": the Charge glow and the card face's Charge row go, nothing new replaces them, and the event logs wait for T-200.
+- **Fixed for D74:** T-195 drops `chargePayable`; T-200 waits for T-212, bumps the protocol to 36 and drops the golden script's `attach` instead of charging; T-199 and T-202 drop Charge from the card view's actions and the inactive reasons; T-198, T-205 and T-206 follow.
+- **The board:** T-200 and everything after it move one wave later: T-200 to 41, T-199 and T-201 to 42, T-202 to 43, T-206 to 44, T-207 to T-209 to 45.
+
 ## 2026-11-06 — Nothing in the code repo refers to the plan (D73, T-207 to T-209)
 
 The human's rule: the code repo is for anyone working on the code, so its code, comments, tests and docs never cite a task id, a milestone or this repo's docs. About 480 lines on its main still did, many of them as D53 allowed: it said a comment may cite `PLAN.md › M<n>`.
