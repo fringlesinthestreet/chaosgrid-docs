@@ -14,6 +14,8 @@ scope:
   - apps/web/src/match/MatchScreen.test.tsx
   - apps/web/src/match/overlays/Hud.tsx
   - apps/web/src/match/overlays/overlays.test.tsx
+  - apps/web/src/cards/CardTile.tsx
+  - apps/web/src/cards/cards.test.tsx
   - apps/web/src/theme/theme.css
   - apps/web/src/i18n/en/match.json
   - apps/web/src/i18n/en/planning.json
@@ -83,6 +85,7 @@ Tests today: `PlanningPanel.test.tsx` :109 "shows the Leader, the hand, the reso
 3. **The planning panel shrinks** to what the battlefield doesn't show: the status line and target picker, `RulesBar`, and (T-202 later) nothing else. The tray takes as little height as it can: one scrollable row of tiles (`overflow-x: auto`, no wrap), the Leader's slot fixed at its left; the card view keeps the HUD's right region and doesn't cover the viewer's grid (the camera's free area excludes the right region already through `freeArea`; check `Hud.tsx` and `MatchScreen`'s insets from T-188, and give the card view a max height with its own scroll so it never grows past the region).
 4. **Tests.** `Tray.test.tsx`: the Leader's slot with the tile and Place Leader; empty once `view.leader` is null; the castLeader flow (move from `PlanningPanel.test.tsx` :163 and :270). `PlanningPanel.test.tsx`: no Leader section. `CardView.test.tsx`: the actions column for a squad (Level up sends `levelUp`, Charge sends `charge`, an ability sends `useAbility`, each through `stubSession().sent`), for a permanent, for a hand card (Place starts the selection, Cast sends `castSpell`), and none for another seat's card. `PlanningActions.test.tsx`: its cases go through the card view now. `overlays.test.tsx`/`MatchScreen.test.tsx` where they look for the panels.
 5. **Docs.** `apps/web/README.md` › How a match flows step 4 names the card view as where actions are taken.
+6. **What T-190 left behind.** `Pile.tsx` and `Pile.test.tsx` go: nothing renders `PileRow` since the piles moved to the strips. `FloatingMana.tsx`'s header comment cites D64, not D58, which D64 replaced. `CardTile` takes an optional `describedBy` and sets it as its button's `aria-describedby`; `HandEntry` passes its rejection reason's id that way instead of on the `li`, so a screen reader reads the reason with the focused tile. `ResourceEntry` can stay as it is: T-202 removes it. A `cards.test.tsx` case pins the button's description.
 
 ## Acceptance
 
@@ -90,6 +93,7 @@ Tests today: `PlanningPanel.test.tsx` :109 "shows the Leader, the hand, the reso
 - [ ] `pnpm --filter @chaosgrid/web test planning CardView MatchScreen overlays` passes.
 - [ ] `pnpm test` passes.
 - [ ] `grep -rn "aria-label=\"Leader\"\|aria-label=\"Squad\"\|aria-label=\"Permanent\"" apps/web/src/match` finds nothing.
+- [ ] `grep -rn "PileRow\|D58" apps/web/src/match/planning` finds nothing.
 - [ ] `git diff --stat main...HEAD` lists only files in the scope.
 
 ## Out of scope
