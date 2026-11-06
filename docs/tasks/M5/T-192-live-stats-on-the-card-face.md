@@ -17,6 +17,7 @@ scope:
   - apps/web/src/match/MatchScreen.test.tsx
   - apps/web/src/i18n/en/match.json
   - apps/web/src/i18n/en/cards.json
+  - apps/web/test/fixtures/planning/*.json
 context:
   - docs/APPS.md#The match
   - apps/web/README.md#Rules a change must keep

@@ -24,6 +24,8 @@ scope:
   - apps/web/src/art/*.test.tsx
   - apps/web/src/i18n/en/battlefield.json
   - apps/web/src/i18n/en/planning.json
+  - apps/web/art-pack/check.test.ts
+  - apps/web/test/fixtures/planning/*.json
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Units
