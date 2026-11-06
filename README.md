@@ -5,7 +5,7 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 68 of 83 tasks merged
+- **Milestone:** M5 — Balance pass · 68 of 84 tasks merged
 - **Latest task completed:** [T-184](docs/tasks/M5/T-184-unique-timed-cards.md) Unique timed cards (2026-11-06)
 - **Next up:**
   - [T-183](docs/tasks/M5/T-183-chaos-factor-and-no-tier-1-flyers.md) Chaos factor and no tier-1 flyers
