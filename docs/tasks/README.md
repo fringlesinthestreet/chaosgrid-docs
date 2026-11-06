@@ -458,6 +458,7 @@ After playing M4, the human set M5's priorities: gameplay, the UI, card balancin
 - **The 11-04 tuning (waves 28 to 32, D60 and D61).** What the human asked for next on 2026-11-04, before any new cards (PLAN.md › M5). Wave 28: T-167 (Level up and Attach only when they apply) edits only `SquadPanel` and its test. Wave 29: T-172 (clicks on a squad's footprint, the focus bug) after T-153 (`MatchScreen`); T-161 waits for it (`pick.ts`, `MatchScreen`). Wave 30: T-164 (no starting resources, D60, and Speed doubled, D61) after T-157, the last core card before it; T-165 (the state icons' keys and the Charge color) after T-160's art changes; T-168 (the piles in the tray) after T-158 and T-160. Wave 31: T-166 (the state cues in PlanGrid) after T-165 and T-168, which edits `en/planning.json` and `theme.css` before it; T-169 (live costs in the hand) after T-159 (`CardTile`) and T-164 (the card data and RULES.md); T-170 (live unit stats, version 30) after T-163 (the model) and T-164 (core and the goldens). Wave 32: T-171 shows them in the card view after T-161 (`CardView`, `MatchScreen`), and T-162 draws the state cues on the battlefield with T-170's keywords.
 - **Follow-ups to the tuning (waves 31 to 33, D62 and D63).** From the reviews of T-152, T-157, T-159 and T-164, and the human's picks on 2026-11-04 (PLAN.md › M5). Wave 31: T-175 (commas in color lists) edits only `names.ts`. Wave 32: T-173 (faster projectiles, D62) after T-169 (the card data) and T-170 (core's tests and the goldens); T-176 (pool cards preview on hover and focus) after T-169 (`CardTile`). Wave 33: T-174 (every seat's pool in previews, D63, and the spend event D57 lacked) after T-170 and T-173, which edit core, the bots' tests and the goldens before it. Two more came from reviews in wave 32: T-177 (the cost label's text and the marked cost's style out of `CardFace`, from T-169's) and T-178 (the web's event logs regenerated after T-170).
 - **The 11-05 playtest (waves 34 and 35, D64).** The bugs the human found playing on 2026-11-05, and the reviews of T-162 to T-174 (PLAN.md › M5). Wave 34: T-179 (the state cue tests on the regenerated logs) turns main green, beside T-181 (bots rest for mana before they pay), which edits only the bots. Wave 35: T-180 (squad cues follow their units) after T-179, which edits the same test file; T-182 (no auto-pay in core, D64) after T-181, so no bot plan stops paying.
+- **The 11-05 playtest, second batch (waves 36 to 42, D65 to D72).** What the human asked for next on 2026-11-05: Chaos as a factor, no Durability, Charge paid in mana, Unique resources and the colorless cards, the grid as the planning surface, pinned toolbars on the cards page and in the deck editor, and removal cards (PLAN.md › M5). Wave 36 runs seven cards with no file in common: T-183 (the Chaos factor, D65), T-184 (Unique timed cards, D66), T-185 (the Leader focus bug and nameless grid icons), T-186 (the cards page), T-187 (the deck editor), T-188 (the grid clear of the tray, seat colors on the TopBar) and T-191 (the destroy effect and permanent group targets, D67). Wave 37: T-189 (no Durability in core and the cards, D67) after T-183, T-184, T-186 and T-191, which edit the card schema, the card files, the cards page's tests and core's effects and Cleanup; T-190 (every seat's piles on its strip) after T-185 and T-188. Wave 38: T-192 (live stats on the card face), T-193 (Charge as a Plan ability in core, D68) and T-194 (no Durability in the web), each after T-189 and T-190. Wave 39: T-195 (payable facts, D72) and T-196 (the bots charge) after T-193; T-197 (Charge in the web) after T-192, T-193 and T-194; T-198 (Unique resources and the colorless cards, D69 and D70) after T-189 and T-193. Wave 40: T-200 alone, since it removes `attach` and Durability from the protocol and from every literal that holds them. Wave 41: T-199 (the tray, the Leader's slot and the card view's actions, D71) after T-197 and T-200; T-201 (removal, wipes and Dark sacrifice cards) after T-191, T-198 and T-200. Wave 42: T-202 (resting from the strips and inactive actions, D71 and D72) after T-195, T-199 and T-200. Until T-200, core keeps `attach` working and the new snapshot fields are optional, so the bots and the web build at every step.
 
 The art cards follow the playtest fixes: T-119 needs T-118. T-119 builds the art module: the version 2 manifest, sprite strips, `SpriteView` and stills. Then the battlefield changes one owner at a time, since all three cards edit `match/battlefield/`: T-120 animates units and permanents, T-121 winds attacks up from playback's look-ahead and flies projectile sprites (D47), and T-122 plays the `fx` sprites and the spell casts. T-120 and T-121 also edit `MatchScreen.tsx` and `replay/ReplayPage.tsx`, and T-121 `match/playback/`. T-123, the art pack, waits only for T-119, whose `manifest-schema.ts` it imports (planning rule 2), and its scope is disjoint from the battlefield cards'. The art cards add owners to M4/README.md's tree the same way as the playtest cards, one after another.
 
@@ -554,6 +555,45 @@ graph LR
   T179 --> T180["T-180 squad cues follow their units"]
   T181["T-181 bots rest for mana"]
   T181 --> T182["T-182 no auto-pay in core"]
+  T183["T-183 Chaos factor"]
+  T184["T-184 Unique timed cards"]
+  T185["T-185 Leader focus and nameless icons"]
+  T186["T-186 cards page pinned toolbar"]
+  T187["T-187 deck editor pinned filters"]
+  T188["T-188 grid clear of the tray"]
+  T191["T-191 destroy and permanent group targets"]
+  T183 --> T189["T-189 no Durability in core and the cards"]
+  T184 --> T189
+  T186 --> T189
+  T191 --> T189
+  T185 --> T190["T-190 every seat's piles on its strip"]
+  T188 --> T190
+  T189 --> T192["T-192 live stats on the card face"]
+  T190 --> T192
+  T189 --> T193["T-193 Charge in core"]
+  T190 --> T193
+  T189 --> T194["T-194 no Durability in the web"]
+  T190 --> T194
+  T193 --> T195["T-195 payable facts"]
+  T193 --> T196["T-196 Charge in the bots"]
+  T192 --> T197["T-197 Charge in the web"]
+  T193 --> T197
+  T194 --> T197
+  T189 --> T198["T-198 Unique resources and colorless cards"]
+  T193 --> T198
+  T194 --> T200["T-200 attach and Durability out of the protocol"]
+  T195 --> T200
+  T196 --> T200
+  T197 --> T200
+  T198 --> T200
+  T197 --> T199["T-199 tray, Leader slot, card view actions"]
+  T200 --> T199
+  T191 --> T201["T-201 removal, wipes and Dark sacrifice"]
+  T198 --> T201
+  T200 --> T201
+  T195 --> T202["T-202 resources from the strips, inactive actions"]
+  T199 --> T202
+  T200 --> T202
 ```
 
 | Wave | Task | Depends on | Model | Scope |
@@ -618,6 +658,26 @@ graph LR
 | 34 | [T-181 Bots rest for mana before they pay](M5/T-181-bots-rest-for-mana-before-they-pay.md) | — | sonnet, medium effort | the bots, their tests and README |
 | 35 | [T-180 Squad cues follow their units](M5/T-180-squad-cues-follow-their-units.md) | T-179 | sonnet, medium effort | `scene.ts` and its test |
 | 35 | [T-182 No auto-pay in core](M5/T-182-no-auto-pay-in-core.md) | T-181 | sonnet, high effort | core, `event.ts` and `snapshot.ts`, `docs/PROTOCOL.md`, sim-cli's tests, the planning draft, its tests and `en/planning.json`, the host and session tests, `MatchScreen.test.tsx` |
+| 36 | [T-183 Chaos factor and no tier-1 flyers](M5/T-183-chaos-factor-and-no-tier-1-flyers.md) | — | sonnet, high effort | core's Chaos and its tests, the Chaos card data, the card schema, sim-cli's tests |
+| 36 | [T-184 Unique timed cards](M5/T-184-unique-timed-cards.md) | — | haiku, low effort | six card files, the starter decks and their test, the set tests |
+| 36 | [T-185 Focusing the Leader during Plan and nameless grid icons](M5/T-185-focusing-the-leader-during-plan-and-name.md) | — | sonnet, medium effort | `planning/`, `CardView`, `en/planning.json` |
+| 36 | [T-186 Cards page pinned toolbar, pinned detail and Overall stats](M5/T-186-cards-page-pinned-toolbar-pinned-detail.md) | — | sonnet, medium effort | `CardsPage`, `BotGames`, `cards.css`, their tests, `en/cards.json` |
+| 36 | [T-187 Deck editor pinned filters, thin deck column and no Chaos cards](M5/T-187-deck-editor-pinned-filters-thin-deck-col.md) | — | sonnet, medium effort | `decks/editor/`, `en/deckEditor.json` |
+| 36 | [T-188 Grid clear of the tray and seat colors on the TopBar](M5/T-188-grid-clear-of-the-tray-and-seat-colors-o.md) | — | sonnet, medium effort | `camera.ts`, `mount.ts`, `scene.ts`, `Battlefield.tsx`, `MatchScreen.tsx`, their tests, `theme.css`, `en/match.json` |
+| 36 | [T-191 Destroy and permanent group targets](M5/T-191-destroy-and-permanent-group-targets.md) | — | opus, high effort | `dsl.ts`, core's effects and Cleanup, their fixtures, the cards and core READMEs |
+| 37 | [T-189 No Durability in core and the cards](M5/T-189-no-durability-in-core-and-the-cards.md) | T-183, T-184, T-186, T-191 | opus, high effort | core, the cards package, the protocol's `HandCard` and version, `docs/PROTOCOL.md`, two cards page tests, sim-cli's tests |
+| 37 | [T-190 Every seat's piles on its strip](M5/T-190-every-seat-s-piles-on-its-strip.md) | T-185, T-188 | sonnet, high effort | `pools.ts`, `scene.ts`, `Tray`, `ZonesPanel`, the planning panel, `MatchScreen`, their tests, the match i18n |
+| 38 | [T-192 Live stats on the card face](M5/T-192-live-stats-on-the-card-face.md) | T-189, T-190 | sonnet, medium effort | `CardFace`, `face.css`, `CardView`, `MatchScreen`, their tests, `en/match.json`, `en/cards.json` |
+| 38 | [T-193 Charge as a Plan ability in core](M5/T-193-charge-as-a-plan-ability-in-core.md) | T-189, T-190 | opus, high effort | the protocol, `docs/PROTOCOL.md`, core, the card schema, DSL and data, the random bot, the bots' and sim-cli's tests, the web's switches on actions and events |
+| 38 | [T-194 No Durability in the web](M5/T-194-no-durability-in-the-web.md) | T-189, T-190 | sonnet, high effort | `scene.ts`, `units-list.ts`, the squad and permanent panels, `PlanGrid`, their tests, the art keys, `en/battlefield.json`, `en/planning.json` |
+| 39 | [T-195 Payable facts in the snapshot](M5/T-195-payable-facts-in-the-snapshot.md) | T-193 | sonnet, high effort | core, `snapshot.ts`, the protocol's version and tests, `docs/PROTOCOL.md` |
+| 39 | [T-196 Charge in the bots](M5/T-196-charge-in-the-bots.md) | T-193 | sonnet, medium effort | the bots, their tests and README, sim-cli's tests |
+| 39 | [T-197 Charge in the web](M5/T-197-charge-in-the-web.md) | T-192, T-193, T-194 | sonnet, high effort | `match/`, `replay/`, the web fixtures, `CardFace`'s Charge row, the match i18n, the web README |
+| 39 | [T-198 Unique resources and the colorless cards](M5/T-198-unique-resources-and-the-colorless-cards.md) | T-189, T-193 | sonnet, high effort | the cards package, sim-cli's deck generator, the deck editor's copy limits |
+| 40 | [T-200 Attach and Durability out of the protocol](M5/T-200-attach-and-durability-out-of-the-protoco.md) | T-194, T-195, T-196, T-197, T-198 | sonnet, high effort | the protocol, `docs/PROTOCOL.md`, core, the bots, sim-cli, the web's source and fixtures |
+| 41 | [T-199 The tray, the Leader's slot and the card view's actions](M5/T-199-the-tray-the-leader-s-slot-and-the-card.md) | T-197, T-200 | opus, high effort | `planning/`, `CardView`, `MatchScreen`, `Hud`, their tests, `theme.css`, the match i18n |
+| 41 | [T-201 Removal, wipes and Dark sacrifice cards](M5/T-201-removal-wipes-and-dark-sacrifice-cards.md) | T-191, T-198, T-200 | opus, high effort | the card data, the starter decks, the cards' tests, core's effects, sim-cli's tests |
+| 42 | [T-202 Resources from the strips and inactive actions](M5/T-202-resources-from-the-strips-and-inactive-a.md) | T-195, T-199, T-200 | opus, high effort | `match/`, the web fixtures, the match i18n, the web README |
 
 ## Later milestones
 
