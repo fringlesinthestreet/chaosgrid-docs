@@ -5,10 +5,9 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 73 of 84 tasks merged
-- **Latest task completed:** [T-189](docs/tasks/M5/T-189-no-durability-in-core-and-the-cards.md) No Durability in core and the cards (2026-11-06)
+- **Milestone:** M5 — Balance pass · 74 of 84 tasks merged
+- **Latest task completed:** [T-192](docs/tasks/M5/T-192-live-stats-on-the-card-face.md) Live stats on the card face (2026-11-06)
 - **Next up:**
-  - [T-192](docs/tasks/M5/T-192-live-stats-on-the-card-face.md) Live stats on the card face
   - [T-193](docs/tasks/M5/T-193-charge-as-a-plan-ability-in-core.md) Charge as a Plan ability in core
   - [T-194](docs/tasks/M5/T-194-no-durability-in-the-web.md) No Durability in the web
 <!-- status:end -->
