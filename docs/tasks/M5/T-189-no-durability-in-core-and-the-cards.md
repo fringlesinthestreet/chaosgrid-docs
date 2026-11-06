@@ -19,6 +19,9 @@ scope:
   - apps/web/src/cards/CardFace.test.tsx
   - apps/web/src/cards/browser.test.tsx
   - tools/sim-cli/test/**
+  - packages/protocol/src/card.ts
+  - apps/web/src/i18n/en/cards.json
+  - packages/db/test/fixtures/**
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Round structure
