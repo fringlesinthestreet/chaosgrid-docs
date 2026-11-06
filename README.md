@@ -5,9 +5,16 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · done (62 of 62 tasks merged)
+- **Milestone:** M5 — Balance pass · 62 of 82 tasks merged
 - **Latest task completed:** [T-182](docs/tasks/M5/T-182-no-auto-pay-in-core.md) No auto-pay in core (2026-11-05)
-- **Next up:** plan M6 — Multiplayer
+- **Next up:**
+  - [T-183](docs/tasks/M5/T-183-chaos-factor-and-no-tier-1-flyers.md) Chaos factor and no tier-1 flyers
+  - [T-184](docs/tasks/M5/T-184-unique-timed-cards.md) Unique timed cards
+  - [T-185](docs/tasks/M5/T-185-focusing-the-leader-during-plan-and-name.md) Focusing the Leader during Plan and nameless grid icons
+  - [T-186](docs/tasks/M5/T-186-cards-page-pinned-toolbar-pinned-detail.md) Cards page pinned toolbar, pinned detail and Overall stats
+  - [T-187](docs/tasks/M5/T-187-deck-editor-pinned-filters-thin-deck-col.md) Deck editor pinned filters, thin deck column and no Chaos cards
+  - [T-188](docs/tasks/M5/T-188-grid-clear-of-the-tray-and-seat-colors-o.md) Grid clear of the tray and seat colors on the TopBar
+  - [T-191](docs/tasks/M5/T-191-destroy-and-permanent-group-targets.md) Destroy and permanent group targets
 <!-- status:end -->
 
 ## What's here
