@@ -31,6 +31,7 @@ scope:
   - apps/web/src/match/planning/draft.test.ts
   - apps/web/src/match/planning/targets.test.ts
   - apps/web/src/i18n/en/overlays.json
+  - packages/cards/src/spells.test.ts
 context:
   - docs/RULES.md#Resources and mana
   - docs/RULES.md#Round structure
