@@ -24,6 +24,8 @@ scope:
   - packages/core/src/view/hidden.test.ts
   - apps/web/src/host/host.test.ts
   - apps/web/src/match/session.test.ts
+  - tools/sim-cli/src/game.test.ts
+  - tools/sim-cli/src/command.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Components and setup
