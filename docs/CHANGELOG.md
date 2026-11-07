@@ -4,6 +4,12 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-07 — T-211 dropped
+
+The art for the Fleeting badge was made outside the task, and T-211's worker found nothing to change in the art pack, so the human dropped it. Its card goes too: crew counts every card file toward its milestone, so a dropped card left in place would keep M5 from finishing and stay in the README's Next up.
+
+- **Cards:** T-211 (Art for the Fleeting badge) is removed. No card depended on it.
+
 ## 2026-11-06 — No Charge (D74, T-212)
 
 The human's request: Charge was a second way to spend mana on a unit beside its Plan abilities, with its own stat, plan action, payable fact and button, and attaching resources, which it replaced, goes as well. A unit spends mana during Plan only on its level-ups and its Plan abilities, which may rest it or not. The human chose to keep each card's effect behind a Plan ability with one new effect over making the abilities always on, and to keep attached artifacts and enchantments (equipment and auras).
