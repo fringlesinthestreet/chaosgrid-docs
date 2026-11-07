@@ -15,7 +15,7 @@
 
   The types are `feat`, `fix`, `test`, `refactor`, `docs`, `chore`, `build` and `ci`.
 - **Tests while you work:** one package at a time, `pnpm --filter @chaosgrid/<pkg> test 2>&1 | tail -n 30`. Before handoff, `crew check` runs lint, format, typecheck and test.
-- **Soaks before handoff:** when your scope touches `packages/core/src/**`, `packages/bots/src/**`, `packages/cards/data/**` or `tools/sim-cli/**`, also run `crew check soak`. It takes a few minutes: give the shell command a timeout of 600000 ms, or run it in the background.
+- **Perf and soaks before handoff:** when your scope touches `packages/core/src/**`, `packages/bots/src/**`, `packages/cards/data/**` or `tools/sim-cli/**`, also run `crew check perf` and `crew check soak` (D75). Each takes a few minutes: give the shell command a timeout of 600000 ms, or run it in the background. Don't run `pnpm test:soak:full`: the lead runs it after a wave's merges.
 - **Lockfile conflicts** in a rebase: `git checkout --ours pnpm-lock.yaml && pnpm install && git add pnpm-lock.yaml`. During a rebase, "ours" is the base, and `pnpm install` adds your dependencies back.
 - **Isolation:** your worktree has its own DB at `.data/chaosgrid.db`. A server you start uses port `4000 + N` for the web and `5000 + N` for the API, where N is your task number: `CHAOSGRID_WEB_PORT=4061 CHAOSGRID_API_PORT=5061` for T-061.
 - **Docs:** a path under `docs/` in your card is in this plan repo (the milestones, the cards) or in the code repo (the rules, the protocol, the decisions, the architecture, the conventions, the art). `crew doc "<path>#<heading>"` reads either. The code repo's code, comments and docs cite only the code repo's docs, never a task, a milestone or this repo (D73).

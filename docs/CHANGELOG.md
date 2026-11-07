@@ -4,6 +4,14 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-07 — Quick and full soak tiers (D75, T-213)
+
+The human's request: the workers took too long. On 2026-11-06, on an idle 10-core laptop, `pnpm test` took 4 min 51 s and `pnpm test:soak` 20 min, so a core, bots, card data or sim-cli card waited about 25 minutes for its checks, longer with other workers on the same cores. The soak played about 300 whole games, and the Chaos factor (D65) made late rounds about 2.7 times costlier. The human picked the lead's three recommendations.
+
+- **Decisions:** D75 replaces D31, on the `--code` lead branch `test-tiers`, with CLAUDE.md's commands table and its rule 5. `pnpm test` runs without dependency order and without perf tests; `pnpm test:perf` runs alone; `pnpm test:soak` is a quick tier, a few seeded games per file checked for legal play; `pnpm test:soak:full` keeps today's game counts and the bars that need many games. Merge it first.
+- **Cards:** T-213 (wave 40, after T-196) builds the tiers, splits the M3 soak so the full tier runs its two tests side by side, trims sim-cli's three slowest tests and adds CI's perf step. T-212 waits for it, which moves T-212 and everything after it one wave later: T-212 to 41, T-200 to 42, T-199 and T-201 to 43, T-202 to 44, T-206 to 45, T-207 to T-209 to 46. T-209 loses its two soak renames, which T-213 does.
+- **The notes:** workers run `crew check perf` beside `crew check soak` when their scope touches the sim (docs/agents/CREW.md), with a new `perf` gate in `.crew/config.sh`. The lead runs the full soak after a wave's merges (this repo's CLAUDE.md).
+
 ## 2026-11-07 — T-211 dropped
 
 The art for the Fleeting badge was made outside the task, and T-211's worker found nothing to change in the art pack, so the human dropped it. Its card goes too: crew counts every card file toward its milestone, so a dropped card left in place would keep M5 from finishing and stay in the README's Next up.
