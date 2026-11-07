@@ -5,10 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 81 of 91 tasks merged
-- **Latest task completed:** [T-198](docs/tasks/M5/T-198-unique-resources-and-the-colorless-cards.md) Unique resources and the colorless cards (2026-11-07)
+- **Milestone:** M5 — Balance pass · 82 of 91 tasks merged
+- **Latest task completed:** [T-196](docs/tasks/M5/T-196-no-attach-in-the-bots.md) No attach in the bots (2026-11-07)
 - **Next up:**
-  - [T-196](docs/tasks/M5/T-196-no-attach-in-the-bots.md) No attach in the bots
+  - [T-212](docs/tasks/M5/T-212-no-charge-in-core-and-the-cards.md) No Charge in core and the cards
 <!-- status:end -->
 
 ## What's here
