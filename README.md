@@ -5,7 +5,7 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 82 of 92 tasks merged
+- **Milestone:** M5 — Balance pass · 82 of 94 tasks merged
 - **Latest task completed:** [T-196](docs/tasks/M5/T-196-no-attach-in-the-bots.md) No attach in the bots (2026-11-07)
 - **Next up:**
   - [T-213](docs/tasks/M5/T-213-quick-and-full-soak-tiers.md) Quick and full soak tiers
