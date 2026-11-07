@@ -5,13 +5,12 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 79 of 92 tasks merged
+- **Milestone:** M5 — Balance pass · 79 of 91 tasks merged
 - **Latest task completed:** [T-195](docs/tasks/M5/T-195-payable-facts-in-the-snapshot.md) Payable facts in the snapshot (2026-11-07)
 - **Next up:**
   - [T-196](docs/tasks/M5/T-196-no-attach-in-the-bots.md) No attach in the bots
   - [T-198](docs/tasks/M5/T-198-unique-resources-and-the-colorless-cards.md) Unique resources and the colorless cards
   - [T-210](docs/tasks/M5/T-210-planner-soak-red-again-on-main.md) Planner soak red again on main
-  - [T-211](docs/tasks/M5/T-211-art-for-the-fleeting-badge.md) Art for the Fleeting badge
 <!-- status:end -->
 
 ## What's here
