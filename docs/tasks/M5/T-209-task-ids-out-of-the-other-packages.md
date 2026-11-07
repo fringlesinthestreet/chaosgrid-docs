@@ -25,7 +25,7 @@ context: []
 
 ## Goal
 
-The code repo is shared, and nothing in it refers to the plan (D73). The bots, the cards, the DB, the HTTP and API code, sim-cli, three docs and two root files still do, in about 95 lines on 2026-11-06's main: task ids (`(T-017, T-024)`, `for T-001`), milestones (`for the API (M4)`, `M1's done-when`), `PLAN.md › M<n>`, "your task card", and two soak tests named after milestones. After this PR none are left, and each comment, test title and doc line says what the code does and why on its own.
+The code repo is shared, and nothing in it refers to the plan (D73). The bots, the cards, the DB, the HTTP and API code, sim-cli, three docs and two root files still do, in about 95 lines on 2026-11-06's main: task ids (`(T-017, T-024)`, `for T-001`), milestones (`for the API (M4)`, `M1's done-when`), `PLAN.md › M<n>` and "your task card". After this PR none are left, and each comment, test title and doc line says what the code does and why on its own.
 
 ## Interfaces
 
@@ -62,16 +62,12 @@ On a copy of 2026-11-06's main, the pass left about 75 lines for the hand edits,
    - A plan citation that carries a rule keeps the rule and drops the citation. Cite `docs/RULES.md › <section>` or a decision instead when one states it.
    - A comment left with nothing to say goes.
    - Test titles and log labels change the same way.
-3. **The soak tests named after milestones** take the names of what they check (`git mv`):
-   - `tools/sim-cli/test/done-when.soak.test.ts` becomes `random-games.soak.test.ts`, and its `describe('M1 done when')` becomes `describe('RandomBots')`.
-   - `tools/sim-cli/test/m3-done-when.soak.test.ts` becomes `bot-skill.soak.test.ts`, and its `describe('M3 done when')` becomes `describe('the bots against each other')`.
-   - `tools/sim-cli/README.md`'s list of tests follows.
-4. **Nothing else changes:** no code, no identifiers, no behavior.
+3. **Nothing else changes:** no code, no identifiers, no behavior.
 
 ## Acceptance
 
 - [ ] `crew check` green
-- [ ] `crew check soak` green, with the renamed soaks in its output
+- [ ] `crew check soak` green
 - [ ] the first command in Interfaces prints nothing
 - [ ] `git diff --stat main...HEAD` lists only files in the scope
 
@@ -85,6 +81,7 @@ On a copy of 2026-11-06's main, the pass left about 75 lines for the hand edits,
 ## Notes
 
 - Keep decision ids (`D33`), citations of the code repo's docs (`RULES.md › Zone mechanics`) and commit hashes: those are the code repo's.
+- T-213 already renamed the soaks after what they check and rewrote the soaks' and the smoke test's header comments and `tools/sim-cli/README.md` › Tests.
 - You run after the whole M5 queue (T-206 waits for every card before it, and T-205 runs on its own), since most of them edit these packages, and T-206 writes the next report in `docs/balance`. T-207 and T-208 run beside you, with disjoint scopes.
 - `eslint.config.js` and `pnpm-workspace.yaml` are root files (planning rule 4): change only their comments, as above.
 - docs/ is formatted by hand (`.prettierignore`), so leave a table's padding as it is when a cell gets shorter. `pnpm format` realigns the package READMEs.

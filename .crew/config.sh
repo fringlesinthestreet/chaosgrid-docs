@@ -15,12 +15,13 @@ CREW_PLAN=docs/PLAN.md
 CREW_STATUS_FILE=README.md
 CREW_NOTES=docs/agents/CREW.md
 
-# The gates. soak isn't a default: workers run it when their scope touches the sim (docs/agents/CREW.md).
+# The gates. perf and soak aren't defaults: workers run them when their scope touches the sim (docs/agents/CREW.md).
 CREW_GATES="lint format typecheck test"
 CREW_GATE_lint="pnpm lint"
 CREW_GATE_format="pnpm format:check"
 CREW_GATE_typecheck="pnpm typecheck"
 CREW_GATE_test="pnpm test"
+CREW_GATE_perf="pnpm test:perf"
 CREW_GATE_soak="pnpm test:soak"
 
 # --frozen-lockfile never rewrites the lockfile; with nothing new, pnpm only checks.
