@@ -22,7 +22,7 @@ context:
 
 ## Goal
 
-The 11-05 playtest changed the game under the 2026-11-02 baseline (T-139): one Chaos card a round, spawned Chaos-factor times (D65), no Durability (D67), no Charge, its cards printing Plan abilities instead (D74), Unique and colorless cards (D66, D69, D70), and the removal cards (T-201). Since T-183, games end in about half the rounds they did, and the human chose to measure before tuning the factor. This task measures where the game stands after wave 42 with T-139's method, and tunes nothing. After this PR, `docs/balance/` holds the two merged reports and a write-up for the new date, and `packages/cards/stats/cards.json` holds fresh per-card counts, the new cards included.
+The 11-05 playtest changed the game under the 2026-11-02 baseline (T-139): one Chaos card a round, spawned Chaos-factor times (D65) up to a cap of the round number per player, with Reach in tier 1 (D76), no Durability (D67), no Charge, its cards printing Plan abilities instead (D74), Unique and colorless cards (D66, D69, D70), and the removal cards (T-201). Since T-183, games end in about half the rounds they did, and the human chose to measure before tuning the factor. This task measures where the game stands after wave 45 with T-139's method, and tunes nothing. After this PR, `docs/balance/` holds the two merged reports and a write-up for the new date, and `packages/cards/stats/cards.json` holds fresh per-card counts, the new cards included.
 
 ## Interfaces
 
@@ -37,7 +37,7 @@ pnpm sim --merge <the parts> --json docs/balance/<date>-generated.json --card-st
 
 1. **The runs and the merges,** as T-139 › Deliverables 1 to 4, at main after T-202, with the bots, styles and point target main has then. Redo the sizing with the Leader and starter deck counts main has then: T-198 adds Brass Arbiter, a colorless Leader.
 2. **The write-up**, `docs/balance/<date>-baseline.md`, with T-139's sections: Runs, Done when, Balance knobs, Cards, Requests. Put every figure the 11-02 write-up also gives beside its 11-02 value. In Balance knobs, these replace the Durability 0 paragraph:
-   - **The Chaos factor (D65):** the median, p10 and p90 rounds against 11-02's, Chaos kill points as a share of all points against 11-02's, and which tier most games end in. Say whether the factor or the point target is the knob to move toward M5's 12 to 16 rounds, with the numbers behind it.
+   - **The Chaos factor and cap (D65, D76):** the median, p10 and p90 rounds against 11-02's, Chaos kill points as a share of all points against 11-02's, and which tier most games end in. Say whether the factor, the cap or the point target is the knob to move toward M5's 12 to 16 rounds, with the numbers behind it.
    - **No Charge (D74):** the plays and the win rate when played of the 13 cards that printed Charge, whose "If charged" abilities became Plan abilities (T-212).
    - **Removal (T-201):** the plays and the win rate when played of each removal and wipe card.
    - **Uniques and colorless (D66, D69, D70):** what stands out in the card lists.

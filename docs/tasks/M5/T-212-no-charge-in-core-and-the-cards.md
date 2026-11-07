@@ -2,7 +2,7 @@
 id: T-212
 title: No Charge in core and the cards
 milestone: M5
-depends_on: [T-195, T-196, T-197, T-198, T-213]
+depends_on: [T-195, T-196, T-197, T-198, T-213, T-214, T-215]
 branch: agent/T-212-no-charge-in-core-and-the-cards
 model: opus
 effort: high
@@ -104,7 +104,7 @@ T-197 has removed the web's Charge glow, its Charge row and every attach control
 
    The cards' other abilities don't change.
 3. **Core.** The `charge` step, `Squad.charged`, `isCharged`, the `charged` condition and the stats' `charge` go. `squad.attached` still fills from `attach` until T-200, and nothing reads it to switch an ability on. The `grantAbility` handler gives each target unit the ability from the moment the spell resolves until the duration ends: a static is on while it lasts, a trigger fires on its trigger, `{level}` reads the unit's level as a printed ability does, and it ends at Cleanup, or earlier when the unit's squad leaves the grid. Previews and the rebuild see the grants as they see the other round effects. The draws during Plan stay as CORE.md › Defaults says: Wild Grove still draws its extra resource at once.
-4. **The protocol.** `ChargeAction` and `'charge'` in `PlanActionType`, `SquadChargedEvent`, `SquadSnapshot.charged`, the card stats' `charge` and their visibility case go. Bump `PROTOCOL_VERSION` (35, after T-195's 34), with docs/PROTOCOL.md's title, Plans, Board events, Snapshot and card sections, and a Versioning row naming D74.
+4. **The protocol.** `ChargeAction` and `'charge'` in `PlanActionType`, `SquadChargedEvent`, `SquadSnapshot.charged`, the card stats' `charge` and their visibility case go. Bump `PROTOCOL_VERSION` (36, after T-215's 35), with docs/PROTOCOL.md's title, Plans, Board events, Snapshot and card sections, and a Versioning row naming D74.
 5. **The rest of the repo follows.**
    - The random bot stops charging (its every-type test follows `PlanActionType`); `rules.test.ts` and the referee lose their `charge` cases.
    - The web: the log's `squad.charged` line, `draft.ts`'s `charge` cases, the model's case and the `log.squadCharged` string go.
@@ -123,7 +123,7 @@ T-197 has removed the web's Charge glow, its Charge row and every attach control
 - [ ] `pnpm test` passes.
 - [ ] `pnpm test:soak` passes.
 - [ ] `pnpm cards:validate` passes.
-- [ ] `grep -rnE "stats\.charge|'charge'|squad\.charged|isCharged|chargePayable" packages apps tools` finds nothing, and neither does `grep -rln '"charge":\|"charged"' packages tools apps/web/test`.
+- [ ] `grep -rnE "stats\.charge|'charge'|squad\.charged|isCharged|chargePayable" packages apps tools` finds nothing but tests that check Charge is gone (a negative assertion such as `not.toContain('charge')` stays), and `grep -rln '"charge":\|"charged"' packages tools apps/web/test` finds nothing.
 - [ ] `git diff --stat main...HEAD` lists only files in the scope.
 
 ## Out of scope

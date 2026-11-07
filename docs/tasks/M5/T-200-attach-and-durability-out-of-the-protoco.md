@@ -51,6 +51,8 @@ What exists (copied on 2026-11-05; line numbers moved since, so grep the names):
 // tools/sim-cli/src/game.ts:291 counts "unrested and unattached" resources; test/golden-script.ts:171 an `attach`
 // apps/web/src/match/model: SquadModel.durability, PermanentModel.durability, the durabilityChanged handlers and the
 //   ignored resources.* cases (T-194 and T-197 kept them for this PR); test literals across apps/web/src;
+// apps/web/src/match/planning/draft.ts: the `attach` cases in markedBy and describeAction, which T-197 kept because the
+//   protocol's switches are exhaustive; packages/core/src/zones/resources.ts: the pool entries' `attachedTo: null`
 //   apps/web/test/fixtures/planning/*.json (durability, attached, attachedTo) and the two logs in test/fixtures/logs/
 ```
 
@@ -58,7 +60,7 @@ Attached permanents (equipment and auras: `mode: 'attached'`, `castPermanent` wi
 
 ## Deliverables
 
-1. **The protocol.** Remove everything listed above, the `Durability` primitive with them unless an Emblem field still uses it. Make the `payable` fields and `levelUpPayable` required. Bump `PROTOCOL_VERSION` (36, after T-212's 35), with docs/PROTOCOL.md's title, its field types, Plans, Planning and Board events, Visibility and Snapshot sections, and a Versioning row naming D67 and D74. In `plan.ts`, `RestForManaAction`'s doc comment cites D58, which D64 replaced: make it D64.
+1. **The protocol.** Remove everything listed above, the `Durability` primitive with them unless an Emblem field still uses it. Make the `payable` fields and `levelUpPayable` required. Bump `PROTOCOL_VERSION` (37, after T-212's 36), with docs/PROTOCOL.md's title, its field types, Plans, Planning and Board events, Visibility and Snapshot sections, and a Versioning row naming D67 and D74. In `plan.ts`, `RestForManaAction`'s doc comment cites D58, which D64 replaced: make it D64.
 2. **Core** stops building and reading what's gone: the `attach` step and its zone functions, `Squad.attached` and the resources' attached state, the views' fields, the rebuild's reads, and the core README's `attached` line.
 3. **The bots.** The random bot stops attaching (its every-type test follows `PlanActionType`). The referee loses its attach case. Fixtures and literals drop the gone fields and gain the required ones.
 4. **sim-cli.** `game.ts` counts unrested resources. The golden script drops its `attach` (T-212 gave it a grant to cover instead), and its fixture cards follow; regenerate the golden streams as `golden.test.ts` says, and say why in the PR.
