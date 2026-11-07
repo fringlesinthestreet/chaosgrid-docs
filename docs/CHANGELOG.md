@@ -4,6 +4,15 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-07 — The Chaos cap (D76, T-214, T-215)
+
+The human's request: the Chaos scaled too much with the rounds, and should grow stronger without turning the game into PvE, with at most 1 squad in round 1, 2 in round 2 and so on, and Reach in tier 1 so flyers aren't overpowered. The human chose a cap per player over one for the whole battlefield, and Reach on Scavenger Drone and Lost Sentinel.
+
+- **Decisions:** D76 narrows D65, on the `--code` lead branch `chaos-cap`, with RULES.md (Chaos deck and Emblems, the sample tier-1 table, Balance knobs) and CORE.md. Merge it first.
+- **Cards:** T-214 (wave 41) caps the squads in core and gives the two cards Reach. T-215, beside it, fixes a bug found while planning it: the preview seats Chaos squads by pairing a card's targets with its squads by index, which since D65 is wrong for every squad after a seat's first, so the snapshot now gives each Chaos squad's seat (protocol 35).
+- **The open questions after waves 39 and 40:** T-213's tiers cover the soak reruns and the perf test that slows under load, and the lead runs the full tier after wave 41 to check the planner's thin margin. T-200 now names the `attach` cases T-197 kept in `draft.ts` and core's `attachedTo: null`, and T-212's acceptance grep lets a test check that Charge is gone.
+- **The board:** T-212 waits for T-214 and T-215 and moves to wave 42, at protocol 36; T-200 to wave 43, at protocol 37; T-199 and T-201 to 44, T-202 to 45, T-206 (which now measures the cap too) to 46, and T-207 to T-209 to 47.
+
 ## 2026-11-07 — Quick and full soak tiers (D75, T-213)
 
 The human's request: the workers took too long. On 2026-11-06, on an idle 10-core laptop, `pnpm test` took 4 min 51 s and `pnpm test:soak` 20 min, so a core, bots, card data or sim-cli card waited about 25 minutes for its checks, longer with other workers on the same cores. The soak played about 300 whole games, and the Chaos factor (D65) made late rounds about 2.7 times costlier. The human picked the lead's three recommendations.
