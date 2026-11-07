@@ -20,6 +20,10 @@ scope:
   - apps/web/src/decks/editor/*.test.ts
   - apps/web/src/decks/editor/*.test.tsx
   - apps/web/src/i18n/en/deckEditor.json
+  - packages/core/src/zones/resources.test.ts
+  - packages/core/src/view/hidden.test.ts
+  - apps/web/src/host/host.test.ts
+  - apps/web/src/match/session.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Components and setup
