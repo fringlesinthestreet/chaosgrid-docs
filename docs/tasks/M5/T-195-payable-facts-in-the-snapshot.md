@@ -13,6 +13,7 @@ scope:
   - packages/protocol/test/**
   - docs/PROTOCOL.md
   - packages/core/**
+  - apps/web/test/fixtures/planning/*.json
 context:
   - docs/DECISIONS.md#Decision log
   - docs/CORE.md#Defaults for open rules questions
