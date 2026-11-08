@@ -5,10 +5,11 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 87 of 95 tasks merged
-- **Latest task completed:** [T-212](docs/tasks/M5/T-212-no-charge-in-core-and-the-cards.md) No Charge in core and the cards (2026-11-08)
+- **Milestone:** M5 — Balance pass · 88 of 95 tasks merged
+- **Latest task completed:** [T-200](docs/tasks/M5/T-200-attach-and-durability-out-of-the-protoco.md) Attach and Durability out of the protocol (2026-11-08)
 - **Next up:**
-  - [T-200](docs/tasks/M5/T-200-attach-and-durability-out-of-the-protoco.md) Attach and Durability out of the protocol
+  - [T-199](docs/tasks/M5/T-199-the-tray-the-leader-s-slot-and-the-card.md) The tray, the Leader's slot and the card view's actions
+  - [T-201](docs/tasks/M5/T-201-removal-wipes-and-dark-sacrifice-cards.md) Removal, wipes and Dark sacrifice cards
 <!-- status:end -->
 
 ## What's here
