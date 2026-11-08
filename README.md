@@ -5,11 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 83 of 94 tasks merged
-- **Latest task completed:** [T-213](docs/tasks/M5/T-213-quick-and-full-soak-tiers.md) Quick and full soak tiers (2026-11-08)
+- **Milestone:** M5 — Balance pass · 84 of 94 tasks merged
+- **Latest task completed:** [T-215](docs/tasks/M5/T-215-chaos-squads-keep-their-seat-in-preview.md) Chaos squads keep their seat in the preview (2026-11-08)
 - **Next up:**
   - [T-214](docs/tasks/M5/T-214-chaos-squad-cap-and-tier-1-reach.md) Chaos squad cap and tier-1 Reach
-  - [T-215](docs/tasks/M5/T-215-chaos-squads-keep-their-seat-in-preview.md) Chaos squads keep their seat in the preview
 <!-- status:end -->
 
 ## What's here
