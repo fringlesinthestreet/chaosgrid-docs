@@ -17,6 +17,7 @@ scope:
   - apps/web/test/fixtures/planning/**
   - apps/web/src/**/*.test.ts
   - apps/web/src/**/*.test.tsx
+  - packages/bots/src/*.test.ts
 context:
   - docs/PROTOCOL.md#Snapshot
   - docs/PROTOCOL.md#Versioning
