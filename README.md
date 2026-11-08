@@ -5,10 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 86 of 95 tasks merged
-- **Latest task completed:** [T-216](docs/tasks/M5/T-216-planner-bars-off.md) Planner bars off while the game is balanced (2026-11-08)
+- **Milestone:** M5 — Balance pass · 87 of 95 tasks merged
+- **Latest task completed:** [T-212](docs/tasks/M5/T-212-no-charge-in-core-and-the-cards.md) No Charge in core and the cards (2026-11-08)
 - **Next up:**
-  - [T-212](docs/tasks/M5/T-212-no-charge-in-core-and-the-cards.md) No Charge in core and the cards
+  - [T-200](docs/tasks/M5/T-200-attach-and-durability-out-of-the-protoco.md) Attach and Durability out of the protocol
 <!-- status:end -->
 
 ## What's here
