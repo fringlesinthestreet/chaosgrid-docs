@@ -14,6 +14,7 @@ scope:
   - packages/cards/data/chaos/lost_sentinel.json
   - packages/cards/data/chaos/scavenger_drone.json
   - tools/sim-cli/test/golden/**
+  - tools/sim-cli/test/planner-early-chaos.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Chaos deck and Emblems
