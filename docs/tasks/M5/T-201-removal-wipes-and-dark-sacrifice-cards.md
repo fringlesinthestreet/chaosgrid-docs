@@ -15,6 +15,7 @@ scope:
   - packages/core/test/fixtures/effects/**
   - tools/sim-cli/test/**
   - packages/cards/src/spells.test.ts
+  - packages/core/src/view/cards.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Zone mechanics
