@@ -22,7 +22,7 @@ context:
 
 ## Goal
 
-The 11-05 playtest changed the game under the 2026-11-02 baseline (T-139): one Chaos card a round, spawned Chaos-factor times (D65) up to a cap of the round number per player, with Reach in tier 1 (D76), no Durability (D67), no Charge, its cards printing Plan abilities instead (D74), Unique and colorless cards (D66, D69, D70), and the removal cards (T-201). Since T-183, games end in about half the rounds they did, and the human chose to measure before tuning the factor. This task measures where the game stands after wave 45 with T-139's method, and tunes nothing. After this PR, `docs/balance/` holds the two merged reports and a write-up for the new date, and `packages/cards/stats/cards.json` holds fresh per-card counts, the new cards included.
+The 11-05 playtest changed the game under the 2026-11-02 baseline (T-139): one Chaos card a round, spawned Chaos-factor times (D65) up to a cap of the round number per player, with Reach in tier 1 (D76), no Durability (D67), no Charge, its cards printing Plan abilities instead (D74), Unique and colorless cards (D66, D69, D70), and the removal cards (T-201). Since T-183, games end in about half the rounds they did, and the human chose to measure before tuning the factor. This task measures where the game stands after wave 46 with T-139's method, and tunes nothing. After this PR, `docs/balance/` holds the two merged reports and a write-up for the new date, and `packages/cards/stats/cards.json` holds fresh per-card counts, the new cards included.
 
 ## Interfaces
 

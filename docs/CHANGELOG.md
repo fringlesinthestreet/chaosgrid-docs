@@ -4,6 +4,14 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-08 — The planner bars off (D77, T-216)
+
+The human's request: the tests that rely on the planner bot beating the greedy bot shouldn't hold up the workers while the human balances the Chaos and the cards. The bots' difficulty levels get balanced after that.
+
+- **Decisions:** D77, on the `--code` lead branch `planner-bars-off`: while the Chaos and the cards are balanced, no test requires the planner to beat greedy. Two tests did: `planner-early-chaos.test.ts`, in `pnpm test`, which gated every card, and the planner soak's full-tier bar, which the lead's full soak checks after a wave. Greedy's bar against random (D33) and the planner's unit tests stay. Merge it first.
+- **Cards:** T-216 (wave 42) skips both tests, so Vitest lists them as skipped, and updates sim-cli's and the bots' READMEs.
+- **The board:** T-212 waits for T-216, since its scope has both test files and the bots' README, and moves to wave 43; T-200 to 44, T-199 and T-201 to 45, T-202 to 46, T-206 to 47 and T-207 to T-209 to 48. No protocol number changes.
+
 ## 2026-11-07 — The Chaos cap (D76, T-214, T-215)
 
 The human's request: the Chaos scaled too much with the rounds, and should grow stronger without turning the game into PvE, with at most 1 squad in round 1, 2 in round 2 and so on, and Reach in tier 1 so flyers aren't overpowered. The human chose a cap per player over one for the whole battlefield, and Reach on Scavenger Drone and Lost Sentinel.
