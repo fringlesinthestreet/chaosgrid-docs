@@ -5,10 +5,11 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 92 of 96 tasks merged
+- **Milestone:** M5 — Balance pass · 92 of 97 tasks merged
 - **Latest task completed:** [T-202](docs/tasks/M5/T-202-resources-from-the-strips-and-inactive-a.md) Resources from the strips and inactive actions (2026-11-08)
 - **Next up:**
   - [T-206](docs/tasks/M5/T-206-balance-baseline-after-the-11-05-rules.md) Balance baseline after the 11-05 rules
+  - [T-218](docs/tasks/M5/T-218-e2e-green-again.md) The e2e tests green again
 <!-- status:end -->
 
 ## What's here
