@@ -463,6 +463,7 @@ After playing M4, the human set M5's priorities: gameplay, the UI, card balancin
 - **Quicker tests (wave 40, D75).** What the human asked for on 2026-11-07: a core, bots, card data or sim-cli card waited about 25 minutes for its checks, `pnpm test` 4 min 51 s and the soak 20 min. T-213 splits the soaks into a quick tier the workers run and a full tier the lead runs after a wave's merges, takes the perf tests out of `pnpm test`, runs its packages without dependency order and trims sim-cli's slowest tests. It waits for T-196, which edits sim-cli's tests, and T-214 and T-212 wait for it, since they edit them next. It does T-209's two soak renames, since it splits one of those files. Stated exception to planning rule 4: it changes the root `package.json` and CI, and the cards after it touch no root file.
 - **The Chaos cap (wave 41, D76).** What the human asked for on 2026-11-07: the Chaos grows with the rounds without turning the game into PvE, so a player faces at most the round number of Chaos squads a round, Extra Chaos included, and tier 1 gets Reach against flyers. T-214 caps the squads in core and gives Scavenger Drone and Lost Sentinel Reach. T-215 fixes a bug found while planning it: the planner's preview pairs a Chaos card's targets with its squads by index, which has seated most Chaos squads wrong since D65, so the snapshot now gives each one's seat (protocol 35). Their scopes are disjoint, so they run together after T-213, whose quick soak they use. T-212 waits for both, since it edits core, the card data and the protocol after them, and T-212 and T-200 move to protocol 36 and 37.
 - **The planner bars off (wave 42, D77).** What the human asked for on 2026-11-08: while the human balances the Chaos and the cards, no test requires the planner bot to beat the greedy bot. Its lead over greedy is thin, so a balance change kept turning those tests red and the fix went into the bots. T-216 skips the two that compare them, `planner-early-chaos.test.ts` in `pnpm test` and the planner soak's full-tier bar, until the human balances the bots' difficulty levels. It runs alone, and T-212 waits for it, since T-212's scope has both test files and the bots' README.
+- **The e2e tests (wave 47).** T-200 found three Playwright tests failing on `main`: m4's whole game and both replay tests, written for a planning UI and a round 1 that have changed since (D60, D64, D71, D72). T-218 fixes them beside T-206, whose scope is disjoint, and T-208 waits for it, since it edits the web app next.
 
 The art cards follow the playtest fixes: T-119 needs T-118. T-119 builds the art module: the version 2 manifest, sprite strips, `SpriteView` and stills. Then the battlefield changes one owner at a time, since all three cards edit `match/battlefield/`: T-120 animates units and permanents, T-121 winds attacks up from playback's look-ahead and flies projectile sprites (D47), and T-122 plays the `fx` sprites and the spell casts. T-120 and T-121 also edit `MatchScreen.tsx` and `replay/ReplayPage.tsx`, and T-121 `match/playback/`. T-123, the art pack, waits only for T-119, whose `manifest-schema.ts` it imports (planning rule 2), and its scope is disjoint from the battlefield cards'. The art cards add owners to M4/README.md's tree the same way as the playtest cards, one after another.
 
@@ -622,6 +623,7 @@ graph LR
   T206 --> T207
   T205 --> T208["T-208 task ids out of the web app"]
   T206 --> T208
+  T218["T-218 e2e tests green again"] --> T208
   T205 --> T209["T-209 task ids out of the other packages"]
   T206 --> T209
 ```
@@ -717,8 +719,9 @@ graph LR
 | 45 | [T-201 Removal, wipes and Dark sacrifice cards](M5/T-201-removal-wipes-and-dark-sacrifice-cards.md) | T-191, T-198, T-200 | opus, high effort | the card data, the starter decks, the cards' tests, core's effects, sim-cli's tests |
 | 46 | [T-202 Resources from the strips and inactive actions](M5/T-202-resources-from-the-strips-and-inactive-a.md) | T-195, T-199, T-200 | opus, high effort | `match/`, the web fixtures, the match i18n, the web README |
 | 47 | [T-206 Balance baseline after the 11-05 rules](M5/T-206-balance-baseline-after-the-11-05-rules.md) | T-201, T-202 | sonnet, medium effort | `docs/balance`, `packages/cards/stats` |
+| 47 | [T-218 The e2e tests green again](M5/T-218-e2e-green-again.md) | — | sonnet, high effort | the web's e2e specs, its replay page, the web README |
 | 48 | [T-207 Task ids out of core and the protocol](M5/T-207-task-ids-out-of-core-and-the-protocol.md) | T-205, T-206 | sonnet, medium effort | core, the protocol, `docs/CORE.md`, `docs/PROTOCOL.md` |
-| 48 | [T-208 Task ids out of the web app](M5/T-208-task-ids-out-of-the-web-app.md) | T-205, T-206 | sonnet, medium effort | the web app, `docs/APPS.md`, `docs/ART.md` |
+| 48 | [T-208 Task ids out of the web app](M5/T-208-task-ids-out-of-the-web-app.md) | T-205, T-206, T-218 | sonnet, medium effort | the web app, `docs/APPS.md`, `docs/ART.md` |
 | 48 | [T-209 Task ids out of the other packages](M5/T-209-task-ids-out-of-the-other-packages.md) | T-205, T-206 | sonnet, medium effort | the bots, cards, DB, HTTP and API packages, sim-cli, `docs/RULES.md`, `docs/ARCHITECTURE.md`, `docs/balance`, `eslint.config.js`, `pnpm-workspace.yaml` |
 
 ## Later milestones
