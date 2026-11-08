@@ -10,6 +10,7 @@ scope:
   - packages/protocol/**
   - docs/PROTOCOL.md
   - apps/web/src/**
+  - apps/web/test/fixtures/planning/*.json
 context:
   - docs/PROTOCOL.md
 ---
