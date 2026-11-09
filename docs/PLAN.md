@@ -117,12 +117,14 @@ Match:
 - [ ] The Chaos cap (the human's request, 2026-11-07; D76, T-214 and T-215). A player faces at most the round number of Chaos squads a round, Extra Chaos included, and tier 1's Scavenger Drone and Lost Sentinel have Reach against flyers (D76; T-214). The planner's preview seats every Chaos squad as the real round does (T-215).
 - [ ] The planner bars off (the human's request, 2026-11-08; D77, T-216). While the Chaos and the cards are balanced, no test requires the planner bot to beat the greedy bot: the two that did are skipped until the human balances the bots' difficulty levels (T-216).
 
-### M6 — Balance v2 (1–2 weeks)
-The human's requests of 2026-11-09: a smaller, steadier Chaos, a slower economy with cheap cards, no traps, and the bugs found playing. The cards are in [tasks/README.md](tasks/README.md#m6--balance-v2).
+### M6 — Balance v2 (2–3 weeks)
+The human's requests of 2026-11-09: a smaller, steadier Chaos, resources as cards of one deck, cheap cards, no traps, and the bugs found playing. The cards are in [tasks/README.md](tasks/README.md#m6--balance-v2).
 - [ ] Chaos: every round reveals one condition, one Emblem and one unit card from the tier's three piles; a unit card spawns its squad once in front of each player it targets; cards sent against everyone stay small, and only tiers 2 and 3 have big cards sent against the point leader; Extra Chaos is one more such card when the leader is 10 points ahead, in tiers 2 and 3 (D80; T-224, T-226). The lobby can turn Chaos off (D82; T-229).
 - [ ] No traps: the card type, its mechanics, its cards and its protocol messages go (D81; T-219, T-223).
-- [ ] Economy: one resource a round (D60; T-227); cheap units, new and re-costed, while expensive cards stay (T-225); Unique artifacts whose Plan ability adds one floating mana, costing at least 2 (D83; T-228, T-230).
-- [ ] Bugs: one level-up a round (D84; T-231); attached-card icons and picks follow the units during playback (T-220); playback back to 1× each round, and the round summary and the Chaos banner close by themselves (T-221); the pool keeps its order when resources rest, and an inactive card's reason shows on hover (T-222).
+- [ ] Resources: one 90-card deck holds them with the rest, the opening hand is 7 and a Plan draws 1 (D60); a resource is played onto the grid as a static permanent that floats its mana every round, basic or non-basic (D85); costs are paid with the round's mana (D64); on-enter resource draws search the deck for a basic resource, and other resource gains give mana (D86) (T-234, T-235, T-236).
+- [ ] Economy: cheap units, new and re-costed, while expensive cards stay (T-225); Unique artifacts whose Plan ability adds one floating mana, costing at least 2 (D83; T-228).
+- [ ] The hand is a window dragged inside the battlefield, with the floating mana, Ready and the clock in it, and no planning panel (D87; T-238).
+- [ ] Bugs: one level-up a round (D84; T-231); attached-card icons and picks follow the units during playback (T-220); playback back to 1× each round, and the round summary and the Chaos banner close by themselves (T-221); an inactive card's reason shows on hover (T-222).
 - [ ] The code repo's docs state only what holds now, and the code carries no history in its comments (D79; T-232). Sprites for the new cards and those still missing art: the prompt page in [CHANGELOG.md](CHANGELOG.md).
 - **Done when:** every card above is merged and the balance baseline after them is committed (T-233).
 

@@ -2,7 +2,7 @@
 id: T-231
 title: One level-up a round
 milestone: M6
-depends_on: [T-227, T-228]
+depends_on: [T-235]
 branch: agent/T-231-one-level-up-a-round
 model: sonnet
 effort: high

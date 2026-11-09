@@ -2,7 +2,7 @@
 id: T-226
 title: New Chaos cards for every tier
 milestone: M6
-depends_on: [T-224]
+depends_on: [T-224, T-235]
 branch: agent/T-226-new-chaos-cards-for-every-tier
 model: sonnet
 effort: medium
@@ -58,3 +58,4 @@ Write each like the existing card of its kind: `chaos.supply_drop` for an Emblem
 ## Notes
 
 - If an effect in the table can't be written with the DSL as it stands (for example a buff to the breaker's units, if `destroyer` has no units target the way a Chaos unit's killer has `killerUnits`), write the nearest one it can, keep the id and the name, and say so in the PR.
+- Heartstone, Rich Vein and the existing Good Harvest and Supply Drop add mana, not resource draws (D86): a `buff` of the player stat `manaPerRound` (T-235), for the game, the round or two rounds. Drought is the `noResources` rule.
