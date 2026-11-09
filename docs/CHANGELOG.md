@@ -4,6 +4,19 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-09 — Resources as cards of the deck, the hand window (D26, D57, D60, D64, D69, D71, D72, D85 to D87, T-234 to T-238)
+
+The human's second request of the day, added to M6 before its first wave started.
+
+- **Decisions,** on the `--code` lead branch `resources-in-the-deck` with RULES.md, CORE.md, APPS.md and ART.md. Merge it first.
+  - D85: resources are cards of the deck, played onto the grid as static 1×1 permanents that float their mana at the start of Plan; any number a round; basic and non-basic; a resource with an ability gives no colored mana, a Unique one gives one generic mana; two-color resources enter rested.
+  - D86: an on-enter "draw a resource" searches the deck for a basic resource, through a panel; every other resource gain is floating mana (`addMana`, `manaPerRound`); Drought forbids playing resources.
+  - D87: the hand is a window the player drags, clamped inside the battlefield, with the floating mana, Ready and the clock in it; no planning panel.
+  - D60 says one 90-card deck, 7 cards to start and 1 a round (the human's picks: 1 a round and 7 to start, out of four options). D64 pays with the mana the grid's resources give. D26 lifts the copy limit for basic resources. D57 and D71 lose the pool. D69 keeps Unique resources at one per deck. D72 loses `usable`.
+  - The human kept the mana artifacts (D83, T-228) beside the resources.
+- **Cards.** T-234 (one deck: the cards, the DB, the API and the deck editor), T-235 (core, the protocol and the bots), T-236 (the web, and the pool out of the protocol), T-238 (the hand window). T-227 (one resource a round) and T-230 (bots and web use ability mana) are removed: no resource draw exists, and T-235 makes every mana unit alike, so T-228 keeps the artifacts and their tests. T-222 loses its pool-order half. T-237 was created and removed in the same branch: the deck editor can't ship apart from the HTTP change the web type-checks against. The board has eight waves.
+- **Reading of the request.** "They are static" means a free-standing permanent on the grid, like the mana artifacts the human asked for before; "only when enters give resource draw": no card had such an effect, so Seedling Scout and Dusk Courier get one, and the rest give mana. The hand window's "playing grid" is the battlefield's box on screen.
+
 ## 2026-11-09 — M6, balance v2 (D60, D79 to D84, T-219 to T-233)
 
 The human's requests after playing: M5 had grown too big, so balance v2 is a milestone of its own, M6, and Multiplayer and Desktop move to M7 and M8.

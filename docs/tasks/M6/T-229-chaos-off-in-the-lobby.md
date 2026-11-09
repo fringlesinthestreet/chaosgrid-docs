@@ -2,7 +2,7 @@
 id: T-229
 title: Chaos off in the lobby
 milestone: M6
-depends_on: [T-221, T-224, T-227]
+depends_on: [T-221, T-224]
 branch: agent/T-229-chaos-off-in-the-lobby
 model: sonnet
 effort: medium

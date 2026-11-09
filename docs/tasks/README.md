@@ -726,14 +726,15 @@ graph LR
 
 ## M6 — Balance v2
 
-Done when every card below is merged and the baseline after them is committed ([PLAN.md](../PLAN.md) › M6). The rules are in the code repo's RULES.md and DECISIONS.md (D60, D79 to D84) before the first wave starts.
+Done when every card below is merged and the baseline after them is committed ([PLAN.md](../PLAN.md) › M6). The rules are in the code repo's RULES.md and DECISIONS.md (D60, D64, D79 to D87) before the first wave starts.
 
 How the waves fit together:
 
-- **One owner a wave for the golden streams and core's shared tests.** T-219, T-224 and T-231 rewrite sim-cli's golden streams; T-227 pins its economy in the golden script so they don't change; the other core cards add new test files where they can.
-- **The protocol, one bump at a time.** T-223 makes it 39 (no traps) and T-228 40 (ability mana, an optional field). The Chaos rework and Chaos off change no message: Chaos off passes `revealSeconds: 0` from the host.
-- **Traps go in two steps,** as Charge did: T-219 empties the cards, core and the bots while the protocol keeps its trap types, and T-223 removes them from the protocol and the web after the two web bug cards that share its files (T-220, T-222).
-- **Card data, one folder each.** T-219 and then T-225 and T-230 edit the starter decks; T-224 and then T-226 the Chaos folder; T-228 adds artifacts.
+- **One owner a wave for the golden streams and core's shared tests.** T-219, T-224, T-235 and T-231 rewrite sim-cli's golden streams, each alone in its wave for core; the other core cards add new test files where they can.
+- **The protocol, one bump at a time.** T-223 makes it 39 (no traps), T-235 40 (resources on the grid, the round's mana and searches, additive: the pool messages stay inert so the web keeps compiling) and T-236 41 (the pool messages go). Chaos off changes no message: it passes `revealSeconds: 0` from the host.
+- **Resources go in three steps.** T-234 puts them in one 90-card deck for the cards, the DB, the API and the deck editor while the host splits them out for core; T-235 makes core and the bots play them from the grid; T-236 makes the web do the same and removes the pool from the protocol. The web type-checks against `http`, `protocol` and core's public entry, which is why each step changes both sides of a contract or leaves the old side inert.
+- **Traps go in two steps,** as Charge did: T-219 empties the cards, core and the bots while the protocol keeps its trap types, and T-223 removes them from the protocol and the web after the two web bug cards that share its files.
+- **Card data, one folder each.** T-219 and then T-225, T-234 and T-228 edit the starter decks; T-224, T-235 and then T-226 the Chaos folder; T-234 the resources; T-235 the cards that drew resources; T-228 adds artifacts.
 - **The sweep and the baseline run alone.** T-232 has every package in its scope; T-233 takes every core for hours.
 
 | Wave | Task | Depends on | Model | Scope |
@@ -741,18 +742,20 @@ How the waves fit together:
 | 1 | [T-219 Traps out of the cards, core and bots](M6/T-219-traps-out-of-the-cards-core-and-bots.md) | — | opus, high effort | the cards package, core, the bots, the DB's tests, sim-cli |
 | 1 | [T-220 Attached icons and picks follow units](M6/T-220-attached-icons-and-picks-follow-units.md) | — | sonnet, medium effort | `scene.ts`, `pick.ts`, `MatchScreen`, their tests |
 | 1 | [T-221 Playback at 1x and overlays that close](M6/T-221-playback-at-1x-and-overlays-that-close.md) | — | sonnet, medium effort | `playback/`, `overlays/`, `session.ts`, `replay/`, the web README |
-| 1 | [T-222 Pool order and inactive reasons on hover](M6/T-222-pool-order-and-inactive-reasons-on-hover.md) | — | sonnet, medium effort | `pools.ts`, `OwnPool`, `ResourceActions`, `HandEntry`, `ActionButton`, their tests, `theme.css` |
+| 1 | [T-222 Inactive reasons on hover](M6/T-222-inactive-reasons-on-hover.md) | — | sonnet, medium effort | `HandEntry`, `ActionButton`, their tests, `theme.css` |
 | 2 | [T-223 Traps out of the protocol and the web](M6/T-223-traps-out-of-the-protocol-and-the-web.md) | T-219, T-220, T-222 | sonnet, high effort | the protocol, `docs/PROTOCOL.md`, `docs/ART.md`, the web's source, tests and art pack |
 | 2 | [T-224 Chaos: a condition, an Emblem and a unit](M6/T-224-chaos-a-condition-an-emblem-and-a-unit.md) | T-219 | opus, high effort | core's `chaos/` and config, core's tests, the Chaos data and schema, sim-cli's tests |
 | 2 | [T-225 Cheap units, new and re-costed](M6/T-225-cheap-units-new-and-re-costed.md) | T-219 | sonnet, high effort | the unit data, the starter decks, two cards tests |
-| 3 | [T-226 New Chaos cards for every tier](M6/T-226-new-chaos-cards-for-every-tier.md) | T-224 | sonnet, medium effort | the Chaos data, the Chaos set test |
-| 3 | [T-227 One resource a round](M6/T-227-one-resource-a-round.md) | T-224 | sonnet, medium effort | core's config and tests, the bots' tests, sim-cli's tests |
-| 4 | [T-228 Mana artifacts and the addMana effect](M6/T-228-mana-artifacts-and-the-addmana-effect.md) | T-223, T-227 | opus, high effort | the DSL and schema, the artifact data, core's effects, zones, snapshot and rebuild, the protocol |
-| 4 | [T-229 Chaos off in the lobby](M6/T-229-chaos-off-in-the-lobby.md) | T-221, T-224, T-227 | sonnet, medium effort | core's config and `chaos/`, the lobby, the host, `overlays/`, sim-cli's command |
-| 5 | [T-230 Bots and the web use ability mana](M6/T-230-bots-and-the-web-use-ability-mana.md) | T-225, T-228 | sonnet, high effort | the bots, `FloatingMana`, the planning fixtures, the starter decks |
-| 5 | [T-231 One level-up a round](M6/T-231-one-level-up-a-round.md) | T-227, T-228 | sonnet, high effort | core's `plan/`, `board.ts`, Cleanup and rebuild, the golden streams |
-| 6 | [T-232 History out of the code's comments](M6/T-232-history-out-of-the-code-s-comments.md) | T-226, T-229, T-230, T-231 | sonnet, medium effort | comments in every package |
-| 7 | [T-233 Balance baseline after balance v2](M6/T-233-balance-baseline-after-balance-v2.md) | T-232 | sonnet, medium effort | `docs/balance`, `packages/cards/stats` |
+| 3 | [T-234 Resources as cards of the deck](M6/T-234-resources-as-cards-of-the-deck.md) | T-223, T-225 | opus, high effort | the cards package, the resource data, the starter decks, the DB, `http`, the API, the deck editor, the lobby, the host |
+| 3 | [T-238 The hand window](M6/T-238-the-hand-window.md) | T-221, T-222 | sonnet, high effort | `planning/`, `MatchScreen`, the battlefield's mount and camera |
+| 4 | [T-235 Core: resources on the grid and the round's mana](M6/T-235-core-resources-on-the-grid-and-the-round.md) | T-224, T-234 | opus, high effort | core, the protocol, the bots, the DSL, the cards that drew resources, sim-cli |
+| 5 | [T-226 New Chaos cards for every tier](M6/T-226-new-chaos-cards-for-every-tier.md) | T-224, T-235 | sonnet, medium effort | the Chaos data, the Chaos set test |
+| 5 | [T-231 One level-up a round](M6/T-231-one-level-up-a-round.md) | T-235 | sonnet, high effort | core's `plan/`, `board.ts`, Cleanup and rebuild, the golden streams |
+| 5 | [T-236 The web plays resources from the grid](M6/T-236-the-web-plays-resources-from-the-grid.md) | T-235, T-238 | opus, high effort | the protocol, `docs/PROTOCOL.md`, `docs/ART.md`, the web's source, tests and art pack |
+| 6 | [T-228 Mana artifacts](M6/T-228-mana-artifacts-and-the-addmana-effect.md) | T-235, T-236 | sonnet, high effort | the card schema, the artifact data, the starter decks, bots and web tests |
+| 6 | [T-229 Chaos off in the lobby](M6/T-229-chaos-off-in-the-lobby.md) | T-221, T-224 | sonnet, medium effort | core's config and `chaos/`, the lobby, the host, `overlays/`, sim-cli's command |
+| 7 | [T-232 History out of the code's comments](M6/T-232-history-out-of-the-code-s-comments.md) | T-226, T-228, T-229, T-231, T-236 | sonnet, medium effort | comments in every package |
+| 8 | [T-233 Balance baseline after balance v2](M6/T-233-balance-baseline-after-balance-v2.md) | T-232 | sonnet, medium effort | `docs/balance`, `packages/cards/stats` |
 
 ## Later milestones
 
