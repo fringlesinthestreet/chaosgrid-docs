@@ -14,9 +14,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 
 | Path | What |
 | --- | --- |
-| [docs/PLAN.md](docs/PLAN.md) | The milestones, M0 to M7 |
+| [docs/PLAN.md](docs/PLAN.md) | The milestones, M0 to M8 |
 | [docs/tasks/](docs/tasks/README.md) | Task cards by milestone, ChaosGrid's planning rules and the board |
 | [docs/CHANGELOG.md](docs/CHANGELOG.md) | How the plan, the decisions and the way we work changed |
+| [docs/DECISIONS-HISTORY.md](docs/DECISIONS-HISTORY.md) | What the code repo's decisions said before, and why they changed (D79) |
 | [docs/agents/CREW.md](docs/agents/CREW.md) | What crew's workers need to know about ChaosGrid |
 | [.crew/](.crew/config.sh) | crew's settings, the code repo's lead paths, and the commits that only look like task merges |
 | [scripts/dev.sh](scripts/dev.sh), [docker-compose.yml](docker-compose.yml) | ChaosGrid on this machine with Redis and the DB viewer |
