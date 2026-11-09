@@ -8,7 +8,7 @@ When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFL
 
 The human's requests after playing: M5 had grown too big, so balance v2 is a milestone of its own, M6, and Multiplayer and Desktop move to M7 and M8.
 
-- **Current docs (D79).** The code repo's docs state only what holds now: its DECISIONS.md drops the superseded and withdrawn rows and the history in the others, with one line mapping the retired numbers that code still cites, and RULES, CORE, APPS, ART, PROTOCOL and the READMEs lose their dates and "no longer"s. The log as it stood is in [DECISIONS-HISTORY.md](DECISIONS-HISTORY.md), which records every later change to a code decision. This repo's CLAUDE.md says how one changes now. T-232 takes the history and the retired numbers out of the code's comments.
+- **Current docs (D79).** The code repo's docs state only what holds now: its DECISIONS.md drops the superseded and withdrawn rows and the history in the others, with one line mapping the retired numbers that code still cites, and RULES, CORE, APPS, ART, PROTOCOL and the READMEs lose their dates and "no longer"s. The log as it stood is in [DECISIONS-HISTORY.md](DECISIONS-HISTORY.md), which records every later change to a code decision, with PROTOCOL.md's table of versions and the cards README's draft-format tables. The code repo's CLAUDE.md asks for comments and test titles without history. This repo's CLAUDE.md says how one changes now. T-232 takes the history and the retired numbers out of the code's comments.
 - **Decisions,** on the `--code` lead branch `balance-v2-rules` with RULES.md, CORE.md, APPS.md and CLAUDE.md. Merge it first.
   - D80 replaces D65 (one Chaos card a round, spawned Chaos-factor times) and D76 (the squad cap): each round reveals a condition, an Emblem and a unit card from the tier's three piles, a unit card spawns once in front of each player it targets, and only tiers 2 and 3 have big cards, sent against the point leader. Asked, the human chose one squad per target over a small factor per tier, and kept Extra Chaos only as one more unit card against a leader 10 points ahead, in tiers 2 and 3; the wiped-seat card goes.
   - D81: no traps. D26 and D67 drop them from their lists.
@@ -18,7 +18,7 @@ The human's requests after playing: M5 had grown too big, so balance v2 is a mil
   - D60 now says one resource a round.
 - **Costs.** Asked whether to halve every cost, the human kept the expensive cards and asked for cheap ones instead: new, or existing 2- and 3-cost units re-costed to 1 with weaker numbers (T-225).
 - **Cards:** T-219 to T-233 in seven waves ([tasks/README.md](tasks/README.md#m6--balance-v2)). The bugs from the human's games became T-220 to T-222 and T-231.
-- **Art:** the prompt page for the 29 new cards and the 10 existing ones that still have no art: ART_LINK.
+- **Art:** the prompt page for the 29 new cards and the 10 existing ones that still have no art, batches B26 to B28: https://claude.ai/code/artifact/f24ef592-af5a-4b9a-8afa-670d6c964008
 
 ## 2026-11-08 — The planner bars off (D77, T-216)
 
