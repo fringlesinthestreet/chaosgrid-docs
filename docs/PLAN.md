@@ -116,14 +116,24 @@ Match:
 - [ ] The 11-05 playtest, second batch (the human's requests after playing, 2026-11-05; D65 to D72 and D74, T-183 to T-202 and T-212). Chaos draws one card a round and a unit card spawns its squad Chaos-factor times, with no flyers in tier 1 (D65; T-183), and the timed cards that stack are Unique (D66; T-184). Durability goes: a permanent stays until an effect removes it, Fleeting replaces Durability 0 and Destroy joins the zone mechanics (D67; T-189, T-191, T-194, T-200). Resources no longer attach, and Charge, first a Plan action paid in generic mana (D68; T-193), goes too at the human's request on 2026-11-06: the 13 cards that printed it keep their effects behind Plan abilities, with a new effect that gives a unit an ability for the round (D74; T-196, T-197, T-212, T-200). Resources can be Unique: Prism, Harvest Cycle and Old Library are, five colored Harvest Cycles join them, and a colorless Leader and a colorless resource arrive (D69, D70; T-198). The grid is the planning surface: every seat's piles and hand on its strip, the Piles, Zones and Plan sections go, the tray holds the hand and the Leader's slot, the card view shows a card's live stats and its actions, resources rest from the strip, and an action the floating mana can't pay shows inactive from the snapshot's `payable` (D71, D72; T-185, T-188, T-190, T-192, T-195, T-199, T-202). The cards page and the deck editor pin their toolbars and detail (T-186, T-187). New removal spells with drawbacks, wipes and cheaper Dark cards with a sacrifice (T-201).
 - [ ] The Chaos cap (the human's request, 2026-11-07; D76, T-214 and T-215). A player faces at most the round number of Chaos squads a round, Extra Chaos included, and tier 1's Scavenger Drone and Lost Sentinel have Reach against flyers (D76; T-214). The planner's preview seats every Chaos squad as the real round does (T-215).
 - [ ] The planner bars off (the human's request, 2026-11-08; D77, T-216). While the Chaos and the cards are balanced, no test requires the planner bot to beat the greedy bot: the two that did are skipped until the human balances the bots' difficulty levels (T-216).
-### M6 — Multiplayer (later)
+
+### M6 — Balance v2 (1–2 weeks)
+The human's requests of 2026-11-09: a smaller, steadier Chaos, a slower economy with cheap cards, no traps, and the bugs found playing. The cards are in [tasks/README.md](tasks/README.md#m6--balance-v2).
+- [ ] Chaos: every round reveals one condition, one Emblem and one unit card from the tier's three piles; a unit card spawns its squad once in front of each player it targets; cards sent against everyone stay small, and only tiers 2 and 3 have big cards sent against the point leader; Extra Chaos is one more such card when the leader is 10 points ahead, in tiers 2 and 3 (D80; T-224, T-226). The lobby can turn Chaos off (D82; T-229).
+- [ ] No traps: the card type, its mechanics, its cards and its protocol messages go (D81; T-219, T-223).
+- [ ] Economy: one resource a round (D60; T-227); cheap units, new and re-costed, while expensive cards stay (T-225); Unique artifacts whose Plan ability adds one floating mana, costing at least 2 (D83; T-228, T-230).
+- [ ] Bugs: one level-up a round (D84; T-231); attached-card icons and picks follow the units during playback (T-220); playback back to 1× each round, and the round summary and the Chaos banner close by themselves (T-221); the pool keeps its order when resources rest, and an inactive card's reason shows on hover (T-222).
+- [ ] The code repo's docs state only what holds now, and the code carries no history in its comments (D79; T-232). Sprites for the new cards and those still missing art: the prompt page in [CHANGELOG.md](CHANGELOG.md).
+- **Done when:** every card above is merged and the balance baseline after them is committed (T-233).
+
+### M7 — Multiplayer (later)
 - [ ] `apps/server`: Node, one `core` per room, `WsTransport` with the same interface as `MockTransport`. The server plays out each round and sends every seat its own filtered timeline (D19).
 - [ ] Multiplayer lobby: rooms and seats, bots filling empty seats (M4 has the solo lobby), reconnect via Snapshot.
-- [ ] Hidden information enforced server-side (plans, hands, face-down traps).
+- [ ] Hidden information enforced server-side (plans and hands).
 - [ ] Accounts move to the server with the DB: M4's local accounts (D40) become server accounts, and the server enforces the Plan and Discard deadlines and the Chaos pause (D41).
 - [ ] The DB moves to Postgres for the server (D11).
 - **Done when:** two browsers and two bots finish a game with the server authoritative.
 
-### M7 — Desktop (later)
+### M8 — Desktop (later)
 - [ ] Tauri wrapper of `apps/web`, auto-update, offline solo play.
 
