@@ -5,10 +5,9 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 96 of 97 tasks merged
-- **Latest task completed:** [T-208](docs/tasks/M5/T-208-task-ids-out-of-the-web-app.md) Task ids out of the web app (2026-11-09)
-- **Next up:**
-  - [T-209](docs/tasks/M5/T-209-task-ids-out-of-the-other-packages.md) Task ids out of the other packages
+- **Milestone:** M5 — Balance pass · done (97 of 97 tasks merged)
+- **Latest task completed:** [T-209](docs/tasks/M5/T-209-task-ids-out-of-the-other-packages.md) Task ids out of the other packages (2026-11-09)
+- **Next up:** plan M6 — Multiplayer
 <!-- status:end -->
 
 ## What's here
