@@ -5,12 +5,12 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · 93 of 97 tasks merged
-- **Latest task completed:** [T-206](docs/tasks/M5/T-206-balance-baseline-after-the-11-05-rules.md) Balance baseline after the 11-05 rules (2026-11-09)
+- **Milestone:** M5 — Balance pass · 94 of 97 tasks merged
+- **Latest task completed:** [T-218](docs/tasks/M5/T-218-e2e-green-again.md) The e2e tests green again (2026-11-09)
 - **Next up:**
   - [T-207](docs/tasks/M5/T-207-task-ids-out-of-core-and-the-protocol.md) Task ids out of core and the protocol
+  - [T-208](docs/tasks/M5/T-208-task-ids-out-of-the-web-app.md) Task ids out of the web app
   - [T-209](docs/tasks/M5/T-209-task-ids-out-of-the-other-packages.md) Task ids out of the other packages
-  - [T-218](docs/tasks/M5/T-218-e2e-green-again.md) The e2e tests green again
 <!-- status:end -->
 
 ## What's here
