@@ -5,11 +5,11 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 2 of 17 tasks merged
-- **Latest task completed:** [T-220](docs/tasks/M6/T-220-attached-icons-and-picks-follow-units.md) Attached icons and picks follow units (2026-11-09)
+- **Milestone:** M6 — Balance v2 · 3 of 17 tasks merged
+- **Latest task completed:** [T-221](docs/tasks/M6/T-221-playback-at-1x-and-overlays-that-close.md) Playback at 1x and overlays that close (2026-11-09)
 - **Next up:**
   - [T-219](docs/tasks/M6/T-219-traps-out-of-the-cards-core-and-bots.md) Traps out of the cards, core and bots
-  - [T-221](docs/tasks/M6/T-221-playback-at-1x-and-overlays-that-close.md) Playback at 1x and overlays that close
+  - [T-238](docs/tasks/M6/T-238-the-hand-window.md) The hand window
 <!-- status:end -->
 
 ## What's here
