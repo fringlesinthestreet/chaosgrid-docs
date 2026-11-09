@@ -2,7 +2,7 @@
 id: T-230
 title: Sim report: end tier and Chaos spawns
 milestone: M5
-depends_on: [T-206]
+depends_on: [T-206, T-229]
 branch: agent/T-230-sim-report-end-tier-and-chaos-spawns
 model: sonnet
 effort: medium
