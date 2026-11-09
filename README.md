@@ -5,9 +5,11 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M5 — Balance pass · done (97 of 97 tasks merged)
-- **Latest task completed:** [T-209](docs/tasks/M5/T-209-task-ids-out-of-the-other-packages.md) Task ids out of the other packages (2026-11-09)
-- **Next up:** plan M6 — Multiplayer
+- **Milestone:** M6 — Balance v2 · 2 of 17 tasks merged
+- **Latest task completed:** [T-220](docs/tasks/M6/T-220-attached-icons-and-picks-follow-units.md) Attached icons and picks follow units (2026-11-09)
+- **Next up:**
+  - [T-219](docs/tasks/M6/T-219-traps-out-of-the-cards-core-and-bots.md) Traps out of the cards, core and bots
+  - [T-221](docs/tasks/M6/T-221-playback-at-1x-and-overlays-that-close.md) Playback at 1x and overlays that close
 <!-- status:end -->
 
 ## What's here
