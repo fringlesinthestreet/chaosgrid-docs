@@ -5,10 +5,12 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 3 of 17 tasks merged
-- **Latest task completed:** [T-221](docs/tasks/M6/T-221-playback-at-1x-and-overlays-that-close.md) Playback at 1x and overlays that close (2026-11-09)
+- **Milestone:** M6 — Balance v2 · 4 of 17 tasks merged
+- **Latest task completed:** [T-219](docs/tasks/M6/T-219-traps-out-of-the-cards-core-and-bots.md) Traps out of the cards, core and bots (2026-11-10)
 - **Next up:**
-  - [T-219](docs/tasks/M6/T-219-traps-out-of-the-cards-core-and-bots.md) Traps out of the cards, core and bots
+  - [T-223](docs/tasks/M6/T-223-traps-out-of-the-protocol-and-the-web.md) Traps out of the protocol and the web
+  - [T-224](docs/tasks/M6/T-224-chaos-a-condition-an-emblem-and-a-unit.md) "Chaos: a condition, an Emblem and a unit"
+  - [T-225](docs/tasks/M6/T-225-cheap-units-new-and-re-costed.md) Cheap units, new and re-costed
   - [T-238](docs/tasks/M6/T-238-the-hand-window.md) The hand window
 <!-- status:end -->
 
