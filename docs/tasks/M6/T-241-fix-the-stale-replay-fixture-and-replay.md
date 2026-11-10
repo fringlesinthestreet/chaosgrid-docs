@@ -9,6 +9,8 @@ effort: medium
 scope:
   - apps/web/test/fixtures/**
   - apps/web/e2e/replay.spec.ts
+  - apps/web/src/match/overlays/overlays.test.tsx
+  - apps/web/src/match/battlefield/sprites.test.ts
 context:
   - docs/CORE.md
 ---
