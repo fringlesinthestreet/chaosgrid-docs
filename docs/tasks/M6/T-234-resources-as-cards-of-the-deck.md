@@ -40,6 +40,10 @@ scope:
   - tools/sim-cli/test/snapshot-positions.test.ts
   - packages/core/test/fixtures/plan/cards.ts
   - packages/core/test/fixtures/effects/cards.ts
+  - tools/sim-cli/test/fixtures/golden/cards/resources/ember_vent.json
+  - tools/sim-cli/test/fixtures/golden/cards/resources/harvest_cycle.json
+  - tools/sim-cli/README.md
+  - packages/http/README.md
 context:
   - docs/RULES.md#Resources and mana
   - docs/RULES.md#Components
