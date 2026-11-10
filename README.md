@@ -5,11 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 12 of 20 tasks merged
-- **Latest task completed:** [T-240](docs/tasks/M6/T-240-fix-the-round-2-preview-test-on-main.md) Fix the round 2 preview test and the e2e hand window clicks on main (2026-11-10)
+- **Milestone:** M6 — Balance v2 · 13 of 20 tasks merged
+- **Latest task completed:** [T-241](docs/tasks/M6/T-241-fix-the-stale-replay-fixture-and-replay.md) Fix the stale replay fixture and replay e2e spec (2026-11-10)
 - **Next up:**
   - [T-235](docs/tasks/M6/T-235-core-resources-on-the-grid-and-the-round.md) "Core: resources on the grid and the round's mana"
-  - [T-241](docs/tasks/M6/T-241-fix-the-stale-replay-fixture-and-replay.md) Fix the stale replay fixture and replay e2e spec
 <!-- status:end -->
 
 ## What's here
