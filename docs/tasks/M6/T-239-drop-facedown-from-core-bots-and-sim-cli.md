@@ -13,6 +13,7 @@ scope:
   - packages/protocol/src/**
   - docs/PROTOCOL.md
   - apps/web/**
+  - packages/protocol/test/**
 context:
   - docs/tasks/M6/T-223-traps-out-of-the-protocol-and-the-web.md
 ---
