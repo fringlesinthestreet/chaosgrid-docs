@@ -5,11 +5,11 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 7 of 18 tasks merged
-- **Latest task completed:** [T-238](docs/tasks/M6/T-238-the-hand-window.md) The hand window (2026-11-10)
+- **Milestone:** M6 — Balance v2 · 8 of 18 tasks merged
+- **Latest task completed:** [T-223](docs/tasks/M6/T-223-traps-out-of-the-protocol-and-the-web.md) Traps out of the protocol and the web (2026-11-10)
 - **Next up:**
-  - [T-223](docs/tasks/M6/T-223-traps-out-of-the-protocol-and-the-web.md) Traps out of the protocol and the web
   - [T-229](docs/tasks/M6/T-229-chaos-off-in-the-lobby.md) Chaos off in the lobby
+  - [T-234](docs/tasks/M6/T-234-resources-as-cards-of-the-deck.md) Resources as cards of the deck
   - [T-239](docs/tasks/M6/T-239-drop-facedown-from-core-bots-and-sim-cli.md) Drop faceDown from core, bots and sim-cli
 <!-- status:end -->
 
