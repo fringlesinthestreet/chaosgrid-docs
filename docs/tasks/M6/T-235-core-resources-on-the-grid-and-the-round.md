@@ -23,6 +23,9 @@ scope:
   - packages/cards/data/units/**
   - packages/cards/test/**
   - tools/sim-cli/**
+  - packages/cards/src/node/load.test.ts
+  - packages/cards/src/node/starter.test.ts
+  - packages/cards/src/spells.test.ts
 context:
   - docs/RULES.md#Resources and mana
   - docs/RULES.md#Round structure
