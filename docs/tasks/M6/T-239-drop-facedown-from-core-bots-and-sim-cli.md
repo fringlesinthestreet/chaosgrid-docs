@@ -11,6 +11,8 @@ scope:
   - packages/bots/**
   - tools/sim-cli/**
   - packages/protocol/src/**
+  - docs/PROTOCOL.md
+  - apps/web/**
 context:
   - docs/tasks/M6/T-223-traps-out-of-the-protocol-and-the-web.md
 ---
