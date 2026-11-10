@@ -22,6 +22,8 @@ scope:
   - packages/cards/test/sets/chaos.test.ts
   - packages/cards/README.md
   - tools/sim-cli/test/**
+  - packages/core/src/scoring/points.test.ts
+  - apps/web/src/host/host.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Chaos deck and Emblems
