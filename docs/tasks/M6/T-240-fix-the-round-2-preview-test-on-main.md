@@ -1,0 +1,45 @@
+---
+id: T-240
+title: Fix the round 2 preview test on main
+milestone: M6
+depends_on: []
+branch: agent/T-240-fix-the-round-2-preview-test-on-main
+model: sonnet
+effort: medium
+scope:
+  - packages/core/src/round/preview.test.ts
+  - packages/core/src/round/preview.ts
+  - packages/core/test/fixtures/**
+context:
+  - docs/CORE.md
+---
+
+# T-240 — Fix the round 2 preview test on main
+
+## Goal
+
+`pnpm test` is green on `main` again. "matches round 2 of seed 3, where nothing is hidden from seat 0" in `packages/core/src/round/preview.test.ts` fails on `main` with `earlierBuffs: 1` instead of `0`, so every worker's `crew check` reports it as a failure they didn't cause.
+
+## Interfaces
+
+- `hiddenFromSeatZero(round)` and `NOTHING_HIDDEN` in `preview.test.ts`: the test expects nothing to be hidden from seat 0 in round 2 of seed 3.
+- `previewRound`, `expectPreviewMatchesRound` and the seeded rounds `begunRound`, `playedWithSeatZero`.
+
+## Deliverables
+
+1. Find why `earlierBuffs` is 1: a card or rule change since the test was written, or a real preview bug.
+2. If the preview is wrong, fix it, so it matches the real round. If the test's premise is stale (the seed now hides something from seat 0 for a legitimate reason), pick another seed and round where nothing is hidden, and say why in the report.
+
+## Acceptance
+
+- [ ] `crew check` green, with no failing test in core
+- [ ] `pnpm --filter @chaosgrid/core exec vitest run src/round/preview.test.ts` passes
+
+## Out of scope
+
+- Weakening the assertion, skipping the test, or changing the cards' behavior.
+- The faceDown removal (T-239) and the resources-as-cards change (T-234): rebase on `main` if either has merged, and check the failure still reproduces.
+
+## Notes
+
+The failure reproduces on `main` at 76d6b9e without any open task's changes. Use the `diagnose` approach: find which commit made `earlierBuffs` 1 before choosing a fix.
