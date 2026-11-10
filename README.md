@@ -5,7 +5,7 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 11 of 19 tasks merged
+- **Milestone:** M6 — Balance v2 · 11 of 20 tasks merged
 - **Latest task completed:** [T-234](docs/tasks/M6/T-234-resources-as-cards-of-the-deck.md) Resources as cards of the deck (2026-11-10)
 - **Next up:**
   - [T-235](docs/tasks/M6/T-235-core-resources-on-the-grid-and-the-round.md) "Core: resources on the grid and the round's mana"
