@@ -5,11 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 9 of 19 tasks merged
-- **Latest task completed:** [T-229](docs/tasks/M6/T-229-chaos-off-in-the-lobby.md) Chaos off in the lobby (2026-11-10)
+- **Milestone:** M6 — Balance v2 · 10 of 19 tasks merged
+- **Latest task completed:** [T-239](docs/tasks/M6/T-239-drop-facedown-from-core-bots-and-sim-cli.md) Drop faceDown from core, bots and sim-cli (2026-11-10)
 - **Next up:**
   - [T-234](docs/tasks/M6/T-234-resources-as-cards-of-the-deck.md) Resources as cards of the deck
-  - [T-239](docs/tasks/M6/T-239-drop-facedown-from-core-bots-and-sim-cli.md) Drop faceDown from core, bots and sim-cli
   - [T-240](docs/tasks/M6/T-240-fix-the-round-2-preview-test-on-main.md) Fix the round 2 preview test on main
 <!-- status:end -->
 
