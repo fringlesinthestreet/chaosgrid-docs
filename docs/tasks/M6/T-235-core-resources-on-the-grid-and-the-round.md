@@ -26,6 +26,12 @@ scope:
   - packages/cards/src/node/load.test.ts
   - packages/cards/src/node/starter.test.ts
   - packages/cards/src/spells.test.ts
+  - apps/web/src/match/planning/draft.ts
+  - apps/web/src/match/planning/rules.ts
+  - apps/web/src/match/planning/targets.test.ts
+  - apps/web/src/match/planning/HandCardActions.tsx
+  - apps/web/src/match/planning/HandEntry.tsx
+  - apps/web/src/match/planning/HandEntry.test.tsx
 context:
   - docs/RULES.md#Resources and mana
   - docs/RULES.md#Round structure
