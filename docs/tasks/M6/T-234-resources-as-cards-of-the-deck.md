@@ -24,6 +24,17 @@ scope:
   - apps/web/src/i18n/en/lobby.json
   - apps/web/e2e/**
   - apps/web/README.md
+  - packages/core/src/zones/**
+  - packages/core/src/effects/**
+  - packages/core/src/view/cards.test.ts
+  - tools/sim-cli/src/**
+  - tools/sim-cli/test/golden-script.ts
+  - packages/core/test/fixtures/zones/decks.ts
+  - apps/web/src/host/bot-seats.test.ts
+  - apps/web/src/match/planning/Zones.test.tsx
+  - apps/web/src/api/fixture.test.ts
+  - apps/web/src/i18n/en/deckEditor.json
+  - apps/web/src/i18n/en/deckList.json
 context:
   - docs/RULES.md#Resources and mana
   - docs/RULES.md#Components
