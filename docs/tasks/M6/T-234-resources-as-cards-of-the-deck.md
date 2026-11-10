@@ -35,6 +35,11 @@ scope:
   - apps/web/src/api/fixture.test.ts
   - apps/web/src/i18n/en/deckEditor.json
   - apps/web/src/i18n/en/deckList.json
+  - tools/sim-cli/test/planner.perf.test.ts
+  - tools/sim-cli/test/scripted.ts
+  - tools/sim-cli/test/snapshot-positions.test.ts
+  - packages/core/test/fixtures/plan/cards.ts
+  - packages/core/test/fixtures/effects/cards.ts
 context:
   - docs/RULES.md#Resources and mana
   - docs/RULES.md#Components
