@@ -5,11 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 18 of 22 tasks merged
-- **Latest task completed:** [T-236](docs/tasks/M6/T-236-the-web-plays-resources-from-the-grid.md) The web plays resources from the grid (2026-11-13)
+- **Milestone:** M6 — Balance v2 · 19 of 22 tasks merged
+- **Latest task completed:** [T-242](docs/tasks/M6/T-242-the-sim-cli-report-records-chaos-and-the.md) The sim-cli report records Chaos and the final tier (2026-11-13)
 - **Next up:**
   - [T-228](docs/tasks/M6/T-228-mana-artifacts-and-the-addmana-effect.md) Mana artifacts
-  - [T-242](docs/tasks/M6/T-242-the-sim-cli-report-records-chaos-and-the.md) The sim-cli report records Chaos and the final tier
 <!-- status:end -->
 
 ## What's here
