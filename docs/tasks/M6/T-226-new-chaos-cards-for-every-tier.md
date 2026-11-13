@@ -13,6 +13,8 @@ scope:
   - packages/core/src/chaos/deck.test.ts
   - packages/core/src/chaos/reveal.test.ts
   - packages/core/src/round/begin.test.ts
+  - packages/core/src/round/check.test.ts
+  - packages/core/src/round/preview.test.ts
 context:
   - docs/RULES.md#Chaos deck and Emblems
   - docs/RULES.md#Sample Chaos deck and Emblems
