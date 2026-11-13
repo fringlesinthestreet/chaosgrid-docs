@@ -32,6 +32,8 @@ scope:
   - apps/web/src/match/planning/HandCardActions.tsx
   - apps/web/src/match/planning/HandEntry.tsx
   - apps/web/src/match/planning/HandEntry.test.tsx
+  - apps/web/test/fixtures/planning/*.json
+  - apps/web/src/host/host.test.ts
 context:
   - docs/RULES.md#Resources and mana
   - docs/RULES.md#Round structure
