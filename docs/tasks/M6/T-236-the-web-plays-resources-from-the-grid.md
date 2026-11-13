@@ -16,6 +16,10 @@ scope:
   - apps/web/art-pack/**
   - apps/web/README.md
   - tools/sim-cli/src/**
+  - packages/core/**
+  - packages/bots/**
+  - packages/cards/README.md
+  - tools/sim-cli/test/**
 context:
   - docs/RULES.md#Resources and mana
   - docs/DECISIONS.md#Decision log
