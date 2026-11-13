@@ -34,6 +34,8 @@ scope:
   - apps/web/src/match/planning/HandEntry.test.tsx
   - apps/web/test/fixtures/planning/*.json
   - apps/web/src/host/host.test.ts
+  - apps/web/src/match/planning/PlanningFlow.test.tsx
+  - apps/web/src/match/planning/Zones.test.tsx
 context:
   - docs/RULES.md#Resources and mana
   - docs/RULES.md#Round structure
