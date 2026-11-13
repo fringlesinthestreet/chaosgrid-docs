@@ -5,10 +5,12 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 13 of 22 tasks merged
-- **Latest task completed:** [T-241](docs/tasks/M6/T-241-fix-the-stale-replay-fixture-and-replay.md) Fix the stale replay fixture and replay e2e spec (2026-11-10)
+- **Milestone:** M6 — Balance v2 · 14 of 22 tasks merged
+- **Latest task completed:** [T-235](docs/tasks/M6/T-235-core-resources-on-the-grid-and-the-round.md) "Core: resources on the grid and the round's mana" (2026-11-13)
 - **Next up:**
-  - [T-235](docs/tasks/M6/T-235-core-resources-on-the-grid-and-the-round.md) "Core: resources on the grid and the round's mana"
+  - [T-226](docs/tasks/M6/T-226-new-chaos-cards-for-every-tier.md) New Chaos cards for every tier
+  - [T-231](docs/tasks/M6/T-231-one-level-up-a-round.md) One level-up a round
+  - [T-236](docs/tasks/M6/T-236-the-web-plays-resources-from-the-grid.md) The web plays resources from the grid
   - [T-243](docs/tasks/M6/T-243-web-leftovers-after-the-hand-window-and.md) Web leftovers after the hand window and the one deck
 <!-- status:end -->
 
