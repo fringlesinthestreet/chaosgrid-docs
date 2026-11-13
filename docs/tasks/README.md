@@ -726,7 +726,7 @@ graph LR
 
 ## M6 — Balance v2
 
-Done when every card below is merged and the baseline after them is committed ([PLAN.md](../PLAN.md) › M6). The rules are in the code repo's RULES.md and DECISIONS.md (D60, D64, D79 to D87) before the first wave starts.
+Done when every card below is merged and the baseline (T-233) is committed ([PLAN.md](../PLAN.md) › M6); wave 9 runs after it. The rules are in the code repo's RULES.md and DECISIONS.md (D60, D64, D79 to D87) before the first wave starts.
 
 How the waves fit together:
 

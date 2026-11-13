@@ -126,7 +126,8 @@ The human's requests of 2026-11-09: a smaller, steadier Chaos, resources as card
 - [ ] The hand is a window dragged inside the battlefield, with the floating mana, Ready and the clock in it, and no planning panel (D87; T-238).
 - [ ] Bugs: one level-up a round (D84; T-231); attached-card icons and picks follow the units during playback (T-220); playback back to 1× each round, and the round summary and the Chaos banner close by themselves (T-221); an inactive card's reason shows on hover (T-222).
 - [ ] The code repo's docs state only what holds now, and the code carries no history in its comments (D79; T-232). Sprites for the new cards and those still missing art: the prompt page in [CHANGELOG.md](CHANGELOG.md).
-- **Done when:** every card above is merged and the balance baseline after them is committed (T-233).
+- [ ] Fixes after the baseline: an Emblem's breaker gets its buff (T-244); the status bar leaves the grid's top row clickable, and the e2e specs stop depending on their seed's Chaos (T-245); the sim-cli report gives the mana spent a round and the Extra Chaos (T-246).
+- **Done when:** every card above is merged and the balance baseline is committed (T-233). The fixes after it don't call for another.
 
 ### M7 — Multiplayer (later)
 - [ ] `apps/server`: Node, one `core` per room, `WsTransport` with the same interface as `MockTransport`. The server plays out each round and sends every seat its own filtered timeline (D19).
