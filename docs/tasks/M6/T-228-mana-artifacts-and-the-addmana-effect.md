@@ -17,6 +17,8 @@ scope:
   - packages/bots/test/**
   - apps/web/src/match/planning/FloatingMana.test.tsx
   - apps/web/test/fixtures/planning/**
+  - packages/cards/data/spells/sow.json
+  - packages/cards/data/spells/bountiful_growth.json
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Resources and mana
