@@ -26,6 +26,7 @@ scope:
   - apps/web/src/i18n/en/overlays.json
   - apps/web/e2e/new-player.spec.ts
   - apps/web/README.md
+  - apps/web/src/match/overlays/index.tsx
 context:
   - docs/DECISIONS.md#Decision log
   - docs/APPS.md#The match
