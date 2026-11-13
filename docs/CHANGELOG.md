@@ -4,6 +4,11 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-13 — D83 applies to artifacts only (T-228)
+
+- **D83:** the Unique and cost-at-least-2 rule covers artifacts with an `addMana` ability only; spells, units and leaders are free of it.
+- **T-228:** also sets Sow to 3 mana, and Bountiful Growth to 8 mana and Unique; scope widened to both spell files.
+
 ## 2026-11-13 — Open questions after waves 1 to 3 (D59, T-242, T-243)
 
 The workers' open questions from T-206 to T-238, checked against main while T-235 runs.

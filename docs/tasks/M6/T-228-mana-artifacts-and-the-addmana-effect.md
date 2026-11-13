@@ -17,6 +17,12 @@ scope:
   - packages/bots/test/**
   - apps/web/src/match/planning/FloatingMana.test.tsx
   - apps/web/test/fixtures/planning/**
+  - packages/cards/data/spells/sow.json
+  - packages/cards/data/spells/bountiful_growth.json
+  - tools/sim-cli/src/decks.test.ts
+  - apps/web/src/host/host.test.ts
+  - packages/core/src/plan/abilities.ts
+  - packages/core/src/plan/abilities.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Resources and mana
@@ -42,7 +48,8 @@ After T-235 and T-236 (grep the names, the lines move).
 
 ## Deliverables
 
-1. **Validation.** A card with an `addMana` ability is Unique, and its casting cost's mana value is at least 2; the error cites D83. The rule is under Artifacts in the cards README.
+1. **Validation.** An artifact with an `addMana` ability is Unique, and its casting cost's mana value is at least 2; the error cites D83. Spells, units and leaders are free of it.
+   - **Spells.** Sow gives 3 mana (`amount: 3`, text "+3 mana this round"). Bountiful Growth gives 8 mana (`amount: 8`, text "+8 mana this round") and is `unique: true`. Bump both cards' `version`. The rule is under Artifacts in the cards README.
 2. **The six cards**, each `unique: true`, free-standing 1×1, text "Rest: add one <color> mana":
 
    | Id | Name | Cost | Gives |
