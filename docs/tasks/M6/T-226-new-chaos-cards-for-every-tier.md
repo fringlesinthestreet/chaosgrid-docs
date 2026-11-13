@@ -15,6 +15,7 @@ scope:
   - packages/core/src/round/begin.test.ts
   - packages/core/src/round/check.test.ts
   - packages/core/src/round/preview.test.ts
+  - tools/sim-cli/src/game.test.ts
 context:
   - docs/RULES.md#Chaos deck and Emblems
   - docs/RULES.md#Sample Chaos deck and Emblems
