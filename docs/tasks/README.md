@@ -737,6 +737,7 @@ How the waves fit together:
 - **Card data, one folder each.** T-219 and then T-225, T-234 and T-228 edit the starter decks; T-224, T-235 and then T-226 the Chaos folder; T-234 the resources; T-235 the cards that drew resources; T-228 adds artifacts.
 - **The sweep and the baseline run alone.** T-232 has every package in its scope; T-233 takes every core for hours.
 - **Fix cards run in the wave where main broke** (T-239 to T-241), beside the card that broke it or after it, with disjoint scopes.
+- **Fixes after the baseline** (T-244 to T-246) run together in wave 9, with disjoint scopes. Only T-244 changes a game, for the two Emblems whose buff reached no unit; the next baseline comes with the human's balance picks.
 
 | Wave | Task | Depends on | Model | Scope |
 | --- | --- | --- | --- | --- |
@@ -762,6 +763,9 @@ How the waves fit together:
 | 6 | [T-242 The sim-cli report records Chaos and the final tier](M6/T-242-the-sim-cli-report-records-chaos-and-the.md) | T-229, T-236 | sonnet, medium effort | sim-cli's report, stats and command |
 | 7 | [T-232 History out of the code's comments](M6/T-232-history-out-of-the-code-s-comments.md) | T-226, T-228, T-229, T-231, T-236 | sonnet, medium effort | comments in every package |
 | 8 | [T-233 Balance baseline after balance v2](M6/T-233-balance-baseline-after-balance-v2.md) | T-232 | sonnet, medium effort | `docs/balance`, `packages/cards/stats` |
+| 9 | [T-244 An Emblem's breaker gets its buff](M6/T-244-an-emblem-s-breaker-gets-its-buff.md) | — | sonnet, medium effort | core's `killerUnits`, its tests, the cards README |
+| 9 | [T-245 Top row clicks and e2e specs free of the seed's Chaos](M6/T-245-top-row-clicks-and-e2e-specs-free-of-the.md) | — | sonnet, high effort | `MatchScreen`, `Hud`, the camera, `new-player.spec.ts`, `bot-worker.spec.ts` |
+| 9 | [T-246 Mana spent and Extra Chaos in the sim-cli report](M6/T-246-mana-spent-and-extra-chaos-in-the-sim-cl.md) | — | sonnet, medium effort | sim-cli's game record, stats and report |
 
 ## Later milestones
 
