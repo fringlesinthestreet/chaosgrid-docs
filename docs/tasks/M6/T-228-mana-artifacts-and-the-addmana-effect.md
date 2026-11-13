@@ -21,6 +21,8 @@ scope:
   - packages/cards/data/spells/bountiful_growth.json
   - tools/sim-cli/src/decks.test.ts
   - apps/web/src/host/host.test.ts
+  - packages/core/src/plan/abilities.ts
+  - packages/core/src/plan/abilities.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Resources and mana
