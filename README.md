@@ -5,12 +5,11 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 15 of 22 tasks merged
-- **Latest task completed:** [T-231](docs/tasks/M6/T-231-one-level-up-a-round.md) One level-up a round (2026-11-13)
+- **Milestone:** M6 — Balance v2 · 16 of 22 tasks merged
+- **Latest task completed:** [T-243](docs/tasks/M6/T-243-web-leftovers-after-the-hand-window-and.md) Web leftovers after the hand window and the one deck (2026-11-13)
 - **Next up:**
   - [T-226](docs/tasks/M6/T-226-new-chaos-cards-for-every-tier.md) New Chaos cards for every tier
   - [T-236](docs/tasks/M6/T-236-the-web-plays-resources-from-the-grid.md) The web plays resources from the grid
-  - [T-243](docs/tasks/M6/T-243-web-leftovers-after-the-hand-window-and.md) Web leftovers after the hand window and the one deck
 <!-- status:end -->
 
 ## What's here
