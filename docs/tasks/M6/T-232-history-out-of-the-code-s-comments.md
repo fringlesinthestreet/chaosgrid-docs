@@ -2,7 +2,7 @@
 id: T-232
 title: History out of the code's comments
 milestone: M6
-depends_on: [T-226, T-228, T-229, T-231, T-236]
+depends_on: [T-226, T-228, T-229, T-231, T-236, T-242]
 branch: agent/T-232-history-out-of-the-code-s-comments
 model: sonnet
 effort: medium

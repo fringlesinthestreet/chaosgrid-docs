@@ -4,6 +4,10 @@ The code repo's `docs/DECISIONS.md` states each decision as it stands, with no h
 
 ## Changes
 
+### 2026-11-13 — The card back has no sprite
+
+- **D59** said "`ui.cardBack`'s portrait and sprite stay what a face-down card draws". No card is face down since the traps went (D81), so the row now says the portrait is the back of a card in DOM pages and there is no sprite.
+
 ### 2026-11-09 — Resources as cards of the deck
 
 Resources join the main deck as static permanents on the grid (D85), searches and mana replace resource draws (D86), and the hand becomes a window (D87). The rows below were rewritten; what they said:

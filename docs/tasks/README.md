@@ -736,6 +736,7 @@ How the waves fit together:
 - **Traps go in two steps,** as Charge did: T-219 empties the cards, core and the bots while the protocol keeps its trap types, and T-223 removes them from the protocol and the web after the two web bug cards that share its files.
 - **Card data, one folder each.** T-219 and then T-225, T-234 and T-228 edit the starter decks; T-224, T-235 and then T-226 the Chaos folder; T-234 the resources; T-235 the cards that drew resources; T-228 adds artifacts.
 - **The sweep and the baseline run alone.** T-232 has every package in its scope; T-233 takes every core for hours.
+- **Fix cards run in the wave where main broke** (T-239 to T-241), beside the card that broke it or after it, with disjoint scopes.
 
 | Wave | Task | Depends on | Model | Scope |
 | --- | --- | --- | --- | --- |
@@ -748,12 +749,17 @@ How the waves fit together:
 | 2 | [T-225 Cheap units, new and re-costed](M6/T-225-cheap-units-new-and-re-costed.md) | T-219 | sonnet, high effort | the unit data, the starter decks, two cards tests |
 | 3 | [T-234 Resources as cards of the deck](M6/T-234-resources-as-cards-of-the-deck.md) | T-223, T-225 | opus, high effort | the cards package, the resource data, the starter decks, the DB, `http`, the API, the deck editor, the lobby, the host |
 | 3 | [T-238 The hand window](M6/T-238-the-hand-window.md) | T-221, T-222 | sonnet, high effort | `planning/`, `MatchScreen`, the battlefield's mount and camera |
+| 3 | [T-239 Drop faceDown from core, bots and sim-cli](M6/T-239-drop-facedown-from-core-bots-and-sim-cli.md) | T-223 | sonnet, medium effort | the protocol's permanent events and snapshot, core, the bots, sim-cli |
 | 4 | [T-235 Core: resources on the grid and the round's mana](M6/T-235-core-resources-on-the-grid-and-the-round.md) | T-224, T-234 | opus, high effort | core, the protocol, the bots, the DSL, the cards that drew resources, sim-cli |
+| 4 | [T-240 Fix the round 2 preview test on main](M6/T-240-fix-the-round-2-preview-test-on-main.md) | T-238 | sonnet, medium effort | `preview.test.ts`, the hand window, two e2e specs |
+| 4 | [T-241 Fix the stale replay fixture and replay spec](M6/T-241-fix-the-stale-replay-fixture-and-replay.md) | T-234 | sonnet, medium effort | the replay log fixture, `replay.spec.ts` |
+| 4 | [T-243 Web leftovers after the hand window and the one deck](M6/T-243-web-leftovers-after-the-hand-window-and.md) | T-238, T-240 | sonnet, medium effort | the battlefield's camera and mount, `Hud`, the hand window's styles, the deck editor's headings, `new-player.spec.ts` |
 | 5 | [T-226 New Chaos cards for every tier](M6/T-226-new-chaos-cards-for-every-tier.md) | T-224, T-235 | sonnet, medium effort | the Chaos data, the Chaos set test |
 | 5 | [T-231 One level-up a round](M6/T-231-one-level-up-a-round.md) | T-235 | sonnet, high effort | core's `plan/`, `board.ts`, Cleanup and rebuild, the golden streams |
 | 5 | [T-236 The web plays resources from the grid](M6/T-236-the-web-plays-resources-from-the-grid.md) | T-235, T-238 | opus, high effort | the protocol, `docs/PROTOCOL.md`, `docs/ART.md`, the web's source, tests and art pack |
 | 6 | [T-228 Mana artifacts](M6/T-228-mana-artifacts-and-the-addmana-effect.md) | T-235, T-236 | sonnet, high effort | the card schema, the artifact data, the starter decks, bots and web tests |
 | 6 | [T-229 Chaos off in the lobby](M6/T-229-chaos-off-in-the-lobby.md) | T-221, T-224 | sonnet, medium effort | core's config and `chaos/`, the lobby, the host, `overlays/`, sim-cli's command |
+| 6 | [T-242 The sim-cli report records Chaos and the final tier](M6/T-242-the-sim-cli-report-records-chaos-and-the.md) | T-229, T-236 | sonnet, medium effort | sim-cli's report, stats and command |
 | 7 | [T-232 History out of the code's comments](M6/T-232-history-out-of-the-code-s-comments.md) | T-226, T-228, T-229, T-231, T-236 | sonnet, medium effort | comments in every package |
 | 8 | [T-233 Balance baseline after balance v2](M6/T-233-balance-baseline-after-balance-v2.md) | T-232 | sonnet, medium effort | `docs/balance`, `packages/cards/stats` |
 

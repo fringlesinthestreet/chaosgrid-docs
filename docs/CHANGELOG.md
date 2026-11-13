@@ -4,6 +4,18 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-13 — Open questions after waves 1 to 3 (D59, T-242, T-243)
+
+The workers' open questions from T-206 to T-238, checked against main while T-235 runs.
+
+- **Resolved on main:** the trap leftovers that kept main red (T-223, T-240), `faceDown` in the protocol (T-239), the failing round 2 preview test (T-240), the bots' null for a hand card of a type no card has (the type is gone).
+- **Resolved by cards already planned:** the e2e round 1 that rests a resource, and the "main deck" and "resource deck" strings (T-236, which now names the strings); the balance stats file (T-233).
+- **D59** loses the card back's sprite: no card is face down any more, so `ui.cardBack` is a portrait and the three backs. ART.md drops its counts of keys and of cards per kind, which had gone stale twice (233 and 256 for 278 card files): the card files are the count. On the `--code` lead branch `card-back-still`; T-236 removes the strip from the art pack, the manifest and the scene.
+- **T-243** (wave 4, beside T-235 with disjoint files): the camera insets, HUD pieces and fold the hand window made dead; the inactive-reason tooltip that the window's `overflow: auto` clips; the deck editor's hard-coded headings (D50); the e2e locators that name the old tray.
+- **T-242** (wave 6, after T-236 frees sim-cli): the JSON report records `chaos` and `tierStarts`, `--merge` refuses to mix them, and the text report prints the share of games ending in each tier, which T-206's write-up asked for and T-233 needs. T-232 waits for it.
+- **Left as the workers judged:** the acceptance grep that names `trap` once, the colorless set at 20, the lowered set bars, the "24 cheap units" test counting every unit of mana value 2 or less, Canopy Archer and Candle Bearer kept at their costs, the T-234 starter picks and seed changes, T-224's readings, T-206's run shape. The replay clock that reads the full round after Skip stays as is.
+- **For the human:** a fourth colored cost-1 unit for Tide and Light, Tin Soldier (dominated by Hired Pike and Hired Spear), and whether the starters should play Prism, Old Library, Ember Vent or Tide Pool: balance picks, best made on T-233's numbers. The `onDraw` trigger has no card since T-234: T-235 owns the DSL and core's triggers and can drop it.
+
 ## 2026-11-09 — Resources as cards of the deck, the hand window (D26, D57, D60, D64, D69, D71, D72, D85 to D87, T-234 to T-238)
 
 The human's second request of the day, added to M6 before its first wave started.
