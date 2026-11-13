@@ -23,6 +23,7 @@ scope:
   - apps/web/src/host/host.test.ts
   - packages/core/src/plan/abilities.ts
   - packages/core/src/plan/abilities.test.ts
+  - tools/sim-cli/src/game.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Resources and mana
