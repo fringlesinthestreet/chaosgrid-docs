@@ -10,6 +10,9 @@ scope:
   - packages/cards/data/chaos/**
   - packages/cards/test/sets/chaos.test.ts
   - apps/web/src/**/*.test.ts
+  - packages/core/src/chaos/deck.test.ts
+  - packages/core/src/chaos/reveal.test.ts
+  - packages/core/src/round/begin.test.ts
 context:
   - docs/RULES.md#Chaos deck and Emblems
   - docs/RULES.md#Sample Chaos deck and Emblems
