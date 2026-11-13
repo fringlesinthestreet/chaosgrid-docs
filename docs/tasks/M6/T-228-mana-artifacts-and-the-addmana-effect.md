@@ -19,6 +19,8 @@ scope:
   - apps/web/test/fixtures/planning/**
   - packages/cards/data/spells/sow.json
   - packages/cards/data/spells/bountiful_growth.json
+  - tools/sim-cli/src/decks.test.ts
+  - apps/web/src/host/host.test.ts
 context:
   - docs/DECISIONS.md#Decision log
   - docs/RULES.md#Resources and mana
