@@ -4,6 +4,11 @@ The code repo's `docs/DECISIONS.md` states each decision as it stands, with no h
 
 ## Changes
 
+### 2026-11-13 — Previews pay with floating mana, and no retired numbers
+
+- **D63** said "a bot previews a round with a guess for each other seat, and every seat's own pool", and "a preview rebuilds every seat's pool as the snapshot shows it, public (D57) and before this round's draws, so a guess pays with its seat's own resources, by their ids". The pool went with the resource deck (D60, D85), and core's preview rebuilds each seat's grid and floating mana, so the row now says floating mana.
+- **The "Retired numbers" line** under the decision log mapped numbers that code might still cite to the decision holding their rule: D7 → D18, D12 and D27 → D40, D25 → D44, D31 → D75, D39 → D45, D48 → D67, D49 and D55 → D63, D58 → D64, D61 → D62, D65 and D76 → D80, D68 → D74. No code cites them after the comment sweep, and the last two doc citations (APPS.md's D39, the bots README's D65) went, so the line went too.
+
 ### 2026-11-13 — The card back has no sprite
 
 - **D59** said "`ui.cardBack`'s portrait and sprite stay what a face-down card draws". No card is face down since the traps went (D81), so the row now says the portrait is the back of a card in DOM pages and there is no sprite.

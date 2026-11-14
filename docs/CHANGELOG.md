@@ -4,6 +4,19 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-13 — Open questions after M6's last wave (D63, T-244 to T-246)
+
+The workers' open questions from T-226 to T-243, checked against main after T-233. The full soak is green on main; `pnpm test:e2e` fails two specs.
+
+- **D63** says floating mana where it said pools, and the "Retired numbers" line is gone, on the `--code` lead branch `m6-docs-leftovers`. The same branch fixes what the one deck and the end of traps left in the docs: the README's pitch (a 100-card main deck, a resource deck, traps, a pool, one Chaos card, a 100-second fight), the web README's pool click, `faceDown` in PROTOCOL.md's permanent events, "main deck" in PROTOCOL.md, RULES.md and the cards README, the planning panel and "D45 supersedes D39" in APPS.md, and the bots README's D65.
+- **T-244** (core): War Drum and Wayfarer Cairn target `killerUnits` on `onDestroyed`, which core resolves only from a killer, so their buffs reach no unit. `killerUnits` covers an Emblem's breaker.
+- **T-245** (web): the match status bar covers the grid's top row, so a player can't click it. The two e2e specs that fail on main relied on their seed's round-1 Chaos (a generic mana, an extra card); T-226's and T-228's cards changed what the seeds draw. The specs stop depending on the seed's Chaos.
+- **T-246** (sim-cli): the mean mana spent a round and the Extra Chaos count, which T-233's write-up lacked, and `--no-chaos` in the replay command.
+- **Resolved on main or by the rules as they stand:** the data-tray locator (T-243 moved the e2e to the hand window, and `data-tray` marks the hand list inside it); the pool UI (T-236 removed it); the rest-for-mana half of the planning test (the action is gone); Dragon Hoard has no ability, as RULES.md says.
+- **Left as the workers judged:** the six artifacts' text starts with "Unique.", `rest` allowed on artifacts and enchantments, Root Tender and Elder Mycelium free of D83 (it covers artifacts only), no core change for resting an artifact after its ability, T-232's sweep of test comments limited to the history grep, sim-cli's `tierStarts` from core's defaults, and `scene.ts`'s `ui.cardBack` fallback (the model's type allows a permanent without a card).
+- **Not a rule question:** "a seat that plays nothing ends round 1 at 9 cards" held only for a seed whose round-1 condition draws an extra card; core deals 7 and 1, the hand limit is 8.
+- **For the human:** the resource sprite strips (26 keys, each `idle`, `enter`, `hurt`, `die`, and `ability` for those with one), and T-233's nine balance proposals.
+
 ## 2026-11-13 — D83 applies to artifacts only (T-228)
 
 - **D83:** the Unique and cost-at-least-2 rule covers artifacts with an `addMana` ability only; spells, units and leaders are free of it.
