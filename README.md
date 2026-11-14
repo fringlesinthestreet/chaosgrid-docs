@@ -5,10 +5,10 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 19 of 22 tasks merged
-- **Latest task completed:** [T-242](docs/tasks/M6/T-242-the-sim-cli-report-records-chaos-and-the.md) The sim-cli report records Chaos and the final tier (2026-11-13)
+- **Milestone:** M6 — Balance v2 · 24 of 25 tasks merged
+- **Latest task completed:** [T-246](docs/tasks/M6/T-246-mana-spent-and-extra-chaos-in-the-sim-cl.md) Mana spent and Extra Chaos in the sim-cli report (2026-11-13)
 - **Next up:**
-  - [T-228](docs/tasks/M6/T-228-mana-artifacts-and-the-addmana-effect.md) Mana artifacts
+  - [T-244](docs/tasks/M6/T-244-an-emblem-s-breaker-gets-its-buff.md) An Emblem's breaker gets its buff
 <!-- status:end -->
 
 ## What's here
