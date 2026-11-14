@@ -4,6 +4,10 @@ The code repo's `docs/DECISIONS.md` states each decision as it stands, with no h
 
 ## Changes
 
+### 2026-11-13 — The top bar above the battlefield's box
+
+- **D51** said "**The battlefield fills the match screen, and everything else floats over it.** The canvas is behind the whole match screen in every phase. The top bar, the tray, the card view, the playback controls and the overlays are panels over its edges". With no camera insets (D87) the top bar covered the grids' top row, so T-245 put it above the battlefield's box; the tray is the hand window. The row now says the battlefield's box fills the screen under the top bar, and why.
+
 ### 2026-11-13 — Previews pay with floating mana, and no retired numbers
 
 - **D63** said "a bot previews a round with a guess for each other seat, and every seat's own pool", and "a preview rebuilds every seat's pool as the snapshot shows it, public (D57) and before this round's draws, so a guess pays with its seat's own resources, by their ids". The pool went with the resource deck (D60, D85), and core's preview rebuilds each seat's grid and floating mana, so the row now says floating mana.
