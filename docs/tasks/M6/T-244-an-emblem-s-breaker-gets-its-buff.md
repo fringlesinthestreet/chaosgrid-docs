@@ -12,6 +12,8 @@ scope:
   - packages/core/src/effects/targets.test.ts
   - packages/core/src/effects/triggers.test.ts
   - packages/cards/README.md
+  - packages/core/src/round/rebuild.ts
+  - packages/core/src/round/rebuild.test.ts
 context:
   - docs/RULES.md#Scoring and winning
   - packages/cards/README.md#Targets
