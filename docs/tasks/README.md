@@ -726,7 +726,7 @@ graph LR
 
 ## M6 — Balance v2
 
-Done when every card below is merged and the baseline (T-233) is committed ([PLAN.md](../PLAN.md) › M6); wave 9 runs after it. The rules are in the code repo's RULES.md and DECISIONS.md (D60, D64, D79 to D87) before the first wave starts.
+Done when every card below is merged and the baseline (T-233) is committed ([PLAN.md](../PLAN.md) › M6); waves 9 and 10 run after it. The rules are in the code repo's RULES.md and DECISIONS.md (D60, D64, D79 to D87) before the first wave starts.
 
 How the waves fit together:
 
@@ -737,7 +737,7 @@ How the waves fit together:
 - **Card data, one folder each.** T-219 and then T-225, T-234 and T-228 edit the starter decks; T-224, T-235 and then T-226 the Chaos folder; T-234 the resources; T-235 the cards that drew resources; T-228 adds artifacts.
 - **The sweep and the baseline run alone.** T-232 has every package in its scope; T-233 takes every core for hours.
 - **Fix cards run in the wave where main broke** (T-239 to T-241), beside the card that broke it or after it, with disjoint scopes.
-- **Fixes after the baseline** (T-244 to T-246) run together in wave 9, with disjoint scopes. Only T-244 changes a game, for the two Emblems whose buff reached no unit; the next baseline comes with the human's balance picks.
+- **Fixes after the baseline** (T-244 to T-246) run together in wave 9, with disjoint scopes. Only T-244 changes a game, for the two Emblems whose buff reached no unit; the next baseline comes with the human's balance picks. T-247, in wave 10, fixes what wave 9's sim-cli card left in tournaments.
 
 | Wave | Task | Depends on | Model | Scope |
 | --- | --- | --- | --- | --- |
@@ -766,6 +766,7 @@ How the waves fit together:
 | 9 | [T-244 An Emblem's breaker gets its buff](M6/T-244-an-emblem-s-breaker-gets-its-buff.md) | — | sonnet, medium effort | core's `killerUnits`, its tests, the cards README |
 | 9 | [T-245 Top row clicks and e2e specs free of the seed's Chaos](M6/T-245-top-row-clicks-and-e2e-specs-free-of-the.md) | — | sonnet, high effort | `MatchScreen`, `Hud`, the camera, `new-player.spec.ts`, `bot-worker.spec.ts` |
 | 9 | [T-246 Mana spent and Extra Chaos in the sim-cli report](M6/T-246-mana-spent-and-extra-chaos-in-the-sim-cl.md) | — | sonnet, medium effort | sim-cli's game record, stats and report |
+| 10 | [T-247 The tournament's replay keeps --no-chaos](M6/T-247-the-tournament-s-replay-keeps-no-chaos.md) | — | sonnet, low effort | sim-cli's tournament, game result and command |
 
 ## Later milestones
 

@@ -4,6 +4,14 @@ Changes to the plan, the decisions and the way we work, newest first. The code's
 
 When you change [PLAN.md](PLAN.md), the code repo's `docs/DECISIONS.md`, [WORKFLOW.md](WORKFLOW.md) or the agent workflow, add an entry here on a lead branch of this repo (D36, D53). Say what changed and why, and name the decisions and tasks it touches.
 
+## 2026-11-13 — Open questions after wave 9 (D51, T-247)
+
+The workers' open questions from T-244 to T-246, checked against main.
+
+- **D51** puts the top bar above the battlefield's box, where T-245 moved it, on the `--code` lead branch `top-bar-docs`. The same branch fixes APPS.md's `PlanningPanel` (the planning folder exports `PlanningProvider`, `PlanLayer` and `HandWindow`) and "the planning panel reads the snapshot".
+- **T-247** (sim-cli): `pnpm sim --tournament … --no-chaos` plays without Chaos, but its replay commands lack `--no-chaos`, so a replay plays a different game. The worker read the tournament as always on Chaos. The same card makes `GameResult.extraChaos` required.
+- **Left as the workers judged:** the `targets.ts` comment names the hand and a squad's or permanent's uses; the mana spent reads costs from the Plan's snapshots, which the sim-cli README says; the rebuild test leaves `maxHp` out in rounds with an HP buff, which matches core's README › Previews (timed buffs from earlier rounds aren't rebuilt), and Wayfarer Cairn's is the first such buff to last into a Plan.
+
 ## 2026-11-13 — Open questions after M6's last wave (D63, T-244 to T-246)
 
 The workers' open questions from T-226 to T-243, checked against main after T-233. The full soak is green on main; `pnpm test:e2e` fails two specs.
