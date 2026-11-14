@@ -5,10 +5,9 @@ The private plan for ChaosGrid (github.com/fringlesinthestreet/chaosgrid): the m
 ## Status
 
 <!-- status:start (generated from git by crew status --update-readme; crew merged refreshes it, don't edit by hand) -->
-- **Milestone:** M6 — Balance v2 · 24 of 25 tasks merged
-- **Latest task completed:** [T-246](docs/tasks/M6/T-246-mana-spent-and-extra-chaos-in-the-sim-cl.md) Mana spent and Extra Chaos in the sim-cli report (2026-11-13)
-- **Next up:**
-  - [T-244](docs/tasks/M6/T-244-an-emblem-s-breaker-gets-its-buff.md) An Emblem's breaker gets its buff
+- **Milestone:** M6 — Balance v2 · done (25 of 25 tasks merged)
+- **Latest task completed:** [T-244](docs/tasks/M6/T-244-an-emblem-s-breaker-gets-its-buff.md) An Emblem's breaker gets its buff (2026-11-13)
+- **Next up:** plan M7 — Multiplayer
 <!-- status:end -->
 
 ## What's here
