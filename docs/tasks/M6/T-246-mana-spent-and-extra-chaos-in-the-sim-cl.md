@@ -15,6 +15,7 @@ scope:
   - tools/sim-cli/src/report.test.ts
   - tools/sim-cli/README.md
   - tools/sim-cli/test/smoke.test.ts
+  - tools/sim-cli/src/command.test.ts
 context:
   - tools/sim-cli/README.md#Usage
   - tools/sim-cli/README.md#JSON report
